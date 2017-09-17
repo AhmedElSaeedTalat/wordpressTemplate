@@ -135,7 +135,9 @@ p{
 						list-style:none;
 					    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.08);
 					    min-height: 81px;
-					    padding:  1rem;
+					    padding-top: 1rem;
+					    padding-left: 1rem;
+					    padding-bottom: 1rem;
 					    position: absolute;
 					    top: 21px;
 					    left: 13%;
@@ -149,13 +151,15 @@ p{
 						.sub-menu{
 							position:absolute;
 							top:0;
-							left:110%;
+							left:100%;
 							display:none;
 						}
 						[class*="menu-item-"]{
 							padding-top:0.4rem;
 							position:relative;
 							margin-bottom:1%;
+							width: 100%;
+						 	padding-right: 0;
 							&:hover  .sub-menu{
 								display:block;
 							}
@@ -199,12 +203,11 @@ p{
     				animation-fill-mode: forwards;
 				}
 			}
-			 div.n2-ss-button-container{
-				background:white !important;
+			 .n2-font-4669165dee3c2406bfe110cc3c6709a8-hover{
+				width: 101px;
+			    margin: 0 auto;
+			    border-bottom: 1px solid red;
 			}
-			// .nextend-bar-horizontal{
-			// 	display:none !important;
-			// }
 	 } //n2-ss-slider-align-visible
 		
 	}//site-content
