@@ -10,6 +10,7 @@
  */
 
 ?>
+
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -22,12 +23,51 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'humescore' ); ?></a>
+	<!-- <a class="skip-link screen-reader-text" href="#content"><?php //esc_html_e( 'Skip to content', 'humescore' ); ?></a> -->
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
+		<!-- ######  header_edit   ###### -->
+						
+				<div class="headWrapper">
+					<div class="container ">
+						<div class="row">
+							<div class="col-sm-4 d-flex align-items-center header_account">
+								<p class="mainStyleText1">Summer Sales Discount Learn More</p>
+							</div>
+							<div class="col-sm-8 d-flex align-items-center justify-content-end header_account">
+								<p class="mainStyleText1"> My account <span class="headerTextSpanPadding">Checkout</span></p>
+							</div>
+						</div>
+					</div>
+				</div>
+						<!-- header-Logo -->
+				<div class="header_logo">
+					<div class="container h-100">
+						<div class="row headerRowAdjustment">
+							<div class="col-12 d-flex justify-content-center header_logo_style align-items-center">
+								<?php the_custom_logo();?>
+							</div>
+						</div>
+						<!-- site Header Menu -->
+						<div class="row d-flex justify-content-center" >
+							<nav id="site-navigation" class="main-navigation "  
+								<?php
+									wp_nav_menu( array(
+										'theme_location' => 'menu-1',
+										'menu_id'        => 'primary-menu',
+										'depth' 		=> '3'
+									) );
+								?>
+							</nav><!-- #site-navigation -->	
+						</div>
+					</div>
+				</div>
+
+		<!-- ######  end_header_edit   ###### -->
+
 			<?php
-			the_custom_logo();
+			
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
@@ -42,15 +82,6 @@
 			endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'humescore' ); ?></button>
-			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				) );
-			?>
-		</nav><!-- #site-navigation -->
+		
 	</header><!-- #masthead -->
-
 	<div id="content" class="site-content">

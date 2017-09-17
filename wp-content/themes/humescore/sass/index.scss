@@ -44,3 +44,184 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
+/* imports */
+@import './variables';
+@import './mixin';
+
+
+
+
+
+
+/*-------------------------------------------------------------
+Body styles
+/*------------------------------------------------------------*/
+body
+{
+	font-family: 'Karla', sans-serif;
+}
+/*-------------------------------------------------------------
+ typography styles
+/*------------------------------------------------------------*/
+p{
+	font-size:14px;
+}
+
+.textStyle{
+	font-size:14px;
+	margin-bottom:0;
+}
+
+
+/*-------------------------------------------------------------
+ header styles
+/*------------------------------------------------------------*/
+.headWrapper{
+	background:$color_main_boxes;
+	 
+	.header_account{
+			height:35px;
+		.mainStyleText1 {
+				font-size:14px;
+				color:white;
+				margin-bottom: 0;
+				 .headerTextSpanPadding{
+				 	padding-left:2.5rem;
+				 	cursor:pointer;
+						}
+				 }
+					}
+}
+	.header_logo{
+		background:white;
+		min-height: 190px;
+			.header_logo_style{
+				height:100%;
+				.custom-logo{
+					    max-height: 190px !important;
+    					max-width: 190px !important;
+				}
+			}
+			.headerRowAdjustment{
+				    height: 190px;
+    				padding-top: 2rem;
+			}
+			.main-navigation {
+			}
+			.menu{
+				list-style:none;
+				@extend .textStyle;
+				display: flex;
+			    
+			    width: 100%;
+			    .icon-angle-down{
+					    height: 12px !important;
+   						 width: 12px !important;
+				}
+					a{
+						color:#333;
+						text-decoration: none;
+						font-size:12px;
+						line-height:10px;
+					}
+					a:hover{
+						color:#777;
+					}
+					.menu-item{
+					    padding-right: 3rem;
+					    position:relative;
+					
+					.sub-menu{
+						list-style:none;
+					    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.08);
+					    min-height: 81px;
+					    padding:  1rem;
+					    position: absolute;
+					    top: 21px;
+					    left: 13%;
+					    width: 13rem;
+					    background-color: white;
+					    display:none;
+					    z-index:125;
+						 .icon-angle-down{
+							display:none;
+						}
+						.sub-menu{
+							position:absolute;
+							top:0;
+							left:110%;
+							display:none;
+						}
+						[class*="menu-item-"]{
+							padding-top:0.4rem;
+							position:relative;
+							margin-bottom:1%;
+							&:hover  .sub-menu{
+								display:block;
+							}
+						}
+					}
+					&:hover {
+						.sub-menu{
+							display:block;
+							.sub-menu{
+								display:none;
+							}
+						}
+					} //menu-item from inside
+				} //menu-item
+			} //menu
+			
+	}
+/*-------------------------------------------------
+	BODY
+--------------------------------------------------*/
+.site-content{
+	margin-top:1.2rem;
+	z-index:1;
+	 .n2-ss-slider-align-visible{
+			.n2-ss-widget{
+		 		   background: rgba(255,255,255,.75);
+		}//n2-ss-widget
+			#n2-ss-2-arrow-previous{
+					opacity:0 !important;
+			}//n2-ss-2-arrow-previous
+			#n2-ss-2-arrow-next{
+					opacity:0 !important;
+			}//n2-ss-2-arrow-next
+			&:hover{
+				#n2-ss-2-arrow-previous{
+					animation: animateArrow .5s;
+    				animation-fill-mode: forwards;
+				}
+				#n2-ss-2-arrow-next{
+					animation: animateArrow2 .5s;
+    				animation-fill-mode: forwards;
+				}
+			}
+			// .nextend-bar-horizontal{
+			// 	display:none !important;
+			// }
+	 } //n2-ss-slider-align-visible
+		
+	}//site-content
+@keyframes animateArrow{
+	0%{
+		opacity:1;
+		left:-10%;
+	}
+	100%{
+		left:0%;
+		opacity:1;
+	}
+}
+@keyframes animateArrow2{
+	0%{
+		opacity:1;
+		right:-10%;
+	}
+	100%{
+		right:0%;
+		opacity:1;
+	}
+}

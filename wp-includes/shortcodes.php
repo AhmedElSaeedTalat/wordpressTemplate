@@ -224,7 +224,6 @@ function do_shortcode( $content, $ignore_html = false ) {
 
 	// Always restore square braces so we don't break things like <!--[if IE ]>
 	$content = unescape_invalid_shortcodes( $content );
-
 	return $content;
 }
 

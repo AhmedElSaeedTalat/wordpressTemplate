@@ -116,10 +116,42 @@ add_action( 'widgets_init', 'humescore_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
-function humescore_scripts() {
-	wp_enqueue_style( 'humescore-style', get_stylesheet_uri() );
+function fonts_uri(){
+	$fonts_url = '';
 
+	/*
+	 * Translators: If there are characters in your language that are not
+	 * supported by Libre Franklin, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$libre_franklin = _x( 'on', 'Karla font: on or off', 'twentyseventeen' );
+
+	if ( 'off' !== $libre_franklin ) {
+		$font_families = array();
+
+		$font_families[] = 'Karla:300,300i,400,400i,600,600i,800,800i';
+
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
+
+	return esc_url_raw( $fonts_url );
+}
+function humescore_scripts() {
+	 wp_enqueue_script('jquery');
+	 wp_enqueue_style('fonts',fonts_uri());
+  	 wp_enqueue_style( 'humescore-bootstrap', get_template_directory_uri() . '/sass/bootstrap.min.css' );
+	 wp_enqueue_style( 'humescore-style', get_stylesheet_uri() );
 	wp_enqueue_script( 'humescore-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script('humescore-tether', get_template_directory_uri().'/js/tether.min.js');
+	wp_enqueue_script('humescore-bootstrap', get_template_directory_uri().'/js/bootstrap.min.js');
+	wp_enqueue_script('humescore-jquery', get_template_directory_uri().'/js/jquery.slim.min.js');
+	wp_enqueue_script('humescore-jquery', get_template_directory_uri().'/js/ui/jquery-ui.min.js');
+	wp_enqueue_script('humescore-index', get_template_directory_uri().'/index.js');
 
 	wp_enqueue_script( 'humescore-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -155,4 +187,5 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+require get_template_directory()."/inc/icons-functions.php";
 
