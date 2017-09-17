@@ -158,6 +158,8 @@ p {
   .site-content .n2-ss-slider-align-visible:hover #n2-ss-2-arrow-next {
     animation: animateArrow2 .5s;
     animation-fill-mode: forwards; }
+  .site-content .n2-ss-slider-align-visible div.n2-ss-button-container {
+    background: white !important; }
 
 @keyframes animateArrow {
   0% {
