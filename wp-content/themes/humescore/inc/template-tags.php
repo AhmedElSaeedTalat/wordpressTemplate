@@ -26,7 +26,7 @@ if ( ! function_exists( 'humescore_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'humescore' ),
+			esc_html_x( ' %s', 'post date', 'humescore' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -36,7 +36,8 @@ if ( ! function_exists( 'humescore_posted_on' ) ) :
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+		echo  '<span class="byline"> ' . $byline .
+		 '</span><span>-</span>'.'<span class="posted-on">' . $posted_on;  // WPCS: XSS OK.
 
 	}
 endif;
@@ -49,17 +50,13 @@ if ( ! function_exists( 'humescore_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'humescore' ) );
-			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'humescore' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-			}
+			
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'humescore' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'humescore' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'humescore' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="tags-links">' . esc_html__( ' %1$s', 'humescore' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
 
@@ -82,21 +79,21 @@ if ( ! function_exists( 'humescore_entry_footer' ) ) :
 			echo '</span>';
 		}
 
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'humescore' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
+		// edit_post_link(
+		// 	sprintf(
+		// 		wp_kses(
+		// 			/* translators: %s: Name of current post. Only visible to screen readers */
+		// 			__( 'Edit <span class="screen-reader-text">%s</span>', 'humescore' ),
+		// 			array(
+		// 				'span' => array(
+		// 					'class' => array(),
+		// 				),
+		// 			)
+		// 		),
+		// 		get_the_title()
+		// 	),
+		// 	'<span class="edit-link">',
+		// 	'</span>'
+		// );
 	}
 endif;

@@ -31,7 +31,7 @@
 						
 				<div class="headWrapper">
 					<div class="container ">
-						<div class="row">
+						<div class="row ">
 							<div class="col-sm-4 d-flex align-items-center header_account">
 								<p class="mainStyleText1">Summer Sales Discount Learn More</p>
 							</div>
@@ -43,20 +43,21 @@
 				</div>
 						<!-- header-Logo -->
 				<div class="header_logo">
-					<div class="container h-100">
+					<div class="container h-100" id="infoHeader">
 						<div class="row headerRowAdjustment">
 							<div class="col-12 d-flex justify-content-center header_logo_style align-items-center">
 								<?php the_custom_logo();?>
 							</div>
 						</div>
 						<!-- site Header Menu -->
-						<div class="row d-flex justify-content-center" >
+						<div class="row d-flex justify-content-center" id="headerMenu" >
 							<nav id="site-navigation" class="main-navigation "  
 								<?php
 									wp_nav_menu( array(
 										'theme_location' => 'menu-1',
 										'menu_id'        => 'primary-menu',
-										'depth' 		=> '3'
+										'depth' 		=> '3',
+										'after'			=> humescores_get_svg(['icon'=>'angle-down'])
 									) );
 								?>
 							</nav><!-- #site-navigation -->	
