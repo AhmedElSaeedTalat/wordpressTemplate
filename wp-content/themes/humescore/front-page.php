@@ -56,3 +56,5 @@ echo do_shortcode('[smartslider3 slider=2]');
 <?php
 get_sidebar();
 get_footer();
+
+// var_dump( wp_get_nav_menu_items('header-menu'));

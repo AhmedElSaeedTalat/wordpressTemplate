@@ -69,11 +69,13 @@ p {
 
 h1 {
   font-size: 24px;
-  color: #333333; }
+  color: #333333;
+  text-transform: uppercase; }
 
-h2 {
+h2, h3 {
   font-size: 18px;
-  color: #333333; }
+  color: #333333;
+  text-transform: uppercase; }
 
 /*-------------------------------------------------------------
  header styles
@@ -153,7 +155,8 @@ h2 {
           display: none; }
 
 #headerMenu {
-  padding-bottom: 12px; }
+  padding-bottom: 12px;
+  align-items: center; }
 
 /*-------------------------------------------------
 	BODY
@@ -211,16 +214,21 @@ Single Posts
   display: flex;
   justify-content: center; }
   .thumbnails .thumbnailWrapper {
-    width: 90%; }
+    width: 90%;
+    height: 700px; }
     .thumbnails .thumbnailWrapper .attachment-thumbnails {
-      width: 100% !important; }
+      width: 100% !important;
+      height: 100% !important; }
   .thumbnails .thumbnailWrapper2 {
     width: 50%; }
     .thumbnails .thumbnailWrapper2 .attachment-thumbnails {
       width: 100% !important; }
 
+/*-------------------------------------------------------------------------------
+	Content
+--------------------------------------------------------------------------------*/
 .content-width {
-  max-width: 60% !important; }
+  max-width: 70% !important; }
   .content-width .entry-content {
     margin-top: 2rem; }
 
@@ -278,6 +286,9 @@ Single Posts
 .commentsNumber {
   padding-left: 10px; }
 
+/*-------------------------------------------------------------------------------
+	Custome Menu
+--------------------------------------------------------------------------------*/
 .menu2 {
   margin-top: 2rem; }
 
@@ -294,7 +305,7 @@ Single Posts
     border: 1px solid #dcdcdc;
     margin-right: 1rem;
     height: 30px;
-    width: 100px;
+    min-width: 100px;
     display: flex;
     justify-content: center;
     align-items: center; }
@@ -316,3 +327,102 @@ Single Posts
         fill: white; }
       .menuWrapper .menuWrapper2:hover a {
         color: white; }
+
+/*-------------------------------------------------------------------------------
+	Static area
+--------------------------------------------------------------------------------*/
+.content-image1 {
+  border-radius: 100%; }
+
+.border {
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #dcdcdc;
+  padding: 9px; }
+  .border .iconsWrapper {
+    display: flex;
+    width: 30%; }
+    .border .iconsWrapper a {
+      width: 15%; }
+  .border .icon {
+    height: 16px;
+    fill: #716f6f;
+    width: 15px; }
+
+/*-------------------------------------------------------------------------------
+		Related Posts Section
+	--------------------------------------------------------------------------------*/
+.relatedPosts .relatedPosts_blog {
+  width: 26%; }
+
+.relatedPosts .image {
+  height: 120px;
+  width: 167px; }
+  .relatedPosts .image img {
+    height: 100%;
+    width: 100%; }
+
+.relatedPosts .title {
+  margin-top: 1rem; }
+  .relatedPosts .title a {
+    color: #33363a;
+    text-decoration: none; }
+
+.relatedPosts .date {
+  font-size: 12px;
+  color: #999999;
+  text-transform: uppercase; }
+
+.RelatedPostHeaderStyle {
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid; }
+
+/*-------------------------------------------------------------------------------
+	comments
+	--------------------------------------------------------------------------------*/
+.comments-area {
+  border: 1px solid #dcdcdc; }
+
+#comment {
+  border: 1px solid #dcdcdc;
+  width: 90%;
+  margin: 0 auto; }
+
+.comment-form-comment {
+  width: 100%;
+  display: flex;
+  flex-direction: column; }
+  .comment-form-comment label {
+    padding-left: 2rem; }
+
+.comment-reply-title {
+  padding-top: 1rem;
+  padding-left: 2rem; }
+
+.form-submit .submit {
+  background: black;
+  color: white;
+  margin-left: 2.5rem;
+  height: 37px;
+  width: 121px;
+  outline: none;
+  border: none; }
+
+.logged-in-as {
+  padding-left: 2rem; }
+  .logged-in-as a {
+    color: #333333; }
+
+.comment-form-author {
+  display: inline-block;
+  width: 30%;
+  margin-left: 5%; }
+
+.comment-form-email {
+  display: inline-block;
+  width: 30%; }
+
+.comment-form-url {
+  display: inline-block;
+  width: 30%; }

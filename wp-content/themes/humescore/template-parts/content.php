@@ -9,6 +9,7 @@
 
 ?>
 										<!-- thumbnail -->
+<?php if(has_post_thumbnail()):?>
 <?php	
 	if(!is_active_sidebar('sidebar-1')):?>									
 <div class="thumbnails">
@@ -25,7 +26,10 @@
 			</div>
 	</div>
 <?php 
-	endif;?>
+	endif;
+	endif;
+	?>
+
 <div class="category d-flex justify-content-center">	
 				<?php 
 						$categories_list = get_the_category_list( esc_html__( ', ', 'humescore' ) );
@@ -89,7 +93,7 @@
 				</div><!-- col -->
 				<?php if(is_singular()):?>
 					
-				<div class="col-12 text-center">	
+				<div class="col-12 text-center content-width">	
 					<div class="share">	
 							<h2>Share</h2>
 					</div><!-- share -->
@@ -128,10 +132,90 @@
 					</div>
 
 				</div>	<!-- col -->
-				<div class="col-12">
-					<img src="" alt="">
+				<div class="col-12 mt-5 content-width">
+					<div class="border">
+						<div class="row">
+							<div class="col-3 ">
+								<img src='<?php echo get_template_directory_uri()."/images/bla.jpeg" ;?>' alt="" class="content-image1">
+							</div>
+							<div class="col-9">
+								<h2>ROOTLAYERS</h2>
+								<p>But that crowd of people had a far narrower escape than mine. Only the fact that a hummock of heathery sand inter- cepted the lower part of the Heat-Ray saved them. Had the elevation of the parabolic mirror been a few yards higher.</p>
+								<div class="iconsWrapper"><a href=""><?php echo humescores_get_svg(['icon'=>'facebook']);?></a>
+									<a href=""><?php echo humescores_get_svg(['icon'=>'google-plus']);?></a>
+									<a href=""><?php echo humescores_get_svg(['icon'=>'twitter']);?></a>		
+									<a href=""><?php echo humescores_get_svg(['icon'=>'vk']);?></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
 				</div>
-			<?php endif ;?>
+			
+			<div class="col-12 mt-5 content-width">
+				<div class="row">
+					<h2 class="mx-auto RelatedPostHeaderStyle">Related Posts</h2>
+						<div class="col-12 relatedPosts d-flex justify-content-around ">
+					<?php
+						$title = get_the_title();
+						$category = get_the_category();
+						$the_category = $category[0]->name;
+						$x = new WP_Query(
+								[
+									'category_name'=>$the_category 
+								]
+							);
+						if($x->have_posts()){
+							while($x->have_posts()){
+								$x->the_post();
+								// echo the_post_thumbnail();
+								if($title !== get_the_title()) :?>
+								<div class="relatedPosts_blog">
+									<?php if(has_post_thumbnail()) :?>
+									<div class="image">
+										<?php echo the_post_thumbnail() ;?>	
+									</div>	
+									<?php else:?>
+									<div class="image">
+										<img src="<?php echo get_template_directory_uri().'/images/logo-minimalo.png' ;?>	" alt="">
+									</div>	
+
+								<?php endif;?>
+									<div class="title">
+										<a href="<?php echo get_permalink();?>"><?php echo get_the_title() ;?>	</a>
+									</div>
+									<div class="date">
+										<?php echo get_the_date() ;?>			
+									</div>	
+								</div>
+							<?php 
+								endif;
+								}
+								}
+								?>		
+						</div>										
+					</div>
+				</div>
+
+
+				<div class="col-12 content-width mt-5">
+					<?php 
+							if ( comments_open() || get_comments_number() ) :
+							comments_template();
+						endif;
+						?>
+				</div>
+				
+		<?php endif ;
+			?>
+
+
+
+
+
+
+
+
 		</div>
 	</div>
 		
