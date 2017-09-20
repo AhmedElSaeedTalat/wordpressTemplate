@@ -43,6 +43,8 @@ echo do_shortcode('[smartslider3 slider=2]');
 			endwhile;
 
 			the_posts_navigation();
+					 wp_reset_postdata();
+
 
 		else :
 

@@ -426,3 +426,133 @@ Single Posts
 .comment-form-url {
   display: inline-block;
   width: 30%; }
+
+.required {
+  color: red; }
+
+#author {
+  height: 41px; }
+
+#email {
+  height: 41px; }
+
+#url {
+  height: 41px; }
+
+#email-notes {
+  margin-left: 2rem; }
+
+/*-------------------------------------------------------------------------------------------
+Footer
+-------------------------------------------------------------------------------------------*/
+.site-footer {
+  background: black;
+  color: white;
+  padding: 3rem; }
+  .site-footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px; }
+  .site-footer .tagsWrapper {
+    border: 1px solid;
+    height: 29px;
+    width: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.1s linear; }
+    .site-footer .tagsWrapper:hover {
+      background: #dd5252;
+      cursor: pointer;
+      border: 1px solid #dd5252; }
+  .site-footer p {
+    margin-bottom: 0; }
+
+.block {
+  display: flex;
+  margin-bottom: 1rem; }
+  .block .image img {
+    height: 86px;
+    width: 107px; }
+  .block .title {
+    font-size: 14px;
+    padding-left: 22px; }
+
+.footerImages {
+  position: relative; }
+  .footerImages .images {
+    height: 140px;
+    width: 151px; }
+  .footerImages .button {
+    width: 17%;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    top: 31%;
+    left: 41%; }
+    .footerImages .button p a {
+      color: #313131; }
+    .footerImages .button .instagram .icon {
+      height: 14px;
+      fill: #313131;
+      width: 10px; }
+
+.footerBorders {
+  padding-top: 1rem;
+  border-bottom: 1px solid white; }
+
+#menuWrapper .icon {
+  fill: white;
+  height: 19px;
+  width: 19px; }
+
+.wrapperImageSideBar img {
+  height: 200px;
+  width: 100%; }
+
+#allContent {
+  display: flex; }
+  #allContent .content1 {
+    padding: 5rem;
+    width: 70%; }
+    #allContent .content1 .thumbnailWrapper2 {
+      width: 100%; }
+      #allContent .content1 .thumbnailWrapper2 img {
+        width: 100%; }
+    #allContent .content1 .border {
+      width: 100%; }
+  #allContent .post-45 {
+    display: flex;
+    justify-content: center; }
+    #allContent .post-45 .wrapper_content {
+      width: 100%; }
+
+.post-45 {
+  display: flex;
+  justify-content: center; }
+  .post-45 .wrapper_content {
+    width: 70%; }
+
+#secondary {
+  margin-top: 4.5rem;
+  width: 20%; }
+  #secondary .styletext {
+    font-size: 13px;
+    font-weight: bold;
+    color: #666666;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #d2cece; }
+  #secondary .text_page {
+    margin-top: 1rem; }
+
+/*--------------------------------------------------------------------------------------------
+mediaqueries
+-------------------------------------------------------------------------------------------*/
+@media only screen and (min-width: 1500px) {
+  .border {
+    width: 73%; }
+  #allContent .content1 .border {
+    width: 73%; } }

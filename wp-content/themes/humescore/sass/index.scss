@@ -264,8 +264,8 @@ h2,h3{
 Single Posts
 -------------------------------------------------------------*/
 .thumbnails{
-	    display: flex;
-  		justify-content: center;
+	   display:flex;
+	   justify-content:center;
   		.thumbnailWrapper{
 				width: 90%;
 				height:700px;
@@ -526,4 +526,170 @@ Single Posts
 .comment-form-url{
 	display:inline-block;
 	width: 30%;
+}
+.required{
+	color:red;
+}
+#author{
+	height: 41px;
+}
+#email{
+	height: 41px;
+}
+#url{
+	height: 41px;
+}
+#email-notes{
+	margin-left:2rem;
+}
+/*-------------------------------------------------------------------------------------------
+Footer
+-------------------------------------------------------------------------------------------*/
+.site-footer{
+	background:black;
+	color:white;
+	padding: 3rem;
+	a{
+		color:white;
+		text-decoration:none;
+		font-size:14px;
+	}
+	.tagsWrapper{
+		border: 1px solid;
+	    height: 29px;
+	    width: 72px;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    transition: all 0.1s linear;
+    	    &:hover{
+	    	background:#dd5252;
+	    	cursor:pointer;
+			border: 1px solid #dd5252;
+
+	    }
+	}
+	p{
+		margin-bottom:0;
+	}
+}
+.block{
+	display:flex;
+    margin-bottom: 1rem;
+	.image{
+		img{
+			    height: 86px;
+				width: 107px;
+		}
+	}
+	.title{
+		font-size:14px;
+	   	padding-left: 22px;
+	}
+}
+.footerImages{
+	position:relative;
+	.images{
+		height:140px;
+		width:151px;
+	}
+	.button{
+		width: 17%;
+	    height: 44px;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    background: rgba(255, 255, 255, 0.9);
+	    position: absolute;
+	    top: 31%;
+	    left: 41%;
+	    p{
+    		a{
+    			color:#313131;
+    		}
+
+	    }
+		.instagram{
+			.icon{
+				height: 14px;
+			    fill: #313131;
+			    width: 10px;
+			}
+		}
+	}
+}
+.footerBorders{
+	padding-top:1rem;
+	border-bottom:1px solid white;
+}
+#menuWrapper{
+	.icon{
+		fill:white;
+		height:19px;
+		width:19px;
+	}
+}
+.wrapperImageSideBar{
+	img{
+		    height: 200px;
+   			 width: 100%;
+	}
+}
+#allContent{
+	display:flex;
+	.content1{
+		padding:5rem;
+		width:70%;
+		.thumbnailWrapper2{
+			width:100%;
+			img{
+				width:100%;
+			}
+		}
+		.border{
+			width:100%;
+		}
+	}
+	.post-45{
+		display:flex;
+		justify-content:center;
+	.wrapper_content{
+		width:100%;
+	}
+	}
+
+}
+	.post-45{
+		display:flex;
+		justify-content:center;
+	.wrapper_content{
+		width:70%;
+	}
+	}
+#secondary{
+	margin-top:4.5rem;
+	width:20%;
+	.styletext{
+		font-size:13px;
+		font-weight:bold;
+		color:#666666;
+	    padding-bottom: 0.4rem;
+    	border-bottom: 1px solid #d2cece;
+	}
+	.text_page{
+		margin-top:1rem;
+	}
+}
+
+/*--------------------------------------------------------------------------------------------
+mediaqueries
+-------------------------------------------------------------------------------------------*/
+@media only screen and (min-width: 1500px ) {
+		.border{
+		width:73%;
+	}
+	#allContent .content1 .border {
+    width:73%;
+}
+	
 }

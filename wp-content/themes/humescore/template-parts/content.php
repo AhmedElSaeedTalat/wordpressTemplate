@@ -8,8 +8,16 @@
  */
 
 ?>
+
+
 										<!-- thumbnail -->
-<?php if(has_post_thumbnail()):?>
+<?php if(is_active_sidebar('sidebar-1')):?>
+<section id="allContent">
+<?php else :?>
+	<section id="allContent1">
+<?php endif ;?>
+	<div class="content1">
+		<?php if(has_post_thumbnail()):?>
 <?php	
 	if(!is_active_sidebar('sidebar-1')):?>									
 <div class="thumbnails">
@@ -21,7 +29,7 @@
 <?php 
   else :?>
   	<div class="thumbnails">
-  			<div class="thumbnailWrapper2 d-flex justify-content-center">	
+  			<div class="thumbnailWrapper2 d-flex ">	
  				 <?php the_post_thumbnail('thumbnails1');?> 
 			</div>
 	</div>
@@ -41,9 +49,10 @@
 			</div>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div class="wrapper_content">
 		<div class="container">	
 				<div class="row d-flex justify-content-center">	
-						<div class="col-12 content-width">	
+						<div class="col-12 blaidth">	
 									<header class="entry-header">
 			
 		<?php
@@ -93,7 +102,7 @@
 				</div><!-- col -->
 				<?php if(is_singular()):?>
 					
-				<div class="col-12 text-center content-width">	
+				<div class="col-12 text-center blaidth">	
 					<div class="share">	
 							<h2>Share</h2>
 					</div><!-- share -->
@@ -111,6 +120,7 @@
 								?>
 									
 							<div class="menuWrapper">	
+								<?php if(!empty($menu_items)):?>
 									<?php foreach($menu_items as $items_menu):?>
 										
 										<div class="menuWrapper2">
@@ -127,15 +137,16 @@
 										</div>
 									<?php endforeach;
 										  endif;
+										endif;
 									?>
 							</div>
 					</div>
 
 				</div>	<!-- col -->
-				<div class="col-12 mt-5 content-width">
+				<div class="col-12 mt-5 blaidth">
 					<div class="border">
 						<div class="row">
-							<div class="col-3 ">
+							<div class="col-3 d-flex justify-content-center">
 								<img src='<?php echo get_template_directory_uri()."/images/bla.jpeg" ;?>' alt="" class="content-image1">
 							</div>
 							<div class="col-9">
@@ -152,7 +163,7 @@
 					
 				</div>
 			
-			<div class="col-12 mt-5 content-width">
+			<div class="col-12 mt-5 blaidth">
 				<div class="row">
 					<h2 class="mx-auto RelatedPostHeaderStyle">Related Posts</h2>
 						<div class="col-12 relatedPosts d-flex justify-content-around ">
@@ -191,6 +202,8 @@
 							<?php 
 								endif;
 								}
+										 wp_reset_postdata();
+
 								}
 								?>		
 						</div>										
@@ -198,7 +211,7 @@
 				</div>
 
 
-				<div class="col-12 content-width mt-5">
+				<div class="col-12 blaidth mt-5">
 					<?php 
 							if ( comments_open() || get_comments_number() ) :
 							comments_template();
@@ -216,8 +229,23 @@
 
 
 
+
+
 		</div>
 	</div>
+	</div>
 		
-	
+		
+
 </article><!-- #post-<?php the_ID(); ?> -->
+	</div>
+
+
+
+
+
+
+		<?php get_sidebar();?>
+
+
+</section>

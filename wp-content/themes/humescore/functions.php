@@ -42,12 +42,13 @@ if ( ! function_exists( 'humescore_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 		add_image_size("thumbnails",1180,700,true);
-		add_image_size("thumbnails1",500,500,true);
+		add_image_size("thumbnails1",600,500,true);
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'humescore' ),
 			'social' => esc_html__( 'Primary2', 'humescore' ),
+			'footer' => esc_html__( 'Primary3', 'humescore' ),
 
 		) );
 
