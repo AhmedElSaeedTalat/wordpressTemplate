@@ -6,6 +6,10 @@ Description: this plugin is used to add social Icons to page
 Version: 1
 Author: ahmed
 */
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+define( 'PLUGIN_VERSION', '1.0.0' );
 class social_Icons extends WP_Widget{
 	public $facebook;
 	public function __construct(){
