@@ -16,16 +16,9 @@ class social_Icons extends WP_Widget{
 		$twitter = $instance['twitter'];
 
 	;?>
-		<input type="text" name="<?php echo $this->get_field_name("facebook");?>" value="plz add your facebook link">
-		<input type="text" name="<?php echo $this->get_field_name("twitter");?>"   value="plz add your twitter link">
-	<!-- <form action="post">
-		<input type="text" name="twitter">
-		<button>Twitter</button>
-	</form>
-	<form action="post">
-		<input type="text" name="vk">
-		<button>VK</button>
-	</form> -->
+		<input type="text" name="<?php echo $this->get_field_name("facebook");?>" placeholder="plz add your facebook link">
+		<input type="text" name="<?php echo $this->get_field_name("twitter");?>"   placeholder="plz add your twitter link">
+	
 	
 <?php
 
