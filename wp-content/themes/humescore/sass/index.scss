@@ -91,6 +91,14 @@ h2,h3{
 	 
 	.header_account{
 			height:35px;
+			span{
+				padding-right:5px;
+				.icon{
+					fill: white;
+					height: 14px;
+					width: 14px;
+				}
+			}
 		.mainStyleText1 {
 				font-size:14px;
 				color:white;
@@ -105,7 +113,6 @@ h2,h3{
 	.header_logo{
 		background:white;
 		min-height: 160px;
-		box-shadow: 0 1px 6px 0 rgba(0,0,0,0.2);
 			.header_logo_style{
 				height:100%;
 				.custom-logo{
@@ -118,15 +125,16 @@ h2,h3{
 			}
 			.main-navigation {
 			}
-			.menu{
+
+			
+	}
+				.menu{
 				list-style:none;
 				@extend .textStyle;
 				display: flex;
-			    
-			    width: 100%;
 			    .icon-angle-down{
 					    height: 12px !important;
-   						 width: 12px !important;
+					 	width: 12px !important;
 				}
 					a{
 						color:#333;
@@ -185,12 +193,23 @@ h2,h3{
 					} //menu-item from inside
 				} //menu-item
 			} //menu
-			
-	}
 	#headerMenu{
-		padding-bottom: 12px;
 		align-items:center;
+		height:45px;
+		background:white;
+		box-shadow: 0 1px 0px 0 rgba(0,0,0,0.2);
+
+		#secondary{
+			margin-top:0;
+			width:100%;
+		}
 	}
+	#site-navigation{
+		display:flex;
+		justify-content:center;
+
+	}
+
 /*-------------------------------------------------
 	BODY
 --------------------------------------------------*/
@@ -692,6 +711,135 @@ Footer
 	}
 }
 
+/*------------------------------------------------------------------------------------------
+custom widgets
+-------------------------------------------------------------------------------------------*/
+.socailIcon{
+	.social{
+		    display: flex;
+    		justify-content: space-around;
+		    margin-top: 1rem;
+	a{
+		    width: 28px;
+	}
+	}
+	#facebook{
+	border: 1px solid #bbb9b9;
+    padding: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+	.icon{
+		height: 15px;
+		width:15px;
+	}
+}
+#twitter{
+	border: 1px solid #bbb9b9;
+    padding: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+	.icon{
+		height: 15px;
+		width:15px;
+	}
+}
+#instagram{
+	border: 1px solid #bbb9b9;
+    padding: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+	.icon{
+		height: 15px;
+		width:15px;
+	}
+}
+}
+.Main_Icons{
+	display:flex;
+	align-items:center;
+	#facebook{
+		padding-right:0.7rem;
+	.icon{
+		height: 15px;
+		width:15px;
+	}
+}
+#twitter{
+	padding-right:0.7rem;
+	.icon{
+		height: 15px;
+		width:15px;
+	}
+}
+#instagram{
+	.icon{
+		height: 15px;
+		width:15px;
+	}
+}
+}
+#wpp-3{
+    margin-top: 2rem;
+	.widget-title{
+		font-size:13px;
+		font-weight:bold;
+		color:#666666;
+		padding-bottom: 0.4rem;
+    	border-bottom: 1px solid #d2cece;
+		text-align:center;
+	}
+	.wpp-post-title{
+		font-size:11px;
+		color:#33363a;
+		text-decoration:none;
+	}
+	.wpp-list{
+		padding:0 !important;
+		li{
+			margin-bottom:1rem;
+		}
+	}
+	
+	.wpp-date{
+		font-size:10px;
+	}
+	.wpp-thumbnail{
+		height:63px;
+	}
+}
+#categories-4{
+	.widget-title{
+		font-size:13px;
+		font-weight:bold;
+		color:#666666;
+		padding-bottom: 0.4rem;
+    	border-bottom: 1px solid #d2cece;
+		text-align:center;
+	}
+	ul{
+		list-style:none;
+		padding:0;
+		li{
+		    display: flex;
+    		justify-content: space-between;
+		a{
+			font-size:13px;
+			color:#33363a;
+			text-decoration:none;
+		    width: 119px;
+			display: inline-block;
+		}
+
+	}
+	}
+	
+}
 /*--------------------------------------------------------------------------------------------
 mediaqueries
 -------------------------------------------------------------------------------------------*/

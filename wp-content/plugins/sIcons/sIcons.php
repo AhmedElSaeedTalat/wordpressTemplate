@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: add scoial Icons
+Plugin Name: main scoial Icons
 Plugin URI: https://facebook.com
 Description: this plugin is used to add social Icons to page
 Version: 1
@@ -10,17 +10,17 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 define( 'PLUGIN_VERSION', '1.0.0' );
-class social_Icons extends WP_Widget{
+class main_icons extends WP_Widget{
 	public $twitter = [];
 	public function __construct(){
-		parent::__construct(false,$name = __("sidebar_social_Icons"));
+		parent::__construct(false,$name = __("social_Icons"));
 	}
 	public function form($instance){
 		$face = $instance['facebook'];
-		$this->twitter[] = $instance['twitter'];
-		$this->twitter[] =$instance['facebook'];
+		$instance['twitter'];
+		$instance['facebook'];
 		$instance['instagram'];
-;?>
+	;?>
 		<input type="text" name="<?php echo $this->get_field_name("facebook");?>" placeholder="plz add your facebook link" 
 		class="inputs" value="<?php echo $instance['facebook'];?>">
 		<input type="text" name="<?php echo $this->get_field_name("twitter");?>"   placeholder="plz add your twitter link"
@@ -40,10 +40,8 @@ class social_Icons extends WP_Widget{
 	public function widget($args,$instance){
 
 		;?>
-		<div class="socailIcon">
-			<h2 class="stay_connected">STAY CONNECTED</h2>
-			<div class="social">
-				<?php if(strpos($instance['facebook'],"facebook") !== false):?>
+		<div class="Main_Icons">
+			<?php if(strpos($instance['facebook'],"facebook") !== false):?>
 				<a href="<?php echo "http://". $instance['facebook'];?>"><span id="facebook"> <?php echo humescores_get_svg(['icon'=>'facebook']);?></span></a>
 			<?php endif ;?>
 
@@ -52,14 +50,13 @@ class social_Icons extends WP_Widget{
 				?></span></a>
 			<?php endif;?>
 
-				<?php if(strpos($instance['instagram'],"instagram") !== false ):?>
+			<?php if(strpos($instance['instagram'],"instagram") !== false ):?>
 				<a href="<?php echo $instance['instagram'];?>"><span id="instagram"><?php echo humescores_get_svg(['icon'=>'instagram']);
 				?></span></a>
 			<?php endif;?>
-			</div>
-			
 		</div>
-		
+				
+
 			
 	
 	
@@ -67,6 +64,6 @@ class social_Icons extends WP_Widget{
 }
 	}
 add_action('widgets_init',function(){
-	register_widget('social_Icons');
+	register_widget('main_icons');
 })
 ;?>

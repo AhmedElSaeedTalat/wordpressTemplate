@@ -33,7 +33,7 @@
 					<div class="container ">
 						<div class="row ">
 							<div class="col-sm-4 d-flex align-items-center header_account">
-								<p class="mainStyleText1">Summer Sales Discount Learn More</p>
+								<span><?php echo humescores_get_svg(['icon'=>'tags']) ;?></span><p class="mainStyleText1">Summer Sales Discount Learn More</p>
 							</div>
 							<div class="col-sm-8 d-flex align-items-center justify-content-end header_account">
 								<p class="mainStyleText1"> My account <span class="headerTextSpanPadding">Checkout</span></p>
@@ -50,22 +50,32 @@
 							</div>
 						</div>
 						<!-- site Header Menu -->
-						<div class="row d-flex justify-content-center" id="headerMenu" >
-							<nav id="site-navigation" class="main-navigation "  
-								<?php
-									wp_nav_menu( array(
-										'theme_location' => 'menu-1',
-										'menu_id'        => 'primary-menu',
-										'depth' 		=> '3',
-										'after'			=> humescores_get_svg(['icon'=>'angle-down'])
-									) );
-									
-								?>
-							</nav><!-- #site-navigation -->	
-						</div>
+						
+						
+						
 					</div>
 				</div>
-
+					<div id="headerMenu">
+						<div class="container h-100" >
+							<div class="row h-100 d-flex align-items-center"  >
+								<div class="col-2 d-flex justify-content-center">
+									<?php get_sidebar('menu');?>
+								</div>
+							<div class="col-8 d-flex justify-content-center" >
+								<nav id="site-navigation" class="main-navigation "  
+									<?php
+										wp_nav_menu( array(
+											'theme_location' => 'menu-1',
+											'menu_id'        => 'primary-menu',
+											'depth' 		=> '3',
+											'after'			=> humescores_get_svg(['icon'=>'angle-down'])
+										) );
+										
+									?>
+								</nav><!-- #site-navigation -->	
+							</div>
+						</div><!-- row -->
+						</div>
 		<!-- ######  end_header_edit   ###### -->
 
 			<?php
