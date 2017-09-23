@@ -35,6 +35,17 @@ $(document).ready(function(){
 			}
 		})
 	});
+		$(document).ready(function(){
+		var position = $(".site-footer").position().top;
+		$(document).on("scroll",function(){
+			if($(document).scrollTop() >= position - 200 ){
+				$(".all1").hide();
+			}
+			else{
+				$(".all1").show();
+			}
+		})
+	});
 	$(document).ready(function(){
 		$(".searchIcon").click(function(){
 			$("#search_section").fadeIn();
