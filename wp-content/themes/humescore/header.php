@@ -81,12 +81,10 @@
 									?>
 								</nav>
 							</div>
-							<div class="col-1 d-flex justify-content-center ">
-								<div class="shopping-bag">
+							<div class="col-2 d-flex ">
+								<div class="shopping-bag pr-3">
 									<?php echo humescores_get_svg(['icon' => 'shopping-bag']) ;?>
 								</div>
-							</div>
-							<div class="col-1  d-flex justify-content-center">
 								<div class="searchIcon">
 									<?php echo humescores_get_svg(['icon' => 'search']) ;?>
 								</div>
