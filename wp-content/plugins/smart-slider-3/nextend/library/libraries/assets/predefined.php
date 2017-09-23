@@ -134,7 +134,8 @@ class N2AssetsPredefined {
                 N2JS::addStaticGroup(N2LIBRARYASSETS . "/dist/nextend-gsap.min.js", 'nextend-gsap');
             
             } else {
-                N2JS::addInline(N2Filesystem::readFile(N2LIBRARYASSETS . "/js/core/gsap/NextendTimeline.js"));
+                N2JS::addInline(N2Filesystem::readFile(N2LIBRARYASSETS . "/dist/nextend-nogsap.min.js"));
+            
             }
         }
     }

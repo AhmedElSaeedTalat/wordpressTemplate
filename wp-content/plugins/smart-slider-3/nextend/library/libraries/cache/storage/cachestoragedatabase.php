@@ -1,4 +1,5 @@
 <?php
+N2Loader::import('libraries.cache.storage.cachestorage');
 
 class N2CacheStorageDatabase extends N2CacheStorage {
 

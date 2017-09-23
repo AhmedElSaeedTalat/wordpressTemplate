@@ -634,9 +634,14 @@ N2Require('SmartSliderAbstract', [], [], function ($, scope, undefined) {
             return;
         }
 
-        this.sliderElement.one('touchstart', $.proxy(function () {
-            this.sliderElement.removeClass('n2-has-hover');
-        }, this));
+        try {
+            var removeHoverClassCB = $.proxy(function () {
+                this.sliderElement.removeClass('n2-has-hover');
+                this.sliderElement[0].removeEventListener('touchstart', removeHoverClassCB, window.n2passiveEvents ? {passive: true} : false);
+            }, this);
+            this.sliderElement[0].addEventListener('touchstart', removeHoverClassCB, window.n2passiveEvents ? {passive: true} : false);
+        } catch (e) {
+        }
 
         this.initControls();
 
@@ -727,7 +732,7 @@ N2Require('SmartSliderAbstract', [], [], function ($, scope, undefined) {
 
         this.preReadyResolve();
 
-        this.sliderElement.find('[role="button"], [tabindex]')
+        this.sliderElement.find('[role="button"], [tabindex]').not('input,select,textarea')
             .keypress(function (event) {
                 if (event.charCode === 32 || event.charCode === 13) {
                     event.preventDefault();
@@ -874,7 +879,7 @@ N2Require('SmartSliderAbstract', [], [], function ($, scope, undefined) {
             middlePointTop = sliderTop + Math.min(this.sliderElement.height(), windowHeight) * this.parameters.playWhenVisibleAt,
             middlePointBottom = sliderTop + Math.min(this.sliderElement.height(), windowHeight) * (1 - this.parameters.playWhenVisibleAt);
 
-        if (middlePointTop >= windowOffsetTop && middlePointBottom <= windowOffsetTop + windowHeight) {
+        if (this.isAdmin || (middlePointTop >= windowOffsetTop && middlePointBottom <= windowOffsetTop + windowHeight)) {
             $(window).off('scroll.n2-ss-visible' + this.id + ' resize.n2-ss-visible' + this.id, $.proxy(this.checkIfVisible, this));
             this.visibleDeferred.resolve();
         }
@@ -1131,7 +1136,7 @@ N2Require('SmartSliderAbstract', [], [], function ($, scope, undefined) {
     SmartSliderAbstract.prototype.initControls = function () {
 
         if (!this.parameters.admin) {
-            if (this.parameters.controls.touch != '0') {
+            if (this.parameters.controls.touch != '0' && this.slides.length > 1) {
                 new scope.SmartSliderControlTouch(this, this.parameters.controls.touch, {
                     fallbackToMouseEvents: this.parameters.controls.drag
                 });
@@ -3893,6 +3898,7 @@ N2Require('SmartSliderBackgroundImage', [], [], function ($, scope, undefined) {
         this.slide = slide;
 
         this.element = element;
+        this.$mask = this.element.find('.n2-ss-slide-background-mask');
         this.manager = manager;
         this.loadDeferred = $.Deferred();
 
@@ -3905,7 +3911,7 @@ N2Require('SmartSliderBackgroundImage', [], [], function ($, scope, undefined) {
 
 
         this.hasImage = false;
-        this.$image = element.find('img');
+        this.$image = this.$mask.find('img');
 
         if (!this.$image.length) {
             this.startColorMode();
@@ -3914,11 +3920,11 @@ N2Require('SmartSliderBackgroundImage', [], [], function ($, scope, undefined) {
             this.startImageMode();
         }
 
-    };
+    }
 
     SmartSliderBackgroundImage.prototype.startColorMode = function () {
         this.loadDeferred.resolve();
-    }
+    };
 
     SmartSliderBackgroundImage.prototype.startImageMode = function () {
         if (this.mode == 'fixed' && ((n2const.isPhone && !this.slide.slider.parameters['background.parallax.mobile']) || (n2const.isTablet && !this.slide.slider.parameters['background.parallax.tablet']))) {
@@ -3930,7 +3936,7 @@ N2Require('SmartSliderBackgroundImage', [], [], function ($, scope, undefined) {
                 opacity: this.opacity,
                 backgroundPosition: this.x + '% ' + this.y + '%'
             })
-            .appendTo(this.element);
+            .appendTo(this.$mask);
 
         if (window.n2FilterProperty) {
             if (this.blur > 0) {
@@ -6198,10 +6204,14 @@ N2Require('SmartSliderResponsiveElement', [], [], function ($, scope, undefined)
             this.element.css(to);
 
             if (this.helper.centered) {
+                var verticalMargin = this.getVerticalMargin(parseInt((this.helper.parent.height() - this.element.height()) / 2)),
+                    horizontalMargin = this.getHorizontalMargin(parseInt((this.helper.parent.width() - this.element.width()) / 2));
                 this.element.css({
-                    marginTop: this.getVerticalMargin(parseInt((this.helper.parent.height() - this.element.height()) / 2))
+                    marginLeft: horizontalMargin,
+                    marginRight: horizontalMargin,
+                    marginTop: verticalMargin,
+                    marginBottom: verticalMargin
                 });
-                this.element.css(nextend.rtl.marginLeft, this.getHorizontalMargin(parseInt((this.helper.parent.width() - this.element.width()) / 2)));
             }
         }
         this._lastRatio = ratio;

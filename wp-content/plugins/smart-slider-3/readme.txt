@@ -3,8 +3,8 @@ Contributors: nextendweb
 Tags: slider, gallery slider, image slider, layer slider, responsive slider, slideshow, fullwidth slider, post slider, horizontal slider, vertical slider, photo slider, video slider
 Donate link: https://sites.fastspring.com/nextend/product/smartslider3donate
 Requires at least: 4.0
-Tested up to: 4.8.1
-Stable tag: 3.2.6
+Tested up to: 4.8.2
+Stable tag: 3.2.8
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -205,10 +205,19 @@ Of course! Smart Slider use protocol relative urls which works fine on http:// a
 
 == Changelog ==
 
-= 3.2.6 - 08. August 2017. =
+= 3.2.8 - 20. September 2017. =
+* Fix: Possible cache related PHP error
+* Fix: Can't save on slide settings at certain cases
+* Fix: Template slider import on some servers
+* Fix: Slide editor possible bug
+
+= 3.2.7 - 12. September 2017. =
+* Fix: Possible cache related PHP error
+
+= 3.2.6 - 08. September 2017. =
 * Fix: Debug code removed
 
-= 3.2.5 - 07. August 2017. =
+= 3.2.5 - 07. September 2017. =
 * Feature: Column count is not limited anymore
 * Feature: Post generator post meta variables
 * Feature: WordPress text widget's shortcode will be replaced, even if your theme doesn't replace it

@@ -1,5 +1,5 @@
 <?php
-if (function_exists('zip_open')) {
+if (function_exists('zip_open') && strtoupper(substr(PHP_OS, 0, 3)) !== 'WIN') {
     class N2ZipReader {
 
         public static function read($path) {

@@ -89,7 +89,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: @canvasheight;
+    height: 100%;
     z-index: 20;
     display: block;
     -webkit-backface-visibility: hidden;
@@ -99,6 +99,11 @@
     position: relative;
     width: @canvaswidth;
     height: @canvasheight;
+  }
+
+  .n2-ss-parallax-clip > .n2-ss-layers-container {
+    position: absolute;
+    right: 0;
   }
 
   .n2-ss-slide-active {

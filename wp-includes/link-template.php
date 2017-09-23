@@ -1955,7 +1955,7 @@ function get_previous_post_link( $format = '&laquo; %link', $link = '%title', $i
  * @param array|string $excluded_terms Optional. Array or comma-separated list of excluded term IDs. Default empty.
  * @param string       $taxonomy       Optional. Taxonomy, if $in_same_term is true. Default 'category'.
  */
-function previous_post_link( $format = '&laquo; %link', $link = '%title', $in_same_term = false, $excluded_terms = '', $taxonomy = 'category' ) {
+function previous_post_link( $format = ' %link', $link = '%title', $in_same_term = false, $excluded_terms = '', $taxonomy = 'category' ) {
 	echo get_previous_post_link( $format, $link, $in_same_term, $excluded_terms, $taxonomy );
 }
 
@@ -1987,7 +1987,7 @@ function get_next_post_link( $format = '%link &raquo;', $link = '%title', $in_sa
  * @param array|string $excluded_terms Optional. Array or comma-separated list of excluded term IDs. Default empty.
  * @param string       $taxonomy       Optional. Taxonomy, if $in_same_term is true. Default 'category'.
  */
-function next_post_link( $format = '%link &raquo;', $link = '%title', $in_same_term = false, $excluded_terms = '', $taxonomy = 'category' ) {
+function next_post_link( $format = '%link ', $link = '%title', $in_same_term = false, $excluded_terms = '', $taxonomy = 'category' ) {
 	 echo get_next_post_link( $format, $link, $in_same_term, $excluded_terms, $taxonomy );
 }
 
@@ -2532,7 +2532,7 @@ function get_the_posts_pagination( $args = array() ) {
 		$args = wp_parse_args( $args, array(
 			'mid_size'           => 1,
 			'prev_text'          => _x( 'Previous', 'previous set of posts' ),
-			'next_text'          => _x( 'Next', 'next set of posts' ),
+			'next_text'          => _x( 'Next ', 'next set of posts' ),
 			'screen_reader_text' => __( 'Posts navigation' ),
 		) );
 
@@ -2582,7 +2582,7 @@ function _navigation_markup( $links, $class = 'posts-navigation', $screen_reader
 
 	$template = '
 	<nav class="navigation %1$s" role="navigation">
-		<h2 class="screen-reader-text">%2$s</h2>
+		<h2 class="screen-reader-text"></h2>
 		<div class="nav-links">%3$s</div>
 	</nav>';
 

@@ -149,30 +149,34 @@ class N2SmartSliderFeatureSlideBackground {
     private function colorOnly($videoHTML, $fillMode, $backgroundColor, $backgroundImageOpacity, $backgroundImageBlur, $x, $y) {
 
         return N2Html::tag('div', array(
-            "style"        => $backgroundColor,
             "class"        => "n2-ss-slide-background n2-ow",
             "data-opacity" => $backgroundImageOpacity,
             "data-blur"    => $backgroundImageBlur,
             "data-mode"    => $fillMode,
             "data-x"       => $x,
             "data-y"       => $y
-        ), $videoHTML);
+        ), N2Html::tag('div', array(
+            'class' => 'n2-ss-slide-background-mask',
+            "style" => $backgroundColor
+        ), $videoHTML));
     }
 
     private function image($videoHTML, $fillMode, $backgroundColor, $backgroundImageOpacity, $backgroundImageBlur, $src, $imageData, $alt, $title, $x, $y) {
         $deviceAttributes = $this->getDeviceAttributes($src, $imageData);
 
         return N2Html::tag('div', $deviceAttributes + array(
-                "style"        => $backgroundColor,
                 "class"        => "n2-ss-slide-background n2-ow",
                 "data-opacity" => $backgroundImageOpacity,
                 "data-blur"    => $backgroundImageBlur,
                 "data-mode"    => $fillMode,
                 "data-x"       => $x,
                 "data-y"       => $y
-            ), N2Html::image($this->getDefaultImage($src, $deviceAttributes), $alt, array(
+            ), N2Html::tag('div', array(
+            'class' => 'n2-ss-slide-background-mask',
+            "style" => $backgroundColor
+        ), N2Html::image($this->getDefaultImage($src, $deviceAttributes), $alt, array(
                 "title" => $title
-            )) . $videoHTML);
+            )) . $videoHTML));
     }
 
     private function getDeviceAttributes($image, $imageData) {

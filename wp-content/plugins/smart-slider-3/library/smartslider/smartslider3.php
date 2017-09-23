@@ -2,7 +2,7 @@
 
 class N2SS3 {
 
-    public static $version = '3.2.6';
+    public static $version = '3.2.8';
 
     public static $plan = 'pro';
 

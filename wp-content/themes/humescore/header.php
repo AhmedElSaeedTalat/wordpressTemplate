@@ -22,6 +22,13 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<!-- <div class="menuMobile">
+		<?php //wp_nav_menu() ;?>
+	</div> -->
+	<section id="search_section">
+		<div class="cls"><?php echo humescores_get_svg(['icon' => 'close']);?></div>
+		<?php get_sidebar('search');?>
+	</section>
 <div id="page" class="site">
 	<!-- <a class="skip-link screen-reader-text" href="#content"><?php //esc_html_e( 'Skip to content', 'humescore' ); ?></a> -->
 
@@ -62,7 +69,7 @@
 									<?php get_sidebar('menu');?>
 								</div>
 							<div class="col-8 d-flex justify-content-center" >
-								<nav id="site-navigation" class="main-navigation "  
+								<nav id="site-navigation" class="main-navigation "  >
 									<?php
 										wp_nav_menu( array(
 											'theme_location' => 'menu-1',
@@ -72,26 +79,24 @@
 										) );
 										
 									?>
-								</nav><!-- #site-navigation -->	
+								</nav>
+							</div>
+							<div class="col-1 d-flex justify-content-center ">
+								<div class="shopping-bag">
+									<?php echo humescores_get_svg(['icon' => 'shopping-bag']) ;?>
+								</div>
+							</div>
+							<div class="col-1  d-flex justify-content-center">
+								<div class="searchIcon">
+									<?php echo humescores_get_svg(['icon' => 'search']) ;?>
+								</div>
 							</div>
 						</div><!-- row -->
-						</div>
+					</div>
+				</div><!-- headerMenu -->
 		<!-- ######  end_header_edit   ###### -->
 
-			<?php
 			
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
-
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
 		</div><!-- .site-branding -->
 
 		

@@ -35,17 +35,24 @@
 						?></a>
 					</div><!-- .site-info -->
 				</div><!-- col -->
-				<div class="col-4 d-flex justify-content-around">
-					<?php
-					$tags = get_tags();
+				<div class="col-4 ">
+					<div class="row">
+						<?php
+							$tags = get_tags(array(
+								"number" => 12
+							));
 
-					foreach ($tags as $key => $tagTexts):?>
-					<div class="tagsWrapper">
-						<p><a href="<?php 
-						$url = $tagTexts->term_id;
-						echo get_tag_link($url)?>"><?php echo $tagTexts->name;?></a></p>
-					</div>	
+							foreach ($tags as $key => $tagTexts):?>
+							<div class="col-3 mb-2">
+								<div class="tagsWrapper">
+									<p><a href="<?php 
+									$url = $tagTexts->term_id;
+									echo get_tag_link($url)?>"><?php echo $tagTexts->name;?></a></p>
+								</div>
+							</div>									
 					<?php endforeach;?>
+					</div><!-- row-child -->
+
 				</div>
 				<div class="col-4">
 					<?php 
@@ -142,11 +149,16 @@ wp_reset_postdata();
 					<div class="footerBorders"></div>
 				</div><!-- col -->
 			</div><!-- row -->
+			<div class="row">
+				<div class="col-12">
+					<p class="text-center fontCopyRight">&copy;  2017 Rootlayers. All Rights Reserved.</p>
+				</div>
+			</div>
 		</div>
 	
 	</footer><!-- #colophon -->
 </div><!-- #page -->
  <?php wp_footer(); ?>
-
+<script src="https://cdn.rawgit.com/leafo/sticky-kit/v1.1.2/jquery.sticky-kit.js"></script>
 </body>
 </html>

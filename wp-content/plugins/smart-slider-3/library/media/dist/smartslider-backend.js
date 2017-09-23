@@ -3157,7 +3157,7 @@ N2Require('SmartSliderBackgroundImageAdmin', ['SmartSliderBackgroundImage'], [],
         this.loadAllowed = true;
 
         this.listenImageManager();
-    };
+    }
 
     SmartSliderBackgroundImageAdmin.prototype = Object.create(scope.SmartSliderBackgroundImage.prototype);
     SmartSliderBackgroundImageAdmin.prototype.constructor = SmartSliderBackgroundImageAdmin;
@@ -3167,13 +3167,13 @@ N2Require('SmartSliderBackgroundImageAdmin', ['SmartSliderBackgroundImage'], [],
 
         // Create an empty div for the background image in the editor
         this.$background = $('<div class="n2-ss-background-image"/>')
-            .appendTo(this.element);
+            .appendTo(this.$mask);
         this.loadDeferred.resolve();
-    }
+    };
 
     SmartSliderBackgroundImageAdmin.prototype.setVisualLoad = function (state) {
         this.allowVisualLoad = state;
-    }
+    };
 
     SmartSliderBackgroundImageAdmin.prototype.listenImageManager = function () {
         if (this.hash != '') {
@@ -3215,14 +3215,15 @@ N2Require('SmartSliderBackgroundImageAdmin', ['SmartSliderBackgroundImage'], [],
 
             this.setSrc(nextend.imageHelper.fixed(src));
         }
-    }
+    };
+
     SmartSliderBackgroundImageAdmin.prototype.setSrc = function (src) {
         scope.SmartSliderBackgroundImage.prototype.setSrc.call(this, nextend.imageHelper.fixed(src));
-    }
+    };
 
     SmartSliderBackgroundImageAdmin.prototype.startFixed = function () {
 
-    }
+    };
 
     SmartSliderBackgroundImageAdmin.prototype.setMode = function (newMode) {
         if (newMode == 'default') {
@@ -3230,11 +3231,11 @@ N2Require('SmartSliderBackgroundImageAdmin', ['SmartSliderBackgroundImage'], [],
         }
         this.element.attr('data-mode', newMode);
         this.mode = newMode;
-    }
+    };
 
     SmartSliderBackgroundImageAdmin.prototype.setFocus = function (x, y) {
         this.$background.css('background-position', x + '% ' + y + '%');
-    }
+    };
 
     SmartSliderBackgroundImageAdmin.prototype.setOpacity = function (opacity) {
         this.opacity = opacity;
@@ -4577,7 +4578,7 @@ N2Require('SlideSettings', ['SlideEditManager'], ['smartSlider'], function ($, s
 
         if (!isStatic) {
 
-            this.canvas = this.slideBackground.element;
+            this.$slideMask = this.slideBackground.$mask;
 
             // Auto fill thumbnail if empty
             var thumbnail = $('#slidethumbnail');
@@ -4686,11 +4687,11 @@ N2Require('SlideSettings', ['SlideEditManager'], ['smartSlider'], function ($, s
             gradient = this.fields.backgroundGradient.val();
         if (gradient != 'off') {
             var backgroundColorEnd = this.fields.backgroundColorEnd.val(),
-                canvas = this.canvas.css({background: '', filter: ''});
+                $slideMask = this.$slideMask.css({background: '', filter: ''});
 
             switch (gradient) {
                 case 'horizontal':
-                    canvas
+                    $slideMask
                         .css('background', '#' + backgroundColor.substr(0, 6))
                         .css('background', '-moz-linear-gradient(left, ' + N2Color.hex2rgbaCSS(backgroundColor) + ' 0%,' + N2Color.hex2rgbaCSS(backgroundColorEnd) + ' 100%)')
                         .css('background', ' -webkit-linear-gradient(left, ' + N2Color.hex2rgbaCSS(backgroundColor) + ' 0%,' + N2Color.hex2rgbaCSS(backgroundColorEnd) + ' 100%)')
@@ -4698,7 +4699,7 @@ N2Require('SlideSettings', ['SlideEditManager'], ['smartSlider'], function ($, s
                         .css('background', 'filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=\'#' + backgroundColor.substr(0, 6) + '\', endColorstr=\'#' + backgroundColorEnd.substr(0, 6) + '\',GradientType=1)');
                     break;
                 case 'vertical':
-                    canvas
+                    $slideMask
                         .css('background', '#' + backgroundColor.substr(0, 6))
                         .css('background', '-moz-linear-gradient(top, ' + N2Color.hex2rgbaCSS(backgroundColor) + ' 0%,' + N2Color.hex2rgbaCSS(backgroundColorEnd) + ' 100%)')
                         .css('background', ' -webkit-linear-gradient(top, ' + N2Color.hex2rgbaCSS(backgroundColor) + ' 0%,' + N2Color.hex2rgbaCSS(backgroundColorEnd) + ' 100%)')
@@ -4706,7 +4707,7 @@ N2Require('SlideSettings', ['SlideEditManager'], ['smartSlider'], function ($, s
                         .css('background', 'filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=\'#' + backgroundColor.substr(0, 6) + '\', endColorstr=\'#' + backgroundColorEnd.substr(0, 6) + '\',GradientType=0)');
                     break;
                 case 'diagonal1':
-                    canvas
+                    $slideMask
                         .css('background', '#' + backgroundColor.substr(0, 6))
                         .css('background', '-moz-linear-gradient(45deg, ' + N2Color.hex2rgbaCSS(backgroundColor) + ' 0%,' + N2Color.hex2rgbaCSS(backgroundColorEnd) + ' 100%)')
                         .css('background', ' -webkit-linear-gradient(45deg, ' + N2Color.hex2rgbaCSS(backgroundColor) + ' 0%,' + N2Color.hex2rgbaCSS(backgroundColorEnd) + ' 100%)')
@@ -4714,7 +4715,7 @@ N2Require('SlideSettings', ['SlideEditManager'], ['smartSlider'], function ($, s
                         .css('background', 'filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=\'#' + backgroundColor.substr(0, 6) + '\', endColorstr=\'#' + backgroundColorEnd.substr(0, 6) + '\',GradientType=1)');
                     break;
                 case 'diagonal2':
-                    canvas
+                    $slideMask
                         .css('background', '#' + backgroundColor.substr(0, 6))
                         .css('background', '-moz-linear-gradient(-45deg, ' + N2Color.hex2rgbaCSS(backgroundColor) + ' 0%,' + N2Color.hex2rgbaCSS(backgroundColorEnd) + ' 100%)')
                         .css('background', ' -webkit-linear-gradient(-45deg, ' + N2Color.hex2rgbaCSS(backgroundColor) + ' 0%,' + N2Color.hex2rgbaCSS(backgroundColorEnd) + ' 100%)')
@@ -4726,9 +4727,9 @@ N2Require('SlideSettings', ['SlideEditManager'], ['smartSlider'], function ($, s
 
         } else {
             if (backgroundColor.substr(6, 8) == '00') {
-                this.canvas.css('background', '');
+                this.$slideMask.css('background', '');
             } else {
-                this.canvas.css('background', '#' + backgroundColor.substr(0, 6))
+                this.$slideMask.css('background', '#' + backgroundColor.substr(0, 6))
                     .css('background', N2Color.hex2rgbaCSS(backgroundColor));
             }
         }

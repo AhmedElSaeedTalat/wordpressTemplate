@@ -20,6 +20,7 @@ class social_Icons extends WP_Widget{
 		$this->twitter[] = $instance['twitter'];
 		$this->twitter[] =$instance['facebook'];
 		$instance['instagram'];
+		$instance['linkedin'];
 ;?>
 		<input type="text" name="<?php echo $this->get_field_name("facebook");?>" placeholder="plz add your facebook link" 
 		class="inputs" value="<?php echo $instance['facebook'];?>">
@@ -29,7 +30,9 @@ class social_Icons extends WP_Widget{
 	<input type="text" name="<?php echo $this->get_field_name("instagram");?>"   placeholder="plz add your instagram link"
 		value="<?php echo $instance['instagram'] ;?>"
 		>
-	
+	<input type="text" name="<?php echo $this->get_field_name("linkedin");?>"   placeholder="plz add your linkedin link"
+		value="<?php echo $instance['linkedin'] ;?>"
+		>
 <?php
 	
 }
@@ -54,6 +57,10 @@ class social_Icons extends WP_Widget{
 
 				<?php if(strpos($instance['instagram'],"instagram") !== false ):?>
 				<a href="<?php echo $instance['instagram'];?>"><span id="instagram"><?php echo humescores_get_svg(['icon'=>'instagram']);
+				?></span></a>
+			<?php endif;?>
+			<?php if(strpos($instance['linkedin'],"linkedin") !== false ):?>
+				<a href="<?php echo $instance['linkedin'];?>"><span id="linkedin"><?php echo humescores_get_svg(['icon'=>'linkedin']);
 				?></span></a>
 			<?php endif;?>
 			</div>

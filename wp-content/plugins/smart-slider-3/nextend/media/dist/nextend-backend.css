@@ -5026,6 +5026,12 @@ html[dir="rtl"] .n2-button-menu-open .n2-button-menu {
     border-radius: 5px;
 }
 
+.n2-box-generator .n2-button-menu-inner{
+	max-height: 150px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
 .n2-button-menu-open.n2-active .n2-button-menu {
     display: block;
 }

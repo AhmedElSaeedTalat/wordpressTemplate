@@ -13,6 +13,8 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 		<?php
+						print apply_filters( 'taxonomy-images-queried-term-image', '' );
+
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">

@@ -11,11 +11,21 @@
 
 
 										<!-- thumbnail -->
-<?php if(is_active_sidebar('sidebar-1')):?>
-<section id="allContent">
-<?php else :?>
-	<section id="allContent1">
-<?php endif ;?>
+<div class="arrow-UP" id="xx">
+	<?php echo humescores_get_svg(['icon'=>'chevron-up']);?>
+</div>
+
+
+<div class="container">
+	<div class="row">
+		<?php if(is_active_sidebar('sidebar-1')):?>
+			<div class="col-8 contentMargin" >
+			<?php else :?>
+			<div class="col-12">
+		<?php endif;?>
+				<section id="allContent">
+		
+				
 	<div class="content1">
 		<?php if(has_post_thumbnail()):?>
 <?php	
@@ -150,8 +160,24 @@
 								<img src='<?php echo get_template_directory_uri()."/images/bla.jpeg" ;?>' alt="" class="content-image1">
 							</div>
 							<div class="col-9">
-								<h2>ROOTLAYERS</h2>
-								<p>But that crowd of people had a far narrower escape than mine. Only the fact that a hummock of heathery sand inter- cepted the lower part of the Heat-Ray saved them. Had the elevation of the parabolic mirror been a few yards higher.</p>
+								<h2><?php 
+									if ( is_front_page() && is_home() ) : ?>
+													<h1 id="siteDesc"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+												<?php else : ?>
+													<p id="siteDesc"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+												<?php
+												endif;?>
+
+																	</h2>
+								<?php
+			
+				$description = get_bloginfo( 'description', 'display' );
+			if ( $description || is_customize_preview() ) : ?>
+				<p ><?php echo $description; ?></p>
+			<?php
+			endif; ?>
+
+
 								<div class="iconsWrapper"><a href=""><?php echo humescores_get_svg(['icon'=>'facebook']);?></a>
 									<a href=""><?php echo humescores_get_svg(['icon'=>'google-plus']);?></a>
 									<a href=""><?php echo humescores_get_svg(['icon'=>'twitter']);?></a>		
@@ -216,9 +242,59 @@
 							if ( comments_open() || get_comments_number() ) :
 							comments_template();
 						endif;
+					      		$previous_post = get_previous_post();
+								 $next_post = get_next_post();		
+										
+
 						?>
 				</div>
-				
+				<div class="all">
+					
+			 	<a href="<?php echo get_permalink($previous_post->ID) ;?>" class="prev_linkFixed">PREV POST</a>
+
+
+					 <div class="prev-link">
+				 		<div class="img">
+						<?php $previous_post = get_previous_post();?>
+						<a href="<?php echo get_permalink($previous_post->ID) ;?>"><?php 
+						if(!empty(get_the_post_thumbnail($previous_post->ID,'thumbnail'))){
+						echo   get_the_post_thumbnail($previous_post->ID,'thumbnail');}else{ ?>
+								<img src="<?php echo get_template_directory_uri().'/images/logo-minimalo.png' ;?>" alt="" class="img-1">
+							<?php }
+						?></a>
+
+					</div>
+					<p><?php  previous_post_link();?></p>
+				 	
+					
+				 </div><!-- prev-link -->
+				</div>
+
+
+
+			 	
+
+				<div class="all1">
+					
+			 	<a href="<?php echo get_permalink($next_post->ID) ;?>" class="next_linkFixed">NEXT POST</a>
+
+					<div class="next-link">
+					<div class="img">
+						<?php  $next_post = get_next_post();?>
+								<a href="<?php echo get_permalink($next_post->ID) ;?>"><?php 
+								if(!empty(get_the_post_thumbnail($next_post->ID,'thumbnail'))){
+								echo get_the_post_thumbnail($next_post->ID,'thumbnail');
+							}
+							else{ ;?>
+								<img src="<?php echo get_template_directory_uri().'/images/logo-minimalo.png' ;?>" alt="" class="img-1">
+							<?php }
+						?></a>
+					</div>
+					<p><?php  next_post_link();?></p>
+				 </div>
+				</div>
+
+				 
 		<?php endif ;
 			?>
 
@@ -240,12 +316,19 @@
 </article><!-- #post-<?php the_ID(); ?> -->
 	</div>
 
+		</div><!-- col-8 -->
+		<div class="col-4 mt-5">
+
+
+			<?php get_sidebar();?>
+		</div>
+	</div><!-- row -->
+</div><!-- container -->
+<div id="xxx"></div>
 
 
 
 
 
-		<?php get_sidebar();?>
 
-
-</section>
+	

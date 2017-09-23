@@ -1,4 +1,5 @@
 <?php
+N2Loader::import('libraries.cache.cache');
 
 class N2CacheCombine extends N2Cache {
 

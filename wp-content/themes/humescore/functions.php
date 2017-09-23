@@ -124,6 +124,24 @@ function humescore_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Popular-posts', 'humescore' ),
+		'id'            => 'popular-1',
+		'description'   => esc_html__( 'Add menu widgets here.', 'humescore' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'SearchWidget', 'humescore' ),
+		'id'            => 'search-1',
+		'description'   => esc_html__( 'Add search widget here.', 'humescore' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'humescore_widgets_init' );
 
@@ -163,9 +181,10 @@ function humescore_scripts() {
 	wp_enqueue_script( 'humescore-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script('humescore-tether', get_template_directory_uri().'/js/tether.min.js');
 	wp_enqueue_script('humescore-bootstrap', get_template_directory_uri().'/js/bootstrap.min.js');
-	// wp_enqueue_script('humescore-jquery', get_template_directory_uri().'/js/jquery.slim.min.js');
-	// wp_enqueue_script('humescore-jquery', get_template_directory_uri().'/js/ui/jquery-ui.min.js');
-	wp_enqueue_script('humescore-jquery', get_template_directory_uri().'/scr//jquery-scrolltofixed.js');
+	// wp_enqueue_script('humescore-scrollMonitor', get_template_directory_uri().'/scrollMonitor/scrollMonitor.js');
+	wp_enqueue_script('humescore-jquery', get_template_directory_uri().'/scr/jquery-scrolltofixed.js');
+		wp_enqueue_script('humescore-bundle', get_template_directory_uri().'/bundle.js');
+
 	wp_enqueue_script('humescore-index', get_template_directory_uri().'/index.js');
 
 	wp_enqueue_script( 'humescore-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -202,5 +221,13 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+function changeExcerpt($more){
+	return "...";
+}
+add_filter("excerpt_more",changeExcerpt);
 require get_template_directory()."/inc/icons-functions.php";
-
+require get_template_directory()."/walkerCat.php";
+add_action( 'init', 'add_excerpts_to_pages' );
+function add_excerpts_to_pages() {
+     add_post_type_support( 'page', 'excerpt' );
+}

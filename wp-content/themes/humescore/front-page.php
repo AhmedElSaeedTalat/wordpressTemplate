@@ -13,50 +13,219 @@
  */
 
 get_header(); ?>
+<div class="arrow-UP" id="xx">
+	<?php echo humescores_get_svg(['icon'=>'chevron-up']);?>
+</div>
 <?php 
 echo do_shortcode('[smartslider3 slider=2]');
 ?>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	
+			<div class="frontPage-content mt-4">
+				<div class="container borderCategories">
+					<div class="row">
+						<div class="col-12">
+							<div class="row">
+								<?php $terms = apply_filters( 'taxonomy-images-get-terms', '');
+							foreach( (array) $terms as $term ):?>
+								<div class="col-3">
+									<div class="block_categories">
+										<div class="image">
+											<a href="<?php echo "/wp-1/category/".$term->name ;?>">	<?php print wp_get_attachment_image( $term->image_id, 'thumbnail' ); ;?></a>
+										</div>
+										<a href="<?php echo "/wp-1/category/".$term->name ;?>">	<div class="extraLayer">	
+										</div></a>
+										<div class="text">
+											<a href="<?php echo "/wp-1/category/".$term->name ;?>"><?php   echo $term->name;?></a>
+										</div>
+									</div><!-- block-categories -->
+								</div><!-- col-3 -->
+								
+							  <?php endforeach ;?>
+							</div><!-- row-child -->
+							
+						</div><!-- col-12 -->
+					</div><!-- row -->
+				</div><!-- container -->
+				<div class="container borderCategories mt-4">
+					<div class="row">
+						<div class="col-12">
+							<p class="text-center " id="fontInfo">Popular-Posts</p>
+						</div>
+					</div>
+					<div class="row">
+						<?php get_sidebar("popular");?>
+					</div>					
+				</div><!-- container -->
+			</div><!-- frontPage -->
 
-		<?php
-		if ( have_posts() ) :
+			<section class="postsFrontPage">
+				<div class="container">
+					<div class="row">
+						<?php if(is_active_sidebar('sidebar-1')):?>
+						<div class="col-8">
+						<?php else :?>
+							<div class="col-12">
+						<?php endif ;?>
+							<div class="row">
+								<div class="col-12">
+									<?php
+										$arguments = array(
+											"posts_per_page" => 1
+										);
+										$query1 = new WP_Query($arguments);
+										if($query1->have_posts())
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+											:?>
+												<div class="img">
+													<?php 
+													$postID = [];
+													foreach ($query1 as $key => $valueX) {
+														$postID[] = $valueX->ID;
+													}
+													if(has_post_thumbnail()):?>
+														<a href="<?php echo get_permalink();?>"><?php the_post_thumbnail('thumbnails1');?></a>
+													<?php else:?>
+														<img src='<?php echo get_template_directory_uri() . "/images/tvl.jpg" ?>' alt="">
+													<?php endif ;?>
+												</div>
+												<div class="category ">	
+													<?php 
+															$categories_list = get_the_category_list( esc_html__( ', ', 'humescore' ) );
+															if ( $categories_list ) {
+															/* translators: 1: list of categories. */
+															printf( '<span class="cat-links">' . esc_html__( ' %1$s', 'humescore' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+																}
+													;?>
+												</div>
+												<div class="firstPostTitle mt-1">
+													<a href="<?php echo get_permalink()?>"><?php the_title();?></a>
+												</div>
+												<div class="firstPostContent">
+													<?php  foreach ($query1 as $key => $value) {
+														?>
+														<span class="mt-1"><?php $postContent=  $value->post_content;
+																 $content = substr($postContent, 0,250);
+																 echo $content;
+														?></span>
+														<?php
+													}
+													echo "....";
+													;?>
+													
+												</div>
+												<a href="<?php echo get_permalink()?>" class="firstPostLink">read more</a>
+												<?	if ( 'post' === get_post_type() ) : ?>
+											<?php 
+											setup_postdata('');
+											?>
 
-			<?php
-			endif;
+													<div class="entry-meta">
+														<?php humescore_posted_on(); ?>
+														<span class="commentsNumber">	
+															<span>-</span><?php comments_number("no comments") ;?>
+														</span>
+													</div><!-- .entry-meta -->
+												<?php endif;?>
+											<?php
+										endif;
+											 wp_reset_postdata();
+											  wp_reset_query();
+									?>
+										
+								</div><!-- col-12 -->
+							</div><!-- row0child -->
+							<div class="row otherPosts">
+								<?php
+								$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+										$arguments2 = array(
+											"post__not_in"	=>[ $postID[10]],
+											 'paged'               => $paged
+										);
+										$wp_query = new WP_Query($arguments2);
+										if($wp_query->have_posts()){
+											while($wp_query->have_posts()){
+												$wp_query->the_post();
+											
+												?>
+												
+								<div class="col-6">
+										<div class="thumbnails">
+											<?php	if(has_post_thumbnail()):?>
+											<a href="<?php echo get_permalink();?>"><?php	the_post_thumbnail('thumbnails1'); ?></a>
+												<?php else:?>
+											
+											<a href="<?php echo get_permalink();?>"><img src='<?php echo get_template_directory_uri() . "/images/tvl.jpg" ?>' alt=""></a>
+												<?php endif ;?>
+										</div>
+										<section class="postTitle">
+											<div class="category mb-3 ">	
+											<?php 
+													$categories_list = get_the_category_list( esc_html__( ', ', 'humescore' ) );
+													if ( $categories_list ) {
+													/* translators: 1: list of categories. */
+													printf( '<span class="cat-links">' . esc_html__( ' %1$s', 'humescore' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+														}
+											;?>
+										</div>
+										<div class="postTitles mt-1 mb-3">
+											<a href="<?php echo get_permalink()?>"><?php the_title();?></a>
+										</div>
+										</section>
+										
+										<div class="firstPostContent">
+											<span class="mt-1 contentOfPosts"><?php the_excerpt();?></span>
+											<a href="<?php echo get_permalink()?>" class="firstPostLink">read more</a>
+												<?php if( 'post' === get_post_type() ) : ?>
+												<?php 
+												setup_postdata('');
+												?>
+											<div class="entry-meta">
+												<?php humescore_posted_on(); ?>
+													<span class="commentsNumber">	
+														<span>-</span><?php comments_number("no comments") ;?>
+													</span>
+												</div><!-- .entry-meta -->
+											
+											<?php
+										endif;
+											
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-
-			endwhile;
-
-			the_posts_navigation();
-					 wp_reset_postdata();
+									?>
+											</div>
+								</div><!-- col-6 child-->
+								
+						<?php
+							}
 
 
-		else :
+;?>
 
-			get_template_part( 'template-parts/content', 'none' );
+					<div class="col-12 d-flex justify-content-center">
+								<?php  the_posts_pagination() ;
+										 wp_reset_query();
+					?>
+												</div>
+							<?php
+							
+																 	
+																	  
 
-		endif; ?>
+												}
+						?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+							</div><!-- row0child -->
+						</div><!-- col-8 -->
+						<div class="col-4">
+							<?php get_sidebar() ;?>
+
+						</div>
+					</div><!-- row -->
+				</div><!-- container -->
+			</section>
+
+		
 
 <?php
-get_sidebar();
 get_footer();
 
-// var_dump( wp_get_nav_menu_items('header-menu'));

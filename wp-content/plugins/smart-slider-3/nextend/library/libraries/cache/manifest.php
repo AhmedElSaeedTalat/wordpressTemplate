@@ -1,4 +1,5 @@
 <?php
+N2Loader::import('libraries.cache.cache');
 
 class N2CacheManifest extends N2Cache {
 

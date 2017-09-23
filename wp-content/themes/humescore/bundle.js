@@ -75,7 +75,11 @@ module.exports = __webpack_require__(2);
 /* 1 */
 /***/ (function(module, exports) {
 
-
+(function($){
+	$(".arrowUP").click(function(){
+	$("html,body").animate({"scrollTop":"0%"},1000);
+});
+});
 
 /***/ }),
 /* 2 */

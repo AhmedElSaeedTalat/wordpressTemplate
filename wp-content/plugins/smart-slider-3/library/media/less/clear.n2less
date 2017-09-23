@@ -159,7 +159,7 @@
   }
 
   .n2-ss-slide-background,
-  .n2-ss-slide-background > div {
+  .n2-ss-slide-background * {
     position: absolute;
     top: 0;
     left: 0;
@@ -190,31 +190,31 @@
     box-sizing: content-box;
   }
 
-  [data-mode="fill"] > .n2-ss-background-image {
+  [data-mode="fill"] .n2-ss-background-image {
     background-size: cover;
   }
 
-  [data-mode="fit"] > .n2-ss-background-image {
+  [data-mode="fit"] .n2-ss-background-image {
     background-size: contain;
   }
 
-  [data-mode="simple"] > .n2-ss-background-image {
+  [data-mode="simple"] .n2-ss-background-image {
     background-size: cover;
   }
 
-  [data-mode="stretch"] > .n2-ss-background-image {
+  [data-mode="stretch"] .n2-ss-background-image {
     background-size: 100% 100%;
   }
 
-  [data-mode="center"] > .n2-ss-background-image {
+  [data-mode="center"] .n2-ss-background-image {
     background-position: 50% 50%;
   }
 
-  [data-mode="tile"] > .n2-ss-background-image {
+  [data-mode="tile"] .n2-ss-background-image {
     background-repeat: repeat;
   }
 
-  [data-mode="fixed"] > .n2-ss-background-image {
+  [data-mode="fixed"] .n2-ss-background-image {
     background-size: cover;
   }
 
@@ -245,12 +245,12 @@
   }
 
   .ssPerspective() when (@hasPerspective = 1) {
-    .n2-ss-layers-container {
+    .n2-ss-slide {
       -webkit-perspective: @perspective;
       perspective: @perspective;
     }
 
-    .n2-ucbrowser & .n2-ss-layers-container {
+    .n2-ucbrowser & .n2-ss-slide {
       -webkit-perspective: initial;
     }
   }

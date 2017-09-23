@@ -217,6 +217,9 @@ N2Require('SmartSliderMainAnimationSimple', ['SmartSliderMainAnimationAbstract']
         if (currentSlide.backgroundImage) {
             currentSlide.backgroundImage.element.css('zIndex', 23);
         }
+
+        nextSlide.$element.css('opacity', 0);
+
         this._showSlide(nextSlide);
 
         this.slider.unsetActiveSlide(currentSlide);
@@ -261,7 +264,11 @@ N2Require('SmartSliderMainAnimationSimple', ['SmartSliderMainAnimationAbstract']
             }, adjustedTiming.outDelay);
         }
 
-        nextSlide.$element.css('opacity', 1);
+        this.timeline.to(nextSlide.$element.get(0), adjustedTiming.inDuration, {
+            opacity: 1,
+            ease: this.getEase()
+        }, adjustedTiming.inDelay);
+
         if (!this._currentBackgroundAnimation && nextSlide.backgroundImage) {
             nextSlide.backgroundImage.element.css('opacity', 1);
         }
@@ -422,31 +429,41 @@ N2Require('SmartSliderMainAnimationSimple', ['SmartSliderMainAnimationAbstract']
     SmartSliderMainAnimationSimple.prototype.__mainAnimationDirection = function (currentSlide, nextSlide, direction, parallax, reversed) {
         var property = '',
             propertyValue = 0,
+            originalPropertyValue = 0,
             parallaxProperty = '';
 
         if (direction == 'horizontal') {
             property = nextend.rtl.left;
             parallaxProperty = 'width';
-            propertyValue = this.slider.dimensions.slideouter.width;
+            originalPropertyValue = propertyValue = this.slider.dimensions.slideouter.width;
         } else if (direction == 'vertical') {
             property = 'top';
             parallaxProperty = 'height';
-            propertyValue = this.slider.dimensions.slideouter.height;
+            originalPropertyValue = propertyValue = this.slider.dimensions.slideouter.height;
         }
 
         if (reversed) {
             propertyValue *= -1;
         }
 
-        var inProperties = {
+        var nextSlideFrom = {},
+            nextSlideTo = {
                 ease: this.getEase()
             },
-            outProperties = {
+            nextSlideFromImage = {},
+            nextSlideToImage = {
+                ease: this.getEase()
+            },
+            currentSlideTo = {
+                ease: this.getEase()
+            },
+            currentSlideToImage = {
                 ease: this.getEase()
             };
-        var from = {};
+
         if (parallax != 1) {
             if (!reversed) {
+                //forward
                 currentSlide.$element.css('zIndex', 24);
                 if (currentSlide.backgroundImage) {
                     currentSlide.backgroundImage.element.css('zIndex', 24);
@@ -456,23 +473,52 @@ N2Require('SmartSliderMainAnimationSimple', ['SmartSliderMainAnimationAbstract']
                 if (nextSlide.backgroundImage) {
                     nextSlide.backgroundImage.element.css(property, propertyValue);
                 }
-                from[property] = propertyValue;
+
+                nextSlide.$element.addClass('n2-ss-parallax-clip');
+                nextSlideFrom[property] = originalPropertyValue;
+                nextSlideFrom[parallaxProperty] = propertyValue;
+                nextSlideTo[parallaxProperty] = originalPropertyValue;
+
+                nextSlideFromImage[property] = propertyValue;
+
+                currentSlideTo[parallaxProperty] = propertyValue;
+                currentSlideToImage[parallaxProperty] = propertyValue;
+
+                currentSlideTo[property] = -propertyValue;
+                currentSlideToImage[property] = -propertyValue;
             } else {
+                //backward
                 currentSlide.$element.css('zIndex', 24);
                 if (currentSlide.backgroundImage) {
                     currentSlide.backgroundImage.element.css('zIndex', 24);
                 }
-                inProperties[parallaxProperty] = -propertyValue;
+                currentSlide.$element.addClass('n2-ss-parallax-clip');
+
+                nextSlideTo[parallaxProperty] = -propertyValue;
+                nextSlideToImage[parallaxProperty] = -propertyValue;
                 propertyValue *= parallax;
-                from[property] = propertyValue;
-                from[parallaxProperty] = -propertyValue;
+
+                nextSlideFrom[property] = propertyValue;
+                nextSlideFrom[parallaxProperty] = -propertyValue;
+
+                nextSlideFromImage[property] = propertyValue;
+                nextSlideFromImage[parallaxProperty] = -propertyValue;
+
+
+                currentSlideTo[parallaxProperty] = -propertyValue;
+                currentSlideTo[property] = originalPropertyValue;
+
+                currentSlideToImage[property] = -propertyValue;
             }
         } else {
             nextSlide.$element.css(property, propertyValue);
             if (nextSlide.backgroundImage) {
                 nextSlide.backgroundImage.element.css(property, propertyValue);
             }
-            from[property] = propertyValue;
+            nextSlideFrom[property] = propertyValue;
+
+            currentSlideTo[property] = -propertyValue;
+            currentSlideToImage[property] = -propertyValue;
         }
 
         nextSlide.$element.css('zIndex', 23);
@@ -492,16 +538,12 @@ N2Require('SmartSliderMainAnimationSimple', ['SmartSliderMainAnimationAbstract']
 
         var adjustedTiming = this.adjustMainAnimation();
 
-        inProperties[property] = 0;
+        nextSlideTo[property] = 0;
+        nextSlideToImage[property] = 0;
 
-        this.timeline.fromTo(nextSlide.$element.get(0), adjustedTiming.inDuration, from, inProperties, adjustedTiming.inDelay);
+        this.timeline.fromTo(nextSlide.$element.get(0), adjustedTiming.inDuration, nextSlideFrom, nextSlideTo, adjustedTiming.inDelay);
         if (nextSlide.backgroundImage) {
-            this.timeline.fromTo(nextSlide.backgroundImage.element, adjustedTiming.inDuration, from, inProperties, adjustedTiming.inDelay);
-        }
-
-        outProperties[property] = -propertyValue;
-        if (!reversed && parallax != 1) {
-            outProperties[parallaxProperty] = propertyValue;
+            this.timeline.fromTo(nextSlide.backgroundImage.element, adjustedTiming.inDuration, nextSlideFromImage, nextSlideToImage, adjustedTiming.inDelay);
         }
 
         if (this.parameters.shiftedBackgroundAnimation != 0) {
@@ -530,10 +572,9 @@ N2Require('SmartSliderMainAnimationSimple', ['SmartSliderMainAnimationAbstract']
             }
         }
 
-
-        this.timeline.to(currentSlide.$element.get(0), adjustedTiming.outDuration, outProperties, adjustedTiming.outDelay);
+        this.timeline.to(currentSlide.$element.get(0), adjustedTiming.outDuration, currentSlideTo, adjustedTiming.outDelay);
         if (currentSlide.backgroundImage) {
-            this.timeline.to(currentSlide.backgroundImage.element, adjustedTiming.outDuration, outProperties, adjustedTiming.outDelay);
+            this.timeline.to(currentSlide.backgroundImage.element, adjustedTiming.outDuration, currentSlideToImage, adjustedTiming.outDelay);
         }
 
         if (this.isTouch && this.isReverseAllowed && parallax == 1) {
@@ -604,7 +645,9 @@ N2Require('SmartSliderMainAnimationSimple', ['SmartSliderMainAnimationAbstract']
 
             nextSlide.$element
                 .css('zIndex', '')
-                .css(property, '');
+                .css(property, '')
+                .removeClass('n2-ss-parallax-clip');
+
             if (nextSlide.backgroundImage) {
                 nextSlide.backgroundImage.element
                     .css('zIndex', '')
@@ -613,7 +656,8 @@ N2Require('SmartSliderMainAnimationSimple', ['SmartSliderMainAnimationAbstract']
 
             currentSlide.$element
                 .css('zIndex', '')
-                .css(parallaxProperty, '');
+                .css(parallaxProperty, '')
+                .removeClass('n2-ss-parallax-clip');
             if (currentSlide.backgroundImage) {
                 currentSlide.backgroundImage.element
                     .css('zIndex', '')
@@ -841,6 +885,9 @@ N2Require('SmartSliderResponsiveSimple', ['SmartSliderResponsive'], [], function
             if (parallax != 1) {
                 this.addHorizontalElement(backgroundImages[i].element, ['width'], 'w');
                 this.addVerticalElement(backgroundImages[i].element, ['height'], 'h');
+                
+                this.addHorizontalElement(backgroundImages[i].$mask, ['width'], 'w');
+                this.addVerticalElement(backgroundImages[i].$mask, ['height'], 'h');
             }
         }
 
