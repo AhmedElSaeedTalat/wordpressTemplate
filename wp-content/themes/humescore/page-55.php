@@ -33,33 +33,37 @@ get_header(); ?>
 
 								endwhile; // End of the loop.
 								?>
+							</section>
+						</div>
 								<section class="formWrapper">
-									<form action="" id="form" >
-										<div class="d-flex justify-content-around">
-											<div class="form">
+									<form action="" id="form"  class="container">
+										<div class="row">
+											<div class="form col-lg-4">
 												<p class="text">Your Name (required)</p>
 												<input type="text" class="input" required>
 											</div>
-											<div class="form">
+											<div class="form col-lg-4">
 												<p class="text">Your Email (required)</p>
 												<input type="email" class="input" required>
 											</div>
-											<div class="form">
+											<div class="form col-lg-4">
 												<p class="text">Subject</p>
 												<input type="text" class="input">
 											</div>			
 										</div>
-										<div class="form textarea">
+										<div class="row">
+											<div class="form textarea col-12">
 												<p class="text">Your Message</p>
 												<textarea name="" class="input area"></textarea> 
 												<button class="btn btn-contact"> send message</button>
-										</div>																
+										</div>	
+										</div>
+																									
 									</form>
 								</section>
 								
 							</section>
 								
-					</div>
 				</div>
 			</div>
 			

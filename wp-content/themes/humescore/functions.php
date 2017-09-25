@@ -142,6 +142,24 @@ function humescore_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'SearchWidget2', 'humescore' ),
+		'id'            => 'search-2',
+		'description'   => esc_html__( 'Add search widget here.', 'humescore' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'small menu icons', 'humescore' ),
+		'id'            => 'icon-2',
+		'description'   => esc_html__( 'Add social icons  here.', 'humescore' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'humescore_widgets_init' );
 
@@ -184,6 +202,7 @@ function humescore_scripts() {
 	// wp_enqueue_script('humescore-scrollMonitor', get_template_directory_uri().'/scrollMonitor/scrollMonitor.js');
 	wp_enqueue_script('humescore-jquery', get_template_directory_uri().'/scr/jquery-scrolltofixed.js');
 		wp_enqueue_script('humescore-bundle', get_template_directory_uri().'/bundle.js');
+	wp_enqueue_script('humescore-ui', get_template_directory_uri().'/js/ui/jquery-ui.js');
 
 	wp_enqueue_script('humescore-index', get_template_directory_uri().'/index.js');
 

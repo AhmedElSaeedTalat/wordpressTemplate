@@ -19,7 +19,7 @@
 <div class="container">
 	<div class="row">
 		<?php if(is_active_sidebar('sidebar-1')):?>
-			<div class="col-8 contentMargin" >
+			<div class="col-lg-8 contentMargin" >
 			<?php else :?>
 			<div class="col-12">
 		<?php endif;?>
@@ -156,10 +156,10 @@
 				<div class="col-12 mt-5 blaidth">
 					<div class="border">
 						<div class="row">
-							<div class="col-3 d-flex justify-content-center">
+							<div class="hidden-sm-down col-md-4 col-lg-3 d-flex justify-content-center">
 								<img src='<?php echo get_template_directory_uri()."/images/bla.jpeg" ;?>' alt="" class="content-image1">
 							</div>
-							<div class="col-9">
+							<div class="col-12 col-md-8 col-lg-9">
 								<h2><?php 
 									if ( is_front_page() && is_home() ) : ?>
 													<h1 id="siteDesc"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -189,11 +189,9 @@
 					
 				</div>
 			
-			<div class="col-12 mt-5 blaidth">
-				<div class="row">
-					<h2 class="mx-auto RelatedPostHeaderStyle">Related Posts</h2>
-						<div class="col-12 relatedPosts d-flex justify-content-around ">
-					<?php
+			<div class="col-12 mt-5 blaidth relatedPosts">
+						<h2 class="mx-auto RelatedPostHeaderStyle">Related Posts</h2>
+<?php 
 						$title = get_the_title();
 						$category = get_the_category();
 						$the_category = $category[0]->name;
@@ -201,12 +199,16 @@
 								[
 									'category_name'=>$the_category 
 								]
-							);
+							); ?>
+				<div class="row">
+					<?php
 						if($x->have_posts()){
 							while($x->have_posts()){
-								$x->the_post();
+								$x->the_post();?>
+									<?php
 								// echo the_post_thumbnail();
 								if($title !== get_the_title()) :?>
+								<div class="col-lg-3">
 								<div class="relatedPosts_blog">
 									<?php if(has_post_thumbnail()) :?>
 									<div class="image">
@@ -218,13 +220,16 @@
 									</div>	
 
 								<?php endif;?>
-									<div class="title">
+									<div class="title ">
 										<a href="<?php echo get_permalink();?>"><?php echo get_the_title() ;?>	</a>
 									</div>
 									<div class="date">
 										<?php echo get_the_date() ;?>			
 									</div>	
 								</div>
+</div>
+
+
 							<?php 
 								endif;
 								}
@@ -232,7 +237,6 @@
 
 								}
 								?>		
-						</div>										
 					</div>
 				</div>
 
@@ -317,7 +321,7 @@
 	</div>
 
 		</div><!-- col-8 -->
-		<div class="col-4 mt-5">
+		<div class="col-lg-4 mt-5">
 
 
 			<?php get_sidebar();?>

@@ -15,28 +15,24 @@
 
 	<footer id="colophon" class="site-footer mt-5">
 		<div class="container">
-			<div class="row">
-				<div class="col-4">
-					<p class="text-uppercase">Minimalo</p>
-				</div>
-				<div class="col-4">
-					<p class="text-uppercase">browse tags</p>
-				</div>
-				<div class="col-4">
-					<p class="text-uppercase">lates posts</p>
-				</div>
-			</div>
+				
+				
+	
 			<div class="row mt-5">
-				<div class="col-4">
+				<div class="col-12 col-lg-4  mb-5">
 					<div class="site-info">
+							<p class="text-uppercase mb-4">Minimalo</p>
 						<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'humescore' ) ); ?>"><?php
 							/* translators: %s: CMS name, i.e. WordPress. */
 							printf( esc_html__( 'Minimalo – is a minimal blog WordPress theme for creative websites. With four different post layouts, support for WordPress post formats, and support WooCommerce plugin, you can get your blog and shop running in minutes. %s', 'humescore' ), 'WordPress' );
 						?></a>
 					</div><!-- .site-info -->
 				</div><!-- col -->
-				<div class="col-4 ">
+				<div class="col-12 col-lg-4  mb-5">
+					<p class="text-uppercase mb-4">browse tags</p>
 					<div class="row">
+						
+
 						<?php
 							$tags = get_tags(array(
 								"number" => 12
@@ -54,15 +50,15 @@
 					</div><!-- row-child -->
 
 				</div>
-				<div class="col-4">
+				<div class="col-12 col-lg-4">
 					<?php 
 					$argument = [
 							'posts_per_page' => 2
 						];
 						$arg = get_posts($argument);	
-				
 						?>
-
+					<p class="text-uppercase mb-4">latest posts</p>
+					
 						<?php
 							foreach ($arg as $key => $value) :
 									setup_postdata( $value );
@@ -82,10 +78,15 @@
 								</div>
 								<div class="title">
 									<a href="<?php echo get_permalink($value->ID) ; ?>"><?php echo $value->post_title ;?></a>
+									<p><?php $x  = new DateTime($value->post_date);
+											$y = $x->format("M d, 20y");
+											echo $y;
+													?>	</p>
 								</div>
 							</div>
 							
 			<?php
+									
 
 			endforeach;
 wp_reset_postdata();
@@ -112,7 +113,7 @@ wp_reset_postdata();
 				<div class="col-5 ">
 					<div class="footerBorders"></div>
 				</div><!-- col -->
-				<div class="col-2 d-flex justify-content-around">
+				<div class=" col-2 d-flex justify-content-around">
 					<?php
 									$xx= wp_nav_menu( array(
 										'theme_location' => 'footer',

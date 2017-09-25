@@ -26,7 +26,7 @@ get_header(); ?>
 			
 			<div class="container" >
 				<div class="row">
-					<div class="col-8 mt-4" id="posts_categories">
+					<div class="col-lg-8 mt-4" id="posts_categories">
 						<div class="row" id="tags">
 
 							<?php 
@@ -44,7 +44,7 @@ get_header(); ?>
 
 									<!-- <section > -->
 									
-										<div class="col-6 ">
+										<div class="col-lg-6 ">
 											<?php if (has_post_thumbnail()):?>
 												<?php the_post_thumbnail(); ?>
 											<?php else :?>
@@ -88,7 +88,7 @@ get_header(); ?>
 						</div>													
 					</div><!-- col-8 -->
 
-					<div class="col-4">
+					<div class="col-lg-4">
 						<?php get_sidebar();?>
 					</div><!-- col-4 -->
 				</div><!-- row -->

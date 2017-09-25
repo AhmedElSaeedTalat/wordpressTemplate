@@ -176,6 +176,9 @@ blockquote:after {
 			    .icon-angle-down{
 					    height: 12px !important;
 					 	width: 12px !important;
+				 	    padding-left: 5px;
+					    display: inline-flex;
+					    align-items: center;
 				}
 					a{
 						color:#333;
@@ -189,6 +192,7 @@ blockquote:after {
 					.menu-item{
 					    padding-right: 3rem;
 					    position:relative;
+					    width:128px;
 					
 					.sub-menu{
 						list-style:none;
@@ -250,20 +254,13 @@ blockquote:after {
 		justify-content:center;
 
 	}
-	#menu-item-49:after{
-		content:"\203A";
-	}
-	#menu-item-70:after{
-		content:"\203A";
-	}
-	#menu-item-71:after{
-		content:"\203A";
-	}
+
+	
 	.searchIcon{
 		.icon {
-			height: 12px;
+			height: 15px;
 		    cursor: pointer;
-		    width: 10px;
+		    width: 15px;
 		    float: right;
 		}
 	}
@@ -311,30 +308,70 @@ blockquote:after {
 		webkit-transform: rotate(-90deg)
 	}
 	}
+
 /*-------------------------------------------------
 	menu Mobile
 --------------------------------------------------*/
 .menuMobile{
+	.menu .menu-item .sub-menu [class*="menu-item-"]:hover{
+		.sub-menu{
+			display:none;
+		}
+	}
 	height:100%;
-	width:20%;
+	width:50%;
 	position:fixed;
 	top:0;
 	left:0;
 	background:white;
 	z-index:5055555555555555555550;
+	font-size:16px;
+    overflow-y: scroll;
+    display:none;
+	ul{
+		padding:0;
+	}
+	.font-sizes{
+		font-size:16px;
+		color:#333;
+	}
+	.Main_Icons {
+		    display: flex;
+		    align-items: center;
+		    border-top: 1px solid #eee;
+		    border-bottom: 1px solid #eee;
+		    width: 100%;
+		    padding-top: 1rem;
+		    padding-bottom: 1rem;
+}
+.borderCart_account{
+	border-top:1px solid #eee;
+}
 	.menu{
 		display:block;
+		.menu-item{
+			width: 100%;
+		}
 		#menu-item-32{
 			padding-top:2rem;
 		}
-		li{
-			padding-bottom:1rem;
+		a{
+			font-size:16px;
 		}
+	
 			[class*="menu-item-"]{
 							&:hover  .sub-menu{
 								display:none;
+								&:hover{
+									display:none;
+								}
 							}
+			
 	}
+
+.menu-item{
+	margin-bottom:1rem;
+}
 	.sub-menu{
 		position:relative;
 		list-style: none;
@@ -346,24 +383,105 @@ blockquote:after {
 	    padding-bottom: 1rem;
 	    top: 0px;
 	    left: 0;
-	    width: 13rem;
+	    width: 100%;
 	    background-color:transparent;
 	    display: none;
 	    z-index: 125;
+	    .sub-menu{
+	    	display:none;
+	    	position:relative;
+							//top:0;
+			left:0%;
+		    width: 100%;	
+	    }
 	}
-	#menu-item-32 {
-		& :nth-child(1):after{
-			content:"+";
-		}
+	.sub-menu:hover .sub-menu{
+			display:none
 	}
+	
 }
 }
 .shopping-bag{
 	.icon{
-		height:12px;
-		width:10px;
+		height:15px;
+		width:15px;
 	}
 }
+.firstLvl{
+	width: 100%;
+    display: inline-block
+}
+.firstLvl:after{
+	content:"+";
+	float:right;
+	cursor:pointer;
+}
+.secondLvl:after{
+	content:"+";
+	float:right;
+	cursor:pointer;
+}
+.searchSmMenu{
+		position:relative;
+	    margin-top: 1rem;
+	    // width: 197px;
+	    label{
+	    	width:100%;
+	    }
+		.search-field{
+			    border: none;
+			    outline: none;
+			    border-bottom: 1px solid #eee;
+			    border-top: 1px solid #eee;
+			    padding-top: 1rem;
+		}
+		.searchIconSM{
+			position:absolute;
+			top:15px;
+			right:106px;
+			.icon{
+				height:15px;
+				width:15px;
+				fill: #666;
+			}
+		}
+		
+}
+.cls1{
+	    margin-top: 3rem;
+
+	.icon{
+		
+		height: 25px;
+	    width: 25px;
+	    fill: #333;
+	    cursor: pointer;
+	}
+	
+}
+.menuSmall{
+	display:flex;
+	align-items:center;
+	
+	.icon{
+		height:20px;
+		width:20px;
+		cursor:pointer;
+		fill:#333;
+    	margin-right: 14px;	
+    }
+}
+.smallMenuSocialWrapper{
+
+	.smallMenuSocial{
+	   
+	    #secondary{
+	    	   
+	    }
+}
+}
+
+#headerMenuContent{}
 /*-------------------------------------------------
 	BODY
 --------------------------------------------------*/
@@ -630,9 +748,14 @@ Single Posts
 		Related Posts Section
 	--------------------------------------------------------------------------------*/
 .relatedPosts{
+	img{width:100%;}
 	.relatedPosts_blog{
-		width:26%;
+		width:100%;
+		img{
+			width:100% !important;
+		}
 	}
+
 	.image{
 		height: 120px;
    		width: 167px;
@@ -643,10 +766,13 @@ Single Posts
 
 	}
 	.title{
+		   min-height: 77px;
 		a{
 			color:#33363a;
 			text-decoration:none;
-
+			    font-size: 15px;
+			    text-transform:lowercase;
+			
 		}
 			margin-top:1rem;
 		}
@@ -660,6 +786,7 @@ Single Posts
 		padding-bottom:1rem;
 		margin-bottom: 2rem;
 		border-bottom:1px solid;
+		width: 20%;
 	}
 	/*-------------------------------------------------------------------------------
 	comments
@@ -737,7 +864,7 @@ Footer
 .site-footer{
 	background:black;
 	color:white;
-	padding: 3rem;
+	padding: 1rem;
 	a{
 		color:white;
 		text-decoration:none;
@@ -768,7 +895,7 @@ Footer
 	.image{
 		img{
 			    height: 86px;
-				width: 107px;
+				width: 107px !important;
 		}
 	}
 	.title{
@@ -1100,6 +1227,7 @@ front-Page
 	    width: 98px;
 	    left: 78.5px;
 	    text-align: center;
+	    text-transform:uppercase;
 	    a{
 	    	font-size: 22px;
 	    	color: white;
@@ -1114,7 +1242,7 @@ front-Page
 		    top: 0px;
 		    height: 100%;
 		    width: 100%;
-		    background: rgba(0,0,0,0.1);
+		    background: rgba(0,0,0,0.2);
 	}
 }
 .borderCategories{
@@ -1262,6 +1390,11 @@ front-Page
     width: 90%;
 
 }
+}
+.thumbnails{
+	a{
+		width:100%;
+	}
 }
 /*--------------------------------------------------------------------------------------------
 arrowUP
@@ -1593,6 +1726,9 @@ navigationLinks
 		}
 	}
 	.page-id-55{
+		img{
+			width:100% !important;
+		}
 		.entry-title{
 			margin-top:3rem;
 			margin-bottom: 3rem;
@@ -1605,21 +1741,14 @@ navigationLinks
 			}
 			.mks_col{
 				display:flex;
-				justify-content:space-around;
 			    margin-top: 2rem;
+			        justify-content: space-between;
 			}
-			.mks_one_half{
-				    width: 394px;
-			        margin-left: 2rem;
-			        & :nth-child(2){
-			        	padding-left:1.3rem;
-			        }
-			}
+			
 		}
 		.entry-content{
 			& :nth-child(1){
-				    width: 90%;
-    				margin: 0 auto;
+				   
 			}
 		}
 	}
@@ -1635,12 +1764,12 @@ navigationLinks
 	.input{
 		padding: 6px 10px;
     	border: 1px solid $borderColor;
+    	width:100%;
 		&:focus{
 			border:1px solid black;
 		}
 	}
 	.textarea{
-		    padding-left: 2.4rem;
     		padding-top: 1rem;
     		.area{
     			width:96%;
@@ -1766,4 +1895,379 @@ mediaqueries
     width:73%;
 }
 	
+}
+/* ------------------
+	 footer mediqueries
+-----------------------*/
+@media only screen and (max-width: $lg ) {
+
+	.footerImages .button{
+		    width: 28%;
+	        left: 36%;
+
+	}
+
+}
+@media only screen and (max-width: $md ) {
+	.footerImages .button{
+	       width: 35%;
+	       top: 27%;
+	 	   left: 28%;
+}
+
+}
+@media only screen and (max-width: $xs ) {
+	.footerImages .button{
+      	width: 37%;
+    	top: 27%;
+	    left: 16%;
+}
+
+}
+/* ------------------
+	sidebar mediaqueries
+-----------------------*/
+#popPost{}
+@media only screen and (max-width: $lg ) {
+
+	.postsFrontPage #secondary {
+	    margin-top: 0;
+	    width: 100%;
+}
+	#secondary .styletext{
+		text-align:center;
+		margin-top: 3rem;
+}
+	.wrapperImageSideBar img {
+	    height: 396px;
+	    width: 100%;
+}
+	#secondary .stay_connected{
+		margin-top:2rem;
+	}
+	 .popular-posts {
+    	margin-top: 3rem;
+}
+	.popular-posts .wpp-thumbnail {
+	    height: 64px;
+       width: 20%;
+	}
+	.popular-posts .wpp-list li {
+	    margin-bottom: 1rem;
+}
+#secondary .socailIcon {
+    margin-top: 4rem;
+}
+.popular-posts .wpp-date {
+    font-size: 12px;
+    padding-left: 8px;
+}
+.popular-posts .wpp-post-title {
+    font-size: 16px;
+    color: #33363a;
+    text-decoration: none;
+}
+.popular-posts .wpp-list {
+    padding: 1rem 0px !important;
+}
+
+.widget_categories ul li {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+}
+@media only screen and (max-width: $lg ) {
+
+#popPost .popular-posts {
+    	margin-top: -1rem;
+}
+
+}
+/* ------------------
+	small menu mediaqueries
+-----------------------*/
+@media only screen and (max-width: $lg ) {
+	.menuMobile
+	{
+		    width: 38%;
+	}
+	
+	}
+	@media only screen and (max-width: $md ) {
+	.menuMobile
+	{
+		    width: 50%;
+	}
+
+	}
+	@media only screen and (max-width: $xs ) {
+	.menuMobile
+	{
+		    width: 100%;
+	}
+.searchSmMenu .search-field {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+    width: 100%;
+}
+
+	}
+/* ------------------
+	head mediaqueries
+-----------------------*/
+@media only screen and (max-width: $lg ) {
+ .header_account{
+ 	justify-content:center;
+ }
+ .smallMenuSocialWrapper{
+ 		display:none;
+	.smallMenuSocial{
+	    margin-left: 12px;
+	    height: 28px;
+	    border: 1px solid #eee;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    width: 90px;
+	    #secondary{
+	    	    margin-top: 0;
+			    width: 80% !important;
+			    height: 19px;
+			    display: inline-block;
+			    
+	    }
+}
+ }
+ 
+#headerMenuContent{
+
+justify-content:start !important;
+}
+#changeDirectionDiv{
+justify-content:center !important;
+
+}
+
+}
+
+/* ------------------
+	categories mediaqueries
+-----------------------*/
+@media only screen and (max-width: $lg ) {
+	.block_categories .text{
+		    left: 19.5px;
+	}
+}
+	@media only screen and (max-width: $md ) {
+	.block_categories .text{
+		        left: 65.5px;
+	}
+}
+/* ------------------
+	posts front-page
+-----------------------*/
+@media only screen and (max-width: $lg ) {
+	.entry-meta {
+    display: flex;
+    justify-content: start;
+}
+.otherPosts .entry-meta {
+    display: flex;
+    justify-content: start;
+    font-size: 12px;
+}
+.otherPosts .entry-meta a{
+	font-size: 12px;
+}
+.firstPostLink{
+	padding-bottom: 1rem;
+    display: inline-block;
+}
+.postsFrontPage .img img {
+    width: 100% !important;
+    height: 380px;
+}
+.otherPosts .thumbnails img {
+    width: 100%;
+    height: 380px;
+}
+.firstPostTitle a {
+    padding-bottom: 1rem;
+    display: inline-block;
+}
+.otherPosts .thumbnails a{
+	width:100%;
+}
+}
+/* ------------------
+	single posts media queries
+-----------------------*/
+#commentform{
+	label{
+	}
+}
+.wpp-post-title{}
+.menuMobile{
+	.search-field{}}
+@media only screen and (max-width: $lg ) {
+	.popular-posts .wpp-post-title{
+
+
+	.wpp-post-title{
+	margin-left: 4px;
+}
+}
+#secondary {
+    margin-top: 0rem;
+    width: 100%;
+}
+.relatedPosts .image {
+		    height: 460px;
+		    width: 100%;
+}
+.relatedPosts .date {
+    padding-bottom: 4%;
+}
+#content1 .category {
+    margin-bottom: 9px;
+    width: 69px;
+    border-bottom: 1px solid red;
+    padding-top: 12px;
+}
+
+.searchPage {
+	.entry-meta a {
+    text-decoration: none;
+    color: #7f7f7f;
+    font-size: 12px;
+}
+.entry-meta {
+    display: flex;
+    justify-content: start;
+    color: #7f7f7f;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.menuMobile{
+	.search-field{
+		width:100% !important;
+}
+}
+
+}
+.searchHeader .page-title {
+    width: 29%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+}
+@media only screen and (max-width: $md ) {
+	.all{
+		display:none !important;
+	}
+	.all1{
+		display:none !important;
+	}
+	.border{
+		img{
+			width: 127px;
+		    height: 127px;
+		    align-self: center;
+
+		}
+	}
+.relatedPosts{
+	.title{
+		text-align:center;
+
+	}
+	.date{
+		text-align:center;
+	}
+}
+}
+@media only screen and (max-width: $xL ) {
+	#author {
+    height: 41px;
+    width: 146px;
+}
+#email {
+    height: 41px;
+    width: 146px;
+}
+#url {
+    height: 41px;
+    width: 146px;
+}
+
+}
+@media only screen and (max-width: $md ) {
+
+	.inputHeight {
+    height: 117px;
+}
+.border .iconsWrapper a {
+    width: 100%;
+}
+}
+@media only screen and (max-width: $xs){
+	.border img {
+    width: 105px;
+    height: 105px;
+    align-self: center;
+}
+.comment-form-author {
+    display: inline-block;
+    width: 100%;
+    margin-left: 5%;
+}
+.comment-form-email {
+    display: inline-block;
+    width: 100%;
+    margin-left: 5%;
+}
+.comment-form-url {
+    display: inline-block;
+    width: 100%;
+    margin-left: 5%;
+}
+#commentform{
+	label{
+		width:100%;
+	}
+}
+#author {
+    height: 41px;
+    width: 90%;
+}
+#email {
+    height: 41px;
+    width: 90%;
+}
+#url {
+    height: 41px;
+    width: 90%;
+}
+.form-submit .submit {
+
+    margin-left: 1.2rem;
+  
+}
+.comment-notes{
+
+    text-indent: -32px;
+	padding-left: 1rem;
+}
+.comment-reply-title {
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+.comment-form-comment label {
+    padding-left: 1rem;
+}
 }

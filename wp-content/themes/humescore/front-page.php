@@ -27,7 +27,7 @@ echo do_shortcode('[smartslider3 slider=2]');
 							<div class="row">
 								<?php $terms = apply_filters( 'taxonomy-images-get-terms', '');
 							foreach( (array) $terms as $term ):?>
-								<div class="col-3">
+								<div class="col-6 col-md-3 mb-4">
 									<div class="block_categories">
 										<div class="image">
 											<a href="<?php echo "/wp-1/category/".$term->name ;?>">	<?php print wp_get_attachment_image( $term->image_id, 'thumbnail' ); ;?></a>
@@ -46,10 +46,10 @@ echo do_shortcode('[smartslider3 slider=2]');
 						</div><!-- col-12 -->
 					</div><!-- row -->
 				</div><!-- container -->
-				<div class="container borderCategories mt-4">
+				<div class="container borderCategories mt-4" id="popPost">
 					<div class="row">
 						<div class="col-12">
-							<p class="text-center " id="fontInfo">Popular-Posts</p>
+							<p class="text-center text-uppercase" id="fontInfo">Popular Posts</p>
 						</div>
 					</div>
 					<div class="row">
@@ -62,7 +62,7 @@ echo do_shortcode('[smartslider3 slider=2]');
 				<div class="container">
 					<div class="row">
 						<?php if(is_active_sidebar('sidebar-1')):?>
-						<div class="col-8">
+						<div class="col-12 col-lg-8">
 						<?php else :?>
 							<div class="col-12">
 						<?php endif ;?>
@@ -149,7 +149,7 @@ echo do_shortcode('[smartslider3 slider=2]');
 											
 												?>
 												
-								<div class="col-6">
+								<div class=" col-12 col-lg-6">
 										<div class="thumbnails">
 											<?php	if(has_post_thumbnail()):?>
 											<a href="<?php echo get_permalink();?>"><?php	the_post_thumbnail('thumbnails1'); ?></a>
@@ -216,7 +216,7 @@ echo do_shortcode('[smartslider3 slider=2]');
 
 							</div><!-- row0child -->
 						</div><!-- col-8 -->
-						<div class="col-4">
+						<div class="col-12 col-lg-4">
 							<?php get_sidebar() ;?>
 
 						</div>

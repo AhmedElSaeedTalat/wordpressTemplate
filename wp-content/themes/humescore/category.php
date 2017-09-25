@@ -26,7 +26,7 @@ get_header(); ?>
 			
 			<div class="container" >
 				<div class="row">
-					<div class="col-8" id="posts_categories">
+					<div class="col-lg-8" id="posts_categories">
 							<?php 
 								$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 								$args = array(
@@ -43,14 +43,14 @@ get_header(); ?>
 									<!-- <section > -->
 									<div class="row mb-4 mt-4" id="contentBorder">
 
-										<div class="col-5 ">
+										<div class="col-lg-5 ">
 											<?php if (has_post_thumbnail()):?>
 												<?php the_post_thumbnail(); ?>
 											<?php else :?>
 												<img src="<?php echo get_template_directory_uri().'/images/3.jpg' ;?>" alt="" class="img">
 											<?php endif;?>
 									</div><!-- col-5 -->	
-									<div class="col-7 ">
+									<div class="col-lg-7 ">
 										<div id="content1">
 											<div class="category">
 												<?php the_archive_title() ;?>
@@ -89,7 +89,7 @@ get_header(); ?>
 
 													
 					</div><!-- col-8 -->
-					<div class="col-4">
+					<div class="col-lg-4">
 						<?php get_sidebar();?>
 					</div><!-- col-4 -->
 				</div><!-- row -->

@@ -13,14 +13,14 @@
 	<header class="entry-header">
 		<div class="container searchPage mt-5">
 			<div class="row applyBorderSearch">
-				<div class="col-6">
+				<div class="col-lg-6">
 					<?php if (has_post_thumbnail()):?>
 					<a href="<?php echo get_permalink() ;?>"><?php the_post_thumbnail('thumbnails1') ;?></a>
 					<?php else :?>
 						<a href="<?php echo get_permalink() ;?>"><img src="<?php echo get_template_directory_uri().'/images/3.jpg' ;?>" alt="" class="img"></a>
 					<?php endif;?>
 				</div>
-				<div class="col-6">
+				<div class="col-lg-6">
 					<section id="content1">
 						<div class="cat" >
 						<?php the_category() ;?>
