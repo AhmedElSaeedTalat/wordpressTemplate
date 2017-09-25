@@ -87,7 +87,7 @@
 					<div id="headerMenu">
 						<div class="container h-100" >
 							<div class="row h-100 d-flex align-items-center"  >
-								<div class="col-5 visible-md-down hidden-lg-up menuSmall">
+								<div class="col-3  visible-md-down hidden-lg-up menuSmall">
 									<?php echo humescores_get_svg(['icon'=> 'menu']);?>
 									<?php echo humescores_get_svg(['icon'=> 'share2']);?>
 								</div>
