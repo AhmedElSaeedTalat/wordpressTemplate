@@ -39,7 +39,7 @@
 							));
 
 							foreach ($tags as $key => $tagTexts):?>
-							<div class="col-3 mb-2">
+							<div class="col-4 col-sm-3 mb-2">
 								<div class="tagsWrapper">
 									<p><a href="<?php 
 									$url = $tagTexts->term_id;

@@ -192,7 +192,7 @@ blockquote:after {
 					.menu-item{
 					    padding-right: 3rem;
 					    position:relative;
-					    width:128px;
+				
 					
 					.sub-menu{
 						list-style:none;
@@ -313,11 +313,7 @@ blockquote:after {
 	menu Mobile
 --------------------------------------------------*/
 .menuMobile{
-	.menu .menu-item .sub-menu [class*="menu-item-"]:hover{
-		.sub-menu{
-			display:none;
-		}
-	}
+	
 	height:100%;
 	width:50%;
 	position:fixed;
@@ -688,25 +684,30 @@ Single Posts
 					border: 1px solid #dcdcdc;
 	  				margin-right: 1rem;
 	                height: 30px;
-	   				min-width: 100px;
 	    			display: flex;
 	    			justify-content: center;
 	    			align-items: center;
 	    			a{
 	    				color:#797d82;
 	    				text-decoration:none;
-	    				width:100%;
+	    				width:70%;
 	    				display:flex;
+	    				span:first-child{
+	    					width:20%;
+	    				}
+	    				span :nth(2){
+	    					width:80%;
+	    				}
 	    				span{
-	    					width:26px;
 	    					height: 65%;
     						padding-top: 3px;
-	    				}
-	    				
-	    				.icon{
+    						.icon{
 							height:16px;
 							width:100%;
 						}
+	    				}
+	    				
+	    				
 	    			}
 	    			&:hover{
 	    					background:#dd5252;
@@ -758,7 +759,6 @@ Single Posts
 
 	.image{
 		height: 120px;
-   		width: 167px;
 		img{
 			height: 100%;
     		width: 100%;
@@ -848,15 +848,30 @@ Single Posts
 }
 #author{
 	height: 41px;
+	width:90%
 }
 #email{
 	height: 41px;
+	width:90%
+
 }
 #url{
 	height: 41px;
+	width:90%
+
 }
 #email-notes{
 	margin-left:2rem;
+}
+.comment-form-email{
+ label{
+ 	width:100%;
+ }
+}
+.comment-form-author{
+	label{
+		width:100%;
+	}
 }
 /*-------------------------------------------------------------------------------------------
 Footer
@@ -873,7 +888,6 @@ Footer
 	.tagsWrapper{
 		border: 1px solid;
 	    height: 29px;
-	    width: 72px;
 	    display: flex;
 	    justify-content: center;
 	    align-items: center;
@@ -1629,6 +1643,7 @@ navigationLinks
 	}
 	.entry-meta{
 		border:none;
+		justify-content:start
 	}
 	#contentBorder{
 		    border-bottom: 1px solid #dcdcdc;
@@ -1650,6 +1665,7 @@ navigationLinks
 		    a{
 		    	color:#333;
 		    	text-decoration:none;
+		    	font-size: 21px;
 		    }
 	}
 
@@ -1661,7 +1677,6 @@ navigationLinks
 			a{
 				color: #777;
     			text-decoration: none;
-			    padding-left: 11px;
 
 			}
 		}
@@ -1695,9 +1710,13 @@ navigationLinks
 }
 		.entry-meta {
     		font-size: 10px;
+    		display: inline-block;
+    		a{
+    			font-size:10px;
+    		}
     }
     #content1{
-	    min-height: 259px;
+	    min-height: 330px;
 	}
 	}
 /*--------------------------------------------------------------------------------------------
@@ -1918,7 +1937,7 @@ mediaqueries
 }
 @media only screen and (max-width: $xs ) {
 	.footerImages .button{
-      	width: 37%;
+      	width: 66%;
     	top: 27%;
 	    left: 16%;
 }
@@ -2020,9 +2039,7 @@ mediaqueries
 	head mediaqueries
 -----------------------*/
 @media only screen and (max-width: $lg ) {
- .header_account{
- 	justify-content:center;
- }
+ 
  .smallMenuSocialWrapper{
  		display:none;
 	.smallMenuSocial{
@@ -2214,6 +2231,21 @@ justify-content:center !important;
 .border .iconsWrapper a {
     width: 100%;
 }
+#author {
+    height: 41px;
+    width: 131px;
+}
+#email {
+    height: 41px;
+    width: 131px;
+}
+#url {
+    height: 41px;
+    width: 131px;
+}
+.menuWrapper .menuWrapper2 a{
+	justify-content:center
+}
 }
 @media only screen and (max-width: $xs){
 	.border img {
@@ -2269,5 +2301,96 @@ justify-content:center !important;
 }
 .comment-form-comment label {
     padding-left: 1rem;
+}
+}
+/*-------------
+*/
+@media only screen and (max-width: $lg){
+	.searchSmMenu .search-field{
+		width:100%;
+	}
+
+	.searchSmMenu .searchIconSM{
+		right: 40px;
+	}
+	.adjustIcons{
+	justify-content:center;
+}
+.comment-form-email{
+ label{
+ 	width:100%;
+ }
+}
+.comment-form-author{
+	label{
+		width:100%;
+	}
+}
+}
+@media only screen and (max-width: $xL){
+.header_account{
+ 	justify-content:center;
+ }
+#changeDirectionDiv {
+    justify-content: center !important;
+}
+}
+@media only screen and (max-width: $xs){
+.menuSmall .icon{
+	height: 15px;
+	cursor: pointer;
+	fill: #333;
+	margin-right: 0px;
+}
+.otherPosts .contentOfPosts p {
+    height: 213px;
+}
+}
+@media only screen and (max-width: 480px){
+
+.block_categories .text {
+    left: 27.5px;
+}
+}
+@media only screen and(min-width: 993px) and (max-width: 1199px){
+
+.block_categories .text {
+    left: 52.5px;
+}
+}
+@media only screen and (max-width: 367px){
+
+.block_categories .text {
+    left: 11.5px;
+}
+.block_categories .text a {
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+.site-footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+}
+.footerImages .images {
+    height: 140px;
+    width: 100%;
+}
+.list-inline-item{
+width:100%;
+}
+.footerImages .button {
+    width: 67%;
+    top: 34%;
+    left: 16%;
+}
+}
+@media only screen and (min-width: 368px) and (max-width: 522px){
+
+.footerImages .button {
+    width: 46%;
+    top: 27%;
+    left: 14%;
 }
 }

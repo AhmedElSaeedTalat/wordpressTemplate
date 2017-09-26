@@ -43,14 +43,14 @@ get_header(); ?>
 									<!-- <section > -->
 									<div class="row mb-4 mt-4" id="contentBorder">
 
-										<div class="col-lg-5 ">
+										<div class="col-md-5 ">
 											<?php if (has_post_thumbnail()):?>
 												<?php the_post_thumbnail(); ?>
 											<?php else :?>
 												<img src="<?php echo get_template_directory_uri().'/images/3.jpg' ;?>" alt="" class="img">
 											<?php endif;?>
 									</div><!-- col-5 -->	
-									<div class="col-lg-7 ">
+									<div class="col-md-7 ">
 										<div id="content1">
 											<div class="category">
 												<?php the_archive_title() ;?>

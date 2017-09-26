@@ -139,7 +139,7 @@
 										if(!empty($items_menu->post_title)){
 											echo "<span>".humescores_get_svg(['icon'=>$items_menu->post_title])."</span>";
 										}
-											echo  $items_menu->post_title;
+											echo "<span class='hidden-sm-down'>". $items_menu->post_title."</span>";
 
 										
 												?>

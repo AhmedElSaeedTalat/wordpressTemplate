@@ -44,7 +44,7 @@ get_header(); ?>
 
 									<!-- <section > -->
 									
-										<div class="col-lg-6 ">
+										<div class="col-md-6 ">
 											<?php if (has_post_thumbnail()):?>
 												<?php the_post_thumbnail(); ?>
 											<?php else :?>

@@ -91,7 +91,7 @@
 									<?php echo humescores_get_svg(['icon'=> 'menu']);?>
 									<?php echo humescores_get_svg(['icon'=> 'share2']);?>
 								</div>
-								<div class="col-5 col-lg-2  d-flex justify-content-center" id="headerMenuContent">
+								<div class="col-5 col-sm-7 col-lg-2  d-flex justify-content-center" id="headerMenuContent">
 								<div class="smallMenuSocialWrapper"><span class="smallMenuSocial">	<?php get_sidebar('menu');?></span></div>
 								</div>
 							<div class="col-8 hidden-md-down d-flex justify-content-center" >
@@ -107,7 +107,7 @@
 									?>
 								</nav>
 							</div>
-							<div class="col-2 d-flex align-items-center ">
+							<div class="col-3 col-sm-2 d-flex align-items-center adjustIcons">
 								<div class="shopping-bag pr-3">
 									<?php echo humescores_get_svg(['icon' => 'shopping-bag']) ;?>
 								</div>
