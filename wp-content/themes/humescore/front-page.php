@@ -53,7 +53,50 @@ echo do_shortcode('[smartslider3 slider=2]');
 						</div>
 					</div>
 					<div class="row">
-						<?php get_sidebar("popular");?>
+						<div class="col-12">
+							<div class="row">
+								<?php 
+						$args = array(
+								  'posts_per_page'  => 4, 
+								  'meta_query'		=> array(
+								  	'key' =>'wpb_post_views_count'
+								  ),
+								   
+								);
+								$myposts = new WP_Query( $args );
+								if ($myposts->have_posts()) {
+								  while ($myposts->have_posts()) {
+								    $myposts->the_post(); ?>
+								
+								<div class="col-md-6 col-lg-3 mb-4">
+									<div class="row">
+										<div class="col-4">
+											<?php if (has_post_thumbnail()):?>
+												<?php the_post_thumbnail(); ?>
+										<?php else :?>
+											<img src="<?php echo get_template_directory_uri().'/images/3.jpg' ;?>" alt="" class="img">
+										<?php endif;?>	
+										</div>
+										<div class="col-8">
+											<div class="title">
+												<a href="<?php  echo get_permalink()?>"><?php the_title();?></a>
+											</div>
+											<div class="date">
+												<?php the_date() ;?>
+											</div>
+										</div>
+									</div>
+											
+										
+									
+								</div>
+							<?php 
+						}
+					}
+						?>
+							</div>
+						</div>
+						
 					</div>					
 				</div><!-- container -->
 			</div><!-- frontPage -->
