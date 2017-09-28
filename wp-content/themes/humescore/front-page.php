@@ -20,7 +20,7 @@ get_header(); ?>
 echo do_shortcode('[smartslider3 slider=2]');
 ?>
 	
-			<div class="frontPage-content mt-4">
+			<div class="frontPage-content">
 				<div class="container borderCategories">
 					<div class="row">
 						<div class="col-12">
@@ -70,19 +70,19 @@ echo do_shortcode('[smartslider3 slider=2]');
 								
 								<div class="col-md-6 col-lg-3 mb-4">
 									<div class="row">
-										<div class="col-4">
+										<div class="col-4 pr-0">
 											<?php if (has_post_thumbnail()):?>
-												<?php the_post_thumbnail(); ?>
+												<a href="<?php  echo get_permalink()?>"><?php the_post_thumbnail('popular'); ?></a>
 										<?php else :?>
-											<img src="<?php echo get_template_directory_uri().'/images/3.jpg' ;?>" alt="" class="img">
-										<?php endif;?>	
+											<a href="<?php  echo get_permalink()?>">	<img src="<?php echo get_template_directory_uri().'/images/3.jpg' ;?>" alt="" class="img">
+										<?php endif;?>	</a>
 										</div>
-										<div class="col-8">
+										<div class="col-8 ">
 											<div class="title">
 												<a href="<?php  echo get_permalink()?>"><?php the_title();?></a>
 											</div>
 											<div class="date">
-												<?php the_date() ;?>
+												<?php echo  get_the_date() ;?>
 											</div>
 										</div>
 									</div>
@@ -128,7 +128,7 @@ echo do_shortcode('[smartslider3 slider=2]');
 													if(has_post_thumbnail()):?>
 														<a href="<?php echo get_permalink();?>"><?php the_post_thumbnail('thumbnails1');?></a>
 													<?php else:?>
-														<img src='<?php echo get_template_directory_uri() . "/images/tvl.jpg" ?>' alt="">
+													<a href="<?php echo get_permalink();?>">	<img src='<?php echo get_template_directory_uri() . "/images/tvl.jpg" ?>' alt=""></a>
 													<?php endif ;?>
 												</div>
 												<div class="category ">	
@@ -165,7 +165,7 @@ echo do_shortcode('[smartslider3 slider=2]');
 													<div class="entry-meta">
 														<?php humescore_posted_on(); ?>
 														<span class="commentsNumber">	
-															<span>-</span><?php comments_number("no comments") ;?>
+															<span>-</span><a href="<?php echo get_permalink()?>/#comments"><?php comments_number("no comments") ;?></a>
 														</span>
 													</div><!-- .entry-meta -->
 												<?php endif;?>
@@ -226,7 +226,7 @@ echo do_shortcode('[smartslider3 slider=2]');
 											<div class="entry-meta">
 												<?php humescore_posted_on(); ?>
 													<span class="commentsNumber">	
-														<span>-</span><?php comments_number("no comments") ;?>
+														<span>-</span><a href="<?php echo get_permalink()?>/#comments"><?php comments_number("no comments") ;?></a>
 													</span>
 												</div><!-- .entry-meta -->
 											

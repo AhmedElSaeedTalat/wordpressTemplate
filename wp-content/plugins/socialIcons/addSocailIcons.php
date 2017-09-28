@@ -43,7 +43,7 @@ class social_Icons extends WP_Widget{
 	public function widget($args,$instance){
 
 		;?>
-		<div class="socailIcon">
+		<div class="socailIcon widget">
 			<h2 class="stay_connected">STAY CONNECTED</h2>
 			<div class="social">
 				<?php if(strpos($instance['facebook'],"facebook") !== false):?>

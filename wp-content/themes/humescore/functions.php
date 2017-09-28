@@ -43,7 +43,8 @@ if ( ! function_exists( 'humescore_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 		add_image_size("thumbnails",1180,700,true);
 		add_image_size("thumbnails1",600,500,true);
-
+		add_image_size("popular",450,450,true);
+			add_image_size("page",300,300,true);
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'humescore' ),
@@ -197,6 +198,8 @@ function humescore_scripts() {
   	 wp_enqueue_style( 'humescore-bootstrap', get_template_directory_uri() . '/sass/bootstrap.min.css' );
 	 wp_enqueue_style( 'humescore-style', get_stylesheet_uri() );
 	wp_enqueue_script( 'humescore-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	// wp_enqueue_script('humescore-font', get_template_directory_uri().'/sass/	font-awesome-4.7.0/css/font-awesome.css
+// ');
 	wp_enqueue_script('humescore-tether', get_template_directory_uri().'/js/tether.min.js');
 	wp_enqueue_script('humescore-bootstrap', get_template_directory_uri().'/js/bootstrap.min.js');
 	// wp_enqueue_script('humescore-scrollMonitor', get_template_directory_uri().'/scrollMonitor/scrollMonitor.js');

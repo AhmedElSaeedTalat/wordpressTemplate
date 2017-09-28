@@ -133,13 +133,16 @@ blockquote:after {
 	.header_account{
 			height:35px;
 			span{
-				padding-right:5px;
-				.icon{
-					fill: white;
-					height: 14px;
-					width: 14px;
-				}
+				    padding-right: 5px;
+				   
+
 			}
+			.tags{
+				 	display: flex;
+				    align-items: center;
+					color: white;
+				    font-size: 12px;
+				}
 		.mainStyleText1 {
 				font-size:14px;
 				color:white;
@@ -153,13 +156,8 @@ blockquote:after {
 }
 	.header_logo{
 		background:white;
-		min-height: 160px;
 			.header_logo_style{
-				height:100%;
-				.custom-logo{
-					    max-height: 160px !important;
-    					max-width: 160px !important;
-				}
+				     padding: 60px 0px 34px !important;
 			}
 			.headerRowAdjustment{
 				    height: 160px;
@@ -189,25 +187,32 @@ blockquote:after {
 					a:hover{
 						color:#777;
 					}
+					
 					.menu-item{
-					    padding-right: 3rem;
+					    padding-right: 2rem;
 					    position:relative;
 				
+						line-height:58px !important;
+					
 					
 					.sub-menu{
 						list-style:none;
-					    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.08);
+					    // box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.08);
 					    min-height: 40px;
 					    padding-top: 1rem;
 					    padding-left: 1rem;
 					    padding-bottom: 1rem;
 					    position: absolute;
-					    top: 21px;
-					    left: 13%;
+				        top: 58px;
+   						left: 0%;
 					    width: 13rem;
 					    background-color: white;
 					    display:none;
 					    z-index:125;
+				        border-width: 1px 1px 0px 1px;
+					    .menu-item{
+					    	line-height:20px !important;
+					    }
 						 .icon-angle-down{
 							display:none;
 						}
@@ -240,9 +245,8 @@ blockquote:after {
 			} //menu
 	#headerMenu{
 		align-items:center;
-		height:45px;
 		background:white;
-		box-shadow: 0 1px 0px 0 rgba(0,0,0,0.2);
+        border-bottom: 1px solid #f0f0f0;
 		// overflow:hidden;
 		#secondary{
 			margin-top:0;
@@ -257,12 +261,9 @@ blockquote:after {
 
 	
 	.searchIcon{
-		.icon {
-			height: 15px;
-		    cursor: pointer;
-		    width: 15px;
-		    float: right;
-		}
+			font-size:20px;
+			cursor:pointer;
+
 	}
 	#search_section{
 		position:fixed;
@@ -274,7 +275,7 @@ blockquote:after {
 		display:none;
 		#secondary {
 		    width: 65%;
-		    margin: 323px auto;
+		    margin: 24% auto;
 		    label{
 		    	width:100%;
 		    }
@@ -295,9 +296,15 @@ blockquote:after {
 }
 .cls{
 	    position: absolute;
-	    top: 282px;
-	    right: 89px;
-	   
+	   	top: 38%;
+		 right: 10%;
+		}
+	   @media only screen and (max-width: 1400px){
+	   	.cls{
+		    position: absolute;
+		   	top: 45%;
+			 right: 7%;
+	   }
 
 }
 	.icon{
@@ -308,7 +315,9 @@ blockquote:after {
 		webkit-transform: rotate(-90deg)
 	}
 	}
-
+.n2-ss-slide-background-mask{
+	width:100% !important
+}
 /*-------------------------------------------------
 	menu Mobile
 --------------------------------------------------*/
@@ -398,10 +407,7 @@ blockquote:after {
 }
 }
 .shopping-bag{
-	.icon{
-		height:15px;
-		width:15px;
-	}
+	font-size: 20px;
 }
 .firstLvl{
 	width: 100%;
@@ -458,7 +464,7 @@ blockquote:after {
 .menuSmall{
 	display:flex;
 	align-items:center;
-	
+    padding-bottom: 3%;
 	.icon{
 		height:20px;
 		width:20px;
@@ -549,7 +555,11 @@ blockquote:after {
 		opacity:1;
 	}
 }
-
+div#n2-ss-2 .n2-ss-layer .n2-font-d6f819def66be3d5790d4988652dbcce-paragraph{
+	width: 559px;
+    text-transform: none;
+    text-align: center !important;
+}
 /*------------------------------------------------------------
 Single Posts
 -------------------------------------------------------------*/
@@ -638,7 +648,7 @@ Single Posts
    					text-transform: uppercase;
    					font-size:12px;
    					padding-bottom: 1rem;
-   					border-bottom: 1px solid #dcdcdc;
+   					border-bottom: 1px solid $borderColor;
                     margin-bottom: 3rem;
    					a{
    						text-decoration:none;
@@ -654,7 +664,12 @@ Single Posts
 			}
 			#siteDesc{
 				font-size:18px;
+				line-height:19px;
+				letter-spacing:1px;
 				a{
+					font-size:18px;
+					line-height:19px;
+					letter-spacing:1px;
 					color:#333333;
 					text-transform:uppercase;
 					text-decoration:none;
@@ -730,13 +745,13 @@ Single Posts
 .border{
 	    width: 100%;
 	    margin: 0 auto;
-	    border: 1px solid #dcdcdc;
+	    border: 1px solid $borderColor;
 	    padding: 9px;
 	    .iconsWrapper{
 	    	display: flex;
    			 width: 30%;
 	    a{
-	    	width:15%;
+	    	width:20%;
 	    }
 	    }
 	    .icon{
@@ -766,18 +781,19 @@ Single Posts
 
 	}
 	.title{
-		   min-height: 77px;
 		a{
 			color:#33363a;
 			text-decoration:none;
-			    font-size: 15px;
-			    text-transform:lowercase;
+		    font-size: 16px;
+		    line-height:17px;
+			text-transform:capitalize;
 			
 		}
 			margin-top:1rem;
 		}
 	.date{
 		font-size:12px;
+		line-height:20px;
 		color:#999999 ;
 		text-transform:uppercase;
 	}
@@ -810,6 +826,9 @@ Single Posts
 	.comment-reply-title{
 		    padding-top: 1rem;
 		 	padding-left: 2rem;
+		 	font-size:18px;
+		 	line-height:19px;
+		 	letter-spacing:1px;
 
 	}
 	.form-submit{
@@ -827,6 +846,8 @@ Single Posts
 		padding-left:2rem;
 		a{
 			color:#333333;
+			font-size:14px;
+			line-height:23px;
 		}
 	}
 
@@ -913,9 +934,19 @@ Footer
 		}
 	}
 	.title{
-		font-size:14px;
+		font-size:16px;
+		line-height:17px;
 	   	padding-left: 22px;
+	   	p{
+	   		font-size:12px;
+	   		line-height:20px;
+	   	}
 	}
+}
+.the_style{
+	font-size:13px;
+	letter-spacing:1px;
+	line-height:14px;
 }
 .footerImages{
 	position:relative;
@@ -961,13 +992,23 @@ Footer
 }
 .wrapperImageSideBar{
 	img{
-		    height: 200px;
+		    height: auto;
    			 width: 100%;
 	}
 }
 .single{
 	#allContent{
 		padding-top:0rem;
+		.category{
+			padding-top:60px;
+		}
+		.entry-header{
+			    margin-bottom: 45px;
+		}
+		.entry-meta{
+			margin-top:30px;
+			padding-bottom:40px;
+		}
 	.content1{
 		padding:0rem;
 		.thumbnailWrapper2{
@@ -1000,26 +1041,37 @@ Footer
 	}
 #secondary{
 	margin-top:0rem;
-	width:90%;
+	width: 100%;
+    padding-left: 60px;
 	.styletext{
 		font-size:13px;
+		line-height:14px;
+		letter-spacing:1px;
+		text-align:center;
 		font-weight:bold;
 		color:#666666;
 	    padding-bottom: 0.4rem;
-    	border-bottom: 1px solid #d2cece;
+    	border-bottom: 1px solid $borderColor;
 	}
 	.text_page{
 		margin-top:1rem;
+		p{
+			font-size:14px;
+			line-height:23px;
+			color:#333333;
+		}
 	}
 	.socailIcon{
 		margin-top:2rem;
 	}
 	.stay_connected{
 		font-size:13px;
+		line-height:14px;
+		letter-spacing:1px;
 		font-weight:bold;
 		color:#666666;
 	    padding-bottom: 0.4rem;
-    	border-bottom: 1px solid #d2cece;
+    	border-bottom: 1px solid $borderColor;
     	text-align:center;
 	}
 }
@@ -1027,7 +1079,10 @@ Footer
 	color:white;
 	margin-top:2rem;
 }
-
+.widget {
+    margin: 0 0 4em;
+    overflow: hidden;
+}
 /*------------------------------------------------------------------------------------------
 custom widgets
 -------------------------------------------------------------------------------------------*/
@@ -1047,6 +1102,7 @@ custom widgets
     justify-content: center;
     align-items: center;
     width: 100%;
+
     &:hover{
     	background:#dd5252;
     	.icon{
@@ -1121,23 +1177,26 @@ custom widgets
 	align-items:center;
 	#facebook{
 		padding-right:0.7rem;
-	.icon{
-		height: 15px;
-		width:15px;
-	}
+	 	font-size:16px;
+		color:#333;
+		&:hover{
+			color:#666;
+		}
 }
 #twitter{
 	padding-right:0.7rem;
-	.icon{
-		height: 15px;
-		width:15px;
-	}
+	font-size:16px;
+	color:#333;
+		&:hover{
+			color:#666;
+		}
 }
 #instagram{
-	.icon{
-		height: 15px;
-		width:15px;
-	}
+	font-size:16px;
+	color:#333;
+		&:hover{
+			color:#666;
+		}
 }
 }
 .popular-posts{
@@ -1147,35 +1206,54 @@ custom widgets
 		font-weight:bold;
 		color:#666666;
 		padding-bottom: 0.4rem;
-    	border-bottom: 1px solid #d2cece;
+    	border-bottom: 1px solid $borderColor;
 		text-align:center;
 	}
 	.wpp-post-title{
-		font-size:11px;
-		color:#33363a;
-		text-decoration:none;
+			font-size:16px;
+			line-height:17px;
+			color:#33363a;
+		    width: 67% !important;
+    		padding-left: 3%;
 	}
 	.wpp-list{
 		padding:0 !important;
 		li{
 			margin-bottom:1rem;
+			list-style:none;
+			a{
+				display:block;
+				float:left;
+			    width: 30%;
+
+			}
+			a :nth(2){
+			
+			}
 		}
 	}
 	
 	.wpp-date{
-		font-size:10px;
+		font-size:12px;
+		line-height:20px;
+		color:   rgb(51, 51, 51) !important;
+		font-weight:500; 
+		 width: 67% !important;
+		padding-left: 3%;
 	}
 	.wpp-thumbnail{
-		height:63px;
+		width:100%;
 	}
 }
 .widget_categories{
 	.widget-title{
 		font-size:13px;
+		line-height:14px;
+		letter-spacing:1px;
 		font-weight:bold;
 		color:#666666;
 		padding-bottom: 0.4rem;
-    	border-bottom: 1px solid #d2cece;
+    	border-bottom: 1px solid $borderColor;
 		text-align:center;
 	}
 	ul{
@@ -1184,8 +1262,12 @@ custom widgets
 		li{
 		    display: flex;
     		justify-content: space-between;
+		    padding-bottom: 10px;
+    		margin-bottom: 10px;
+    		color: #818181;
 		a{
-			font-size:13px;
+			font-size:14px;
+			line-height:23px;
 			color:#33363a;
 			text-decoration:none;
 		    width: 119px;
@@ -1199,11 +1281,18 @@ custom widgets
 .subscription{
 	.text{
 		font-size:13px;
+		line-height:14px;
+		letter-spacing:1px;
 		font-weight:bold;
 		color:#666666;
 		padding-bottom: 0.4rem;
-    	border-bottom: 1px solid #d2cece;
+    	border-bottom: 1px solid $borderColor;
 		text-align:center;
+	}
+	.subscriptionText2{
+		font-size:14px;
+		line-height:23px;
+		color:#333333;
 	}
 	.input{
 		    width: 100%;
@@ -1223,6 +1312,10 @@ custom widgets
 			background:#3c3a3a;
 		}
 	}
+	.btn{
+		border-radius:0;
+		cursor:pointer;
+	}
 }
 .wpp-comments {
     font-size: 10px;
@@ -1237,7 +1330,7 @@ front-Page
 	position:relative;
 	.text{
 	    position: absolute;
-	    top: 58.5px;
+	    top: 78px;
 	    width: 98px;
 	    left: 78.5px;
 	    text-align: center;
@@ -1257,17 +1350,21 @@ front-Page
 		    height: 100%;
 		    width: 100%;
 		    background: rgba(0,0,0,0.2);
+		    transition:all .5s;
+		    &:hover{
+		    	 background: rgba(0,0,0,0.1);
+		    }
 	}
 }
 .borderCategories{
 	padding-bottom: 2rem;
-    border-bottom: 1px solid $borderColor;
+    border-bottom: 1px solid #f0f0f0;
 }
 .frontPage-content{
+			margin-top:40px;
 
 	#secondary{
 		width: 100%;
-		margin-top:0;
 		.popular-posts{
 		.wpp-list{
 			    display: flex;
@@ -1295,47 +1392,84 @@ front-Page
 	}
 }
 #fontInfo{
+
 	font-size:18px;
-	color:#888;
+	color:#333333;
 	padding-bottom:0.9rem;
+	letter-spacing:1px;
 }
 .postsFrontPage{
 	margin-top:4rem;
 	.img{
 		img{
 			width:100% !important;
+			opacity:0.9;
+			transition:all 0.9s;
+			&:hover{
+				opacity:1;
+			}
+		}
+	}
+	.entry-meta{
+		padding-bottom:30px !important;
+		justify-content: start !important;
+		font-size:12px !important;
+		line-height:20px !important;
+		letter-spacing:1px !important;
+		border-bottom: 1px solid $borderColor !important;
+		a{
+			font-size:12px !important;
+			line-height:20px !important;
+			letter-spacing:1px !important;
 		}
 	}
 	.category{
 			margin-top:1rem;
+			margin-bottom:15px;
 
 		.cat-links{
-			font-size: 14px;
+			a{
+				font-size: 12px;
+			line-height:20px;
+			letter-spacing:1px;
+			}
+			
 		  
 	}
 
 	}
 }
 .firstPostTitle{
+	margin-bottom:25px;
 	a{
 		font-size:24px;
+		line-height:26px;
+		letter-spacing:2px;
 		text-decoration:none;
-		color:#666;
+		color:#000000;
+		display:inline-block;
 		&:hover{
-		color:#888;
+		opacity: .8;
 		}
 	}
 }
 .firstPostContent{
 	margin-bottom: 0.5rem;
-}
-.firstPostLink{
 	font-size:14px;
-	text-transform:uppercase;
-	color:#666;
-	transition: all .5s ;
-	padding-bottom:2px;
-	border-bottom:1px solid transparent;
+	line-height:23px;
+	color:#333333;
+	margin-bottom:1.25rem
+}
+.firstPostLink {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #666;
+    transition: all .5s;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+    display: inline-block;
+	margin-bottom:4rem;
+
 
 	&:hover{
 		text-decoration:none;
@@ -1345,6 +1479,9 @@ front-Page
 	}
 }
 .otherPosts{
+	.firstPostLink{
+		margin-bottom:4rem !important;
+	}
 	.firstPostContent{
 
 	}
@@ -1352,16 +1489,22 @@ front-Page
 		img{
 			width:100%;
 			height:230px;
+			opacity:0.9;
+			&:hover{
+				opacity:1;
+			}
 		}
 	
 	}
 	.postTitles{
 		a{
-		font-size:18px;
+		font-size:24px;
+		letter-spacing:2px;
+		line-height:26px;
 		text-decoration:none;
-		color:#666;
+		color:#000;
 		&:hover {
-			color:#888;
+			opacity:0.8;
 		}
 	}
 	}
@@ -1371,23 +1514,27 @@ front-Page
 	}
 	.contentOfPosts{
 		p{
-			height:150px;
+			    padding-bottom: 1.25rem;
+			    min-height:181px;
 		}
 	}
 	.entry-meta{
 				    display: flex;
-	    			justify-content: center;
+	    			justify-content: start;
 	    			color: #7f7f7f;
    					text-transform: uppercase;
-   					font-size:10px;
-   					padding-bottom: 1rem;
-   					border-bottom: 1px solid #dcdcdc;
+   					font-size:10px !important;
+   					line-height:20px;
+   					letter-spacing:1px;
+   					padding-bottom: 30px;
+   					border-bottom: 1px solid $borderColor;
                     margin-bottom: 3rem;
-                    height: 44px;
    					a{
    						text-decoration:none;
    						color:#7f7f7f;
-   						font-size:10px;
+   						font-size:10px !important;
+   						line-height:20px;
+   						letter-spacing:1px;
    					}
    					span{
    						padding-right:5px;
@@ -1401,7 +1548,8 @@ front-Page
 .postsFrontPage{
 	#secondary {
     margin-top: 0;
-    width: 90%;
+    width: 100%;
+    padding-left:60px;
 
 }
 }
@@ -1416,18 +1564,28 @@ Popuiar Posts
 #popPost{
 	img{
 		width:100%;
-		height:112px;
+		height:auto;
 	}
 	.title{
 		
 		a{
 			font-size:14px;
-			color:#000;
+			color:#000000;
 			text-decoration:none;
-		}
+			letter-spacing:1px;
+			line-height: 16px;
+		    display: inline-block;
+		    &:hover{
+		    	opacity:0.8;
+		    }
+					}
 	}
 	.date{
 		font-size:11px;
+		color:#333333;
+		line-height:18px;
+		display:inline-block;
+
 	}
 }
 /*--------------------------------------------------------------------------------------------
@@ -1445,11 +1603,20 @@ arrowUP
     justify-content:center;
     align-items:center;
     opacity:0;
+    cursor:pointer;
+    &:hover{
+    	background:rgba(221,82,82,0.8);
+    }
     .icon{
 		height:19px;
 		fill:white;
     }
 
+}
+@media only screen and( min-width:1500px){
+	.arrowUP{
+		top: 1000px;
+	}
 }
 .animateArow{
 	animation:animateArow 0.5s;
@@ -1458,11 +1625,12 @@ arrowUP
 @keyframes animateArow{
 	0%{
 		opacity:1;
-		top:800px;
+		top:100%;
 	}
 	100%{
 		opacity:1;
-		top:600px;
+		top:90%;
+
 	}
 }
 .animateArow1{
@@ -1472,33 +1640,68 @@ arrowUP
 }
 @keyframes animateArow1{
 	0%{
-		top:600px;
+		top:90%;
 	}
 	50%{
-		top:650px;
+		top:60px;
 	}
-	90%{
-		top:700px;
+	
+	100%{
+		top:100%;
 		opacity:0;
+	}
+}
+@media only screen and (min-width: 1500px){
+	.animateArow{
+	animation:animateArow 0.5s;
+	animation-fill-mode:forwards;
+}
+@keyframes animateArow{
+	0%{
+		opacity:1;
+		top:100%;
 	}
 	100%{
-		top:800px;
+		opacity:1;
+		top:90%;
+	}
+}
+.animateArow1{
+	animation:animateArow1 5s;
+	animation-fill-mode:forwards;
+	animation-duration:5s;
+}
+@keyframes animateArow1{
+	0%{
+		top:20%;
+	}
+	50%{
+		top:%60;
+	}
+	
+	100%{
+		top:100%;
 		opacity:0;
 	}
+}
 }
 .navigation pagination{
 	text-align:center;
 }
 .page-numbers{
-	color:#666;
+	color:#33363a;
 	text-decoration:none;
+	font-size:14px;
+	line-height:23px;
+	padding:0 5px;
+	text-transform:uppercase;
 	&:hover{
 		text-decoration:none;
 		color:#888;
 	}
 }
 .current{
-	color:#888;
+	color:#a2a2a2;
 }
 .next:hover{
 	border-bottom:none;
@@ -1666,7 +1869,7 @@ navigationLinks
 		justify-content:start
 	}
 	#contentBorder{
-		    border-bottom: 1px solid #dcdcdc;
+		    border-bottom: 1px solid $borderColor;
 	}
 }
 #content1{
@@ -1827,6 +2030,12 @@ navigationLinks
 /*--------------------------------------------------------------------------------------------
 	Search.php
 -------------------------------------------------------------------------------------------*/
+.comment-form-comment label {
+    padding-left: 2rem;
+ 	font-size:14px;
+ 	line-height:23px;
+ 	font-weight:bold;  
+}
 	.searchHeader{
 		margin-top:2rem;
 		.page-title{
@@ -1978,7 +2187,6 @@ mediaqueries
 		margin-top: 3rem;
 }
 	.wrapperImageSideBar img {
-	    height: 396px;
 	    width: 100%;
 }
 	#secondary .stay_connected{
@@ -2267,6 +2475,17 @@ justify-content:center !important;
 	justify-content:center
 }
 }
+.form-submit .submit {
+
+    margin-left: 2.2rem;
+  	text-transform:uppercase;
+  	font-size:13px;
+  	cursor:pointer;
+  	transition:all 0.5s;
+  	&:hover{
+  		opacity:0.8;
+  	}
+}
 @media only screen and (max-width: $xs){
 	.border img {
     width: 105px;
@@ -2305,11 +2524,7 @@ justify-content:center !important;
     height: 41px;
     width: 90%;
 }
-.form-submit .submit {
 
-    margin-left: 1.2rem;
-  
-}
 .comment-notes{
 
     text-indent: -32px;
@@ -2321,10 +2536,13 @@ justify-content:center !important;
 }
 .comment-form-comment label {
     padding-left: 1rem;
+
 }
 }
 /*-------------
 */
+
+
 @media only screen and (max-width: $lg){
 	.searchSmMenu .search-field{
 		width:100%;

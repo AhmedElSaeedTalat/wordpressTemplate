@@ -21,7 +21,7 @@
 			<div class="row mt-5">
 				<div class="col-12 col-lg-4  mb-5">
 					<div class="site-info">
-							<p class="text-uppercase mb-4">Minimalo</p>
+							<p class="text-uppercase mb-4 the_style">Minimalo</p>
 						<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'humescore' ) ); ?>"><?php
 							/* translators: %s: CMS name, i.e. WordPress. */
 							printf( esc_html__( 'Minimalo – is a minimal blog WordPress theme for creative websites. With four different post layouts, support for WordPress post formats, and support WooCommerce plugin, you can get your blog and shop running in minutes. %s', 'humescore' ), 'WordPress' );
@@ -29,7 +29,7 @@
 					</div><!-- .site-info -->
 				</div><!-- col -->
 				<div class="col-12 col-lg-4  mb-5">
-					<p class="text-uppercase mb-4">browse tags</p>
+					<p class="text-uppercase mb-4 the_style">browse tags</p>
 					<div class="row">
 						
 
@@ -57,7 +57,7 @@
 						];
 						$arg = get_posts($argument);	
 						?>
-					<p class="text-uppercase mb-4">latest posts</p>
+					<p class="text-uppercase mb-4 the_style">latest posts</p>
 					
 						<?php
 							foreach ($arg as $key => $value) :

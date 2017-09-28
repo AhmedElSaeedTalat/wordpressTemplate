@@ -21,7 +21,8 @@ class add_page extends WP_Widget{
 			$image= get_attached_media( 'image',$page->ID  ) ;
 			$src = "";
 			foreach ($image as $key => $get_src) {
-				$src= $get_src->guid;
+				$src= $get_src->ID;
+
 			}
 			
 
@@ -29,9 +30,10 @@ class add_page extends WP_Widget{
 		}
 		
 	?>
-	<p class="styletext"><?php echo $title ;?></p>
+	<section class="widget">
+		<p class="styletext"><?php echo $title ;?></p>
 	<div class="wrapperImageSideBar">
-			<img src="<?php echo $src ;?>" alt="">
+			<?php echo wp_get_attachment_image($src,$size='page') ;?>
 	</div>
 	<div class="text_page">
 		<?php
@@ -42,6 +44,8 @@ class add_page extends WP_Widget{
 				<p><?php echo $string_Page."..."; ?></p>
 				
 	</div>
+	</section>
+	
 	<?php
 	}
 }

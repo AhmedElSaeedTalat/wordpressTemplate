@@ -42,17 +42,17 @@ class main_icons extends WP_Widget{
 		;?>
 		<div class="Main_Icons">
 			<?php if(strpos($instance['facebook'],"facebook") !== false):?>
-				<a href="<?php echo "http://". $instance['facebook'];?>"><span id="facebook"> <?php echo humescores_get_svg(['icon'=>'facebook']);?></span></a>
+				<a href="<?php echo "http://". $instance['facebook'];?>"><span id="facebook"><i class="fa fa-facebook" aria-hidden="true"></i>
+</span></a>
 			<?php endif ;?>
 
 			<?php if(strpos($instance['twitter'],"twitter") !== false ):?>
-				<a href="<?php echo $instance['twitter'];?>"><span id="twitter"><?php echo humescores_get_svg(['icon'=>'twitter']);
-				?></span></a>
+				<a href="<?php echo $instance['twitter'];?>"><span id="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a>
 			<?php endif;?>
 
 			<?php if(strpos($instance['instagram'],"instagram") !== false ):?>
-				<a href="<?php echo $instance['instagram'];?>"><span id="instagram"><?php echo humescores_get_svg(['icon'=>'instagram']);
-				?></span></a>
+				<a href="<?php echo $instance['instagram'];?>"><span id="instagram"><i class="fa fa-instagram" aria-hidden="true"></i>
+</span></a>
 			<?php endif;?>
 		</div>
 				
