@@ -857,7 +857,11 @@ Footer
       .single #allContent .content1 .thumbnailWrapper2 img {
         width: 100%; }
     .single #allContent .content1 .border {
-      width: 100%; }
+      width: 100%;
+      margin-top: 70px;
+      padding: 20px 5px; }
+      .single #allContent .content1 .border img {
+        width: 100%; }
   .single #allContent .post-45 {
     display: flex;
     justify-content: center; }

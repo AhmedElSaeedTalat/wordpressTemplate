@@ -154,7 +154,7 @@
 					</div>
 
 				</div>	<!-- col -->
-				<div class="col-12 mt-5 blaidth">
+				<div class="col-12  blaidth">
 					<div class="border">
 						<div class="row">
 							<div class="hidden-sm-down col-md-4 col-lg-3 d-flex justify-content-center">
