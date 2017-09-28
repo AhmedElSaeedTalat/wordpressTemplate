@@ -582,7 +582,7 @@ Single Posts
 
 .share {
   width: 6%;
-  margin: 0 auto; }
+  margin: 5% auto; }
   .share h2 {
     padding-bottom: 1rem;
     border-bottom: 1px solid;
@@ -655,11 +655,9 @@ Single Posts
     width: 100%; }
     .relatedPosts .relatedPosts_blog img {
       width: 100% !important; }
-  .relatedPosts .image {
-    height: 120px; }
-    .relatedPosts .image img {
-      height: 100%;
-      width: 100%; }
+  .relatedPosts .image img {
+    height: auto;
+    width: 100%; }
   .relatedPosts .title {
     margin-top: 1rem; }
     .relatedPosts .title a {
@@ -848,7 +846,7 @@ Footer
   .single #allContent .entry-header {
     margin-bottom: 45px; }
   .single #allContent .entry-meta {
-    margin-top: 30px;
+    margin-top: 8%;
     padding-bottom: 40px; }
   .single #allContent .content1 {
     padding: 0rem; }
@@ -1487,7 +1485,7 @@ navigationLinks
   position: fixed;
   top: 48%;
   right: 0;
-  width: 300px;
+  width: 137px;
   height: 53px;
   z-index: 100000000000000000000000000000; }
   .all1:hover .next-link {
@@ -1790,12 +1788,6 @@ mediaqueries
     top: 27%;
     left: 28%; } }
 
-@media only screen and (max-width: 576px) {
-  .footerImages .button {
-    width: 66%;
-    top: 27%;
-    left: 16%; } }
-
 /* ------------------
 	sidebar mediaqueries
 -----------------------*/
@@ -1812,16 +1804,25 @@ mediaqueries
     margin-top: 2rem; }
   .popular-posts {
     margin-top: 3rem; }
-  .popular-posts .wpp-thumbnail {
-    height: 64px;
-    width: 20%; }
+    .popular-posts .wpp-post-title {
+      font-size: 16px;
+      line-height: 17px;
+      color: #33363a;
+      width: 82% !important;
+      padding-left: 3%; }
+    .popular-posts .wpp-list {
+      padding: 0 !important; }
+      .popular-posts .wpp-list li {
+        margin-bottom: 1rem;
+        list-style: none; }
+        .popular-posts .wpp-list li a {
+          display: block;
+          float: left;
+          width: 18%; }
   .popular-posts .wpp-list li {
     margin-bottom: 1rem; }
   #secondary .socailIcon {
     margin-top: 4rem; }
-  .popular-posts .wpp-date {
-    font-size: 12px;
-    padding-left: 8px; }
   .popular-posts .wpp-post-title {
     font-size: 16px;
     color: #33363a;
@@ -1930,9 +1931,6 @@ mediaqueries
     margin-left: 4px; }
   #secondary {
     margin-top: 0rem;
-    width: 100%; }
-  .relatedPosts .image {
-    height: 460px;
     width: 100%; }
   .relatedPosts .date {
     padding-bottom: 4%; }
@@ -2061,6 +2059,11 @@ mediaqueries
     width: 100%; } }
 
 @media only screen and (max-width: 1200px) {
+  .RelatedPostHeaderStyle {
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid;
+    width: 26%; }
   .header_account {
     justify-content: center; }
   #changeDirectionDiv {
@@ -2109,3 +2112,80 @@ mediaqueries
     width: 46%;
     top: 27%;
     left: 14%; } }
+
+@media only screen and (max-width: 768px) {
+  .RelatedPostHeaderStyle {
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid;
+    width: 31%; }
+  .comment-reply-title {
+    padding-top: 1rem;
+    padding-left: 1.5rem;
+    font-size: 18px;
+    line-height: 19px;
+    letter-spacing: 1px; }
+  .logged-in-as {
+    padding-left: 1.5rem; }
+  .form-submit .submit {
+    margin-left: 1.5rem;
+    text-transform: uppercase;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.5s; }
+  .comment-form-comment label {
+    padding-left: 1.5rem;
+    font-size: 14px;
+    line-height: 23px;
+    font-weight: bold; } }
+
+@media only screen and (max-width: 576px) {
+  .comment-reply-title {
+    padding-top: 1rem;
+    padding-left: 1.2rem;
+    font-size: 18px;
+    line-height: 19px;
+    letter-spacing: 1px; }
+  .logged-in-as {
+    padding-left: 1.2rem; }
+  .form-submit .submit {
+    margin-left: 1.1rem;
+    text-transform: uppercase;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.5s; }
+  .footerImages .button {
+    width: 66%;
+    top: 27%;
+    left: 16%; }
+  .comment-form-comment label {
+    padding-left: 1.2rem;
+    font-size: 14px;
+    line-height: 23px;
+    font-weight: bold; }
+  .popular-posts {
+    margin-top: 3rem; }
+    .popular-posts .wpp-list {
+      padding: 0 !important; }
+      .popular-posts .wpp-list li {
+        margin-bottom: 1rem;
+        list-style: none; }
+        .popular-posts .wpp-list li a {
+          display: block;
+          float: left;
+          width: 22%; }
+    .popular-posts .wpp-post-title {
+      font-size: 16px;
+      line-height: 17px;
+      color: #33363a;
+      width: 78% !important;
+      padding-left: 3%; }
+  .RelatedPostHeaderStyle {
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid;
+    width: 47%;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    color: #333333; } }
