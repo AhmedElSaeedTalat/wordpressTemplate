@@ -1539,27 +1539,56 @@ navigationLinks
 /*--------------------------------------------------------------------------------------------
 	Categories
 -------------------------------------------------------------------------------------------*/
+.category .site-main {
+  margin-bottom: 45px; }
+
+.category .entry-meta {
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  margin-top: 30px; }
+  .category .entry-meta a {
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 1px; }
+  .category .entry-meta .vcard a:hover {
+    color: #000; }
+  .category .entry-meta .posted-on a:hover {
+    color: #000; }
+  .category .entry-meta .commentsNumber:hover {
+    color: #000; }
+
+.category img {
+  opacity: 0.9; }
+  .category img:hover {
+    opacity: 1; }
+
 #Title {
   margin-top: 5.5rem; }
   #Title .page-title {
     text-transform: capitalize;
     font-size: 36px;
-    color: #333; }
+    color: #333;
+    line-height: 36px; }
 
 .text-Title {
   font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 1px;
   color: #777; }
 
 #posts_categories img {
   width: 100%;
-  height: 286px; }
+  height: auto; }
 
 #posts_categories .entry-meta {
   border: none;
   justify-content: start; }
 
 #posts_categories #contentBorder {
-  border-bottom: 1px solid #f0f0f0; }
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 10px;
+  margin-bottom: 60px; }
 
 #content1 {
   min-height: 196px;
@@ -1567,23 +1596,40 @@ navigationLinks
   #content1 p {
     margin-bottom: 0px; }
   #content1 .category {
-    margin-bottom: 9px;
+    margin-bottom: 15px;
     width: 69px;
-    border-bottom: 1px solid red; }
+    border-bottom: 1px solid red;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    color: #000000; }
   #content1 .title {
-    margin-bottom: 9px; }
+    margin-bottom: 25px; }
     #content1 .title a {
       color: #333;
       text-decoration: none;
-      font-size: 21px; }
+      font-size: 24px;
+      line-height: 26px;
+      letter-spacing: 2px; }
+      #content1 .title a:hover {
+        opacity: 0.8; }
 
 .links {
   height: 90px; }
   .links .linkMore {
     margin-bottom: 23px; }
     .links .linkMore a {
-      color: #777;
-      text-decoration: none; }
+      color: #999999;
+      font-size: 14px;
+      line-height: 23px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s ease; }
+      .links .linkMore a:hover {
+        opacity: .8;
+        border-color: #999; }
 
 .adjust {
   overflow: hidden; }

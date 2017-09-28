@@ -1932,22 +1932,61 @@ navigationLinks
 /*--------------------------------------------------------------------------------------------
 	Categories
 -------------------------------------------------------------------------------------------*/
+.category{
+	.site-main{
+		margin-bottom: 45px;
+	}
+	.entry-meta{
+			font-size:12px;
+			line-height:20px;
+			letter-spacing:1px;
+			margin-top:30px;
+			
+		a{
+			font-size:12px;
+			line-height:20px;
+			letter-spacing:1px;
+			
+		}
+			.vcard a:hover{
+				color:#000;
+}
+			.posted-on{
+				a:hover{
+					color:#000;
+				}
+			}
+			.commentsNumber:hover{
+				color:#000;
+			}
+	}
+	img{
+		opacity:0.9;
+		&:hover{
+			opacity:1;
+		}
+	}
+}
+
 #Title{
 	margin-top:5.5rem;
 	.page-title{
 		text-transform:capitalize;
 		font-size:36px;
 		color:#333;
+		line-height:36px;
 	}
 }
 .text-Title{
 	font-size:12px;
+	line-height:12px;
+	letter-spacing:1px;
 	color:#777;
 }
 #posts_categories{
 	img{
 		width:100%;
-		height:286px;
+		height:auto;
 	}
 	.entry-meta{
 		border:none;
@@ -1955,6 +1994,8 @@ navigationLinks
 	}
 	#contentBorder{
 		    border-bottom: 1px solid $borderColor;
+		    padding-bottom:10px;
+		    margin-bottom: 60px;
 	}
 }
 #content1{
@@ -1964,16 +2005,26 @@ navigationLinks
 		margin-bottom:0px;
 	}
 	.category{
-		    margin-bottom: 9px;
+		    margin-bottom: 15px;
 		    width: 69px;
 		 	border-bottom: 1px solid red;
+		 	text-transform:uppercase;
+		 	font-size:12px;
+		 	line-height:20px;
+		 	letter-spacing:1px;
+		 	color:#000000;
 	}
 	.title{
-		    margin-bottom: 9px;
+		    margin-bottom: 25px;
 		    a{
 		    	color:#333;
 		    	text-decoration:none;
-		    	font-size: 21px;
+		    	font-size: 24px;
+		    	line-height:26px;
+		    	letter-spacing:2px;
+		    	&:hover{
+					opacity:0.8;
+		    	}
 		    }
 	}
 
@@ -1983,9 +2034,17 @@ navigationLinks
 		.linkMore{
 			margin-bottom:23px;
 			a{
-				color: #777;
+				color: #999999;
+				font-size:14px;
+				line-height:23px;
+				letter-spacing:1px;
     			text-decoration: none;
-
+				border-bottom:1px solid transparent;
+			    transition: all 0.3s ease;
+				&:hover{
+					opacity: .8;
+   					 border-color: #999;
+				}
 			}
 		}
 	}

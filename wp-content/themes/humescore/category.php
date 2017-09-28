@@ -41,13 +41,13 @@ get_header(); ?>
 										;?>
 
 									<!-- <section > -->
-									<div class="row mb-4 mt-4" id="contentBorder">
+									<div class="row  " id="contentBorder">
 
 										<div class="col-md-5 ">
 											<?php if (has_post_thumbnail()):?>
-												<?php the_post_thumbnail(); ?>
+												<a href="<?php echo get_permalink() ;?>"><?php the_post_thumbnail('popular'); ?></a>
 											<?php else :?>
-												<img src="<?php echo get_template_directory_uri().'/images/3.jpg' ;?>" alt="" class="img">
+										<a href="<?php echo get_permalink() ;?>"><img src="<?php echo get_template_directory_uri().'/images/3.jpg' ;?>" alt="" class="img"></a>
 											<?php endif;?>
 									</div><!-- col-5 -->	
 									<div class="col-md-7 ">
@@ -72,7 +72,7 @@ get_header(); ?>
 												<div class="entry-meta">
 													<?php humescore_posted_on(); ?>
 														<span class="commentsNumber">	
-															<span>-</span><?php comments_number("no comments") ;?>
+															<span>-</span><a href="<?php  echo get_permalink()?>/#comments"><?php comments_number("no comments") ;?></a>
 														</span>
 												</div><!-- .entry-meta -->
 										</div>
