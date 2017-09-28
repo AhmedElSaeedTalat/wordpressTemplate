@@ -996,7 +996,7 @@ custom widgets
     font-size: 16px;
     line-height: 17px;
     color: #33363a;
-    width: 67% !important;
+    width: 62% !important;
     padding-left: 3%; }
   .popular-posts .wpp-list {
     padding: 0 !important; }
@@ -1006,7 +1006,7 @@ custom widgets
       .popular-posts .wpp-list li a {
         display: block;
         float: left;
-        width: 30%; }
+        width: 35%; }
   .popular-posts .wpp-date {
     font-size: 12px;
     line-height: 20px;
@@ -1061,10 +1061,13 @@ custom widgets
 
 .subscription .input {
   width: 100%;
-  padding: 8px 17px;
+  padding: 6px 12px;
   outline: #d2cece;
   margin-bottom: 1rem;
-  border: 1px solid  #d2cece; }
+  border: 1px solid #f0f0f0;
+  color: #666666;
+  height: 45px;
+  font-size: 14px; }
   .subscription .input:focus {
     border: 1px solid black; }
 

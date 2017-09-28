@@ -1255,7 +1255,7 @@ custom widgets
 			font-size:16px;
 			line-height:17px;
 			color:#33363a;
-		    width: 67% !important;
+		    width: 62% !important;
     		padding-left: 3%;
 	}
 	.wpp-list{
@@ -1266,7 +1266,7 @@ custom widgets
 			a{
 				display:block;
 				float:left;
-			    width: 30%;
+			    width: 35%;
 
 			}
 			a :nth(2){
@@ -1338,10 +1338,13 @@ custom widgets
 	}
 	.input{
 		    width: 100%;
-		    padding: 8px 17px;
+	        padding: 6px 12px;
 		    outline: #d2cece;
 		    margin-bottom:1rem;
-		    border:1px solid  #d2cece;
+		    border:1px solid #f0f0f0;
+		    color:#666666;
+		    height: 45px;
+		    font-size: 14px;
 		    &:focus{
 		    	border:1px solid black;
 		    }
