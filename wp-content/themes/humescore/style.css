@@ -894,65 +894,73 @@ custom widgets
 
 .socailIcon #facebook {
   border: 1px solid #bbb9b9;
-  padding: 0.2rem;
+  padding: 5px 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%; }
   .socailIcon #facebook:hover {
     background: #dd5252; }
-    .socailIcon #facebook:hover .icon {
-      fill: white; }
-  .socailIcon #facebook .icon {
-    height: 15px;
-    width: 15px; }
-    .socailIcon #facebook .icon:hover {
-      fill: white; }
+    .socailIcon #facebook:hover .fa-facebook {
+      color: white;
+      text-decoration: none; }
+  .socailIcon #facebook .fa-facebook {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none; }
 
 .socailIcon #twitter {
   border: 1px solid #bbb9b9;
-  padding: 0.2rem;
+  padding: 5px 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%; }
   .socailIcon #twitter:hover {
     background: #dd5252; }
-    .socailIcon #twitter:hover .icon {
-      fill: white; }
-  .socailIcon #twitter .icon {
-    height: 15px;
-    width: 15px; }
+    .socailIcon #twitter:hover .fa-twitter {
+      color: white;
+      text-decoration: none; }
+  .socailIcon #twitter .fa-twitter {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none; }
 
 .socailIcon #instagram {
   border: 1px solid #bbb9b9;
-  padding: 0.2rem;
+  padding: 5px 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%; }
   .socailIcon #instagram:hover {
     background: #dd5252; }
-    .socailIcon #instagram:hover .icon {
-      fill: white; }
-  .socailIcon #instagram .icon {
-    height: 15px;
-    width: 15px; }
+    .socailIcon #instagram:hover .fa-instagram {
+      color: white;
+      text-decoration: none; }
+  .socailIcon #instagram .fa-instagram {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none; }
 
 .socailIcon #linkedin {
   border: 1px solid #bbb9b9;
-  padding: 0.2rem;
+  padding: 5px 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%; }
   .socailIcon #linkedin:hover {
     background: #dd5252; }
-    .socailIcon #linkedin:hover .icon {
-      fill: white; }
-  .socailIcon #linkedin .icon {
-    height: 15px;
-    width: 15px; }
+    .socailIcon #linkedin:hover .fa-linkedin {
+      color: white;
+      text-decoration: none;
+      border-bottom: none; }
+  .socailIcon #linkedin .fa-linkedin {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: none; }
 
 .Main_Icons {
   display: flex;

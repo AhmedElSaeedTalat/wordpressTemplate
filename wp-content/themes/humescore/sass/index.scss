@@ -1131,7 +1131,7 @@ custom widgets
 	}
 	#facebook{
 	border: 1px solid #bbb9b9;
-    padding: 0.2rem;
+    padding: 5px 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1139,70 +1139,78 @@ custom widgets
 
     &:hover{
     	background:#dd5252;
-    	.icon{
-    		fill:white;
+    	.fa-facebook{
+    		color:white;
+    		text-decoration:none;
     	}
     }
-	.icon{
-		height: 15px;
-		width:15px;
-		&:hover{
-			fill:white;
-		}
+	.fa-facebook{
+		    font-size: 16px;
+    		color: #333;
+			text-decoration:none;
 	}
 }
 #twitter{
 	border: 1px solid #bbb9b9;
-    padding: 0.2rem;
+    padding: 5px 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
      &:hover{
     	background:#dd5252;
-    	.icon{
-    		fill:white;
+    	.fa-twitter{
+    		color:white;
+    		text-decoration:none;
     	}
     }
-	.icon{
-		height: 15px;
-		width:15px;
+	.fa-twitter{
+		    font-size: 16px;
+    		color: #333;
+			text-decoration:none;
 	}
 }
 #instagram{
 	border: 1px solid #bbb9b9;
-    padding: 0.2rem;
+    padding: 5px 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
      &:hover{
     	background:#dd5252;
-    	.icon{
-    		fill:white;
+    	.fa-instagram{
+    		color:white;
+    		text-decoration:none;
     	}
     }
-	.icon{
-		height: 15px;
-		width:15px;
+	.fa-instagram{
+		    font-size: 16px;
+    		color: #333;
+			text-decoration:none;
 	}
 }
 #linkedin{
 	border: 1px solid #bbb9b9;
-    padding: 0.2rem;
+   	padding: 5px 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
      &:hover{
     	background:#dd5252;
-    	.icon{
-    		fill:white;
+    	.fa-linkedin{
+    		color:white;
+    		text-decoration:none;
+			border-bottom:none;
+
     	}
     }
-	.icon{
-		height: 15px;
-		width:15px;
+	.fa-linkedin{
+		    font-size: 16px;
+    		color: #333;
+			text-decoration:none;
+			border-bottom:none;
 	}
 }
 }

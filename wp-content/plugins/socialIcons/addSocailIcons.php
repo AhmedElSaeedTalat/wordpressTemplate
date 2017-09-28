@@ -47,21 +47,18 @@ class social_Icons extends WP_Widget{
 			<h2 class="stay_connected">STAY CONNECTED</h2>
 			<div class="social">
 				<?php if(strpos($instance['facebook'],"facebook") !== false):?>
-				<a href="<?php echo "http://". $instance['facebook'];?>"><span id="facebook"> <?php echo humescores_get_svg(['icon'=>'facebook']);?></span></a>
+				<a href="<?php echo "http://". $instance['facebook'];?>"><span id="facebook"> <i class="fa fa-facebook" aria-hidden="true"></i></span></a>
 			<?php endif ;?>
 
 			<?php if(strpos($instance['twitter'],"twitter") !== false ):?>
-				<a href="<?php echo $instance['twitter'];?>"><span id="twitter"><?php echo humescores_get_svg(['icon'=>'twitter']);
-				?></span></a>
+				<a href="<?php echo $instance['twitter'];?>"><span id="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span></a>
 			<?php endif;?>
 
 				<?php if(strpos($instance['instagram'],"instagram") !== false ):?>
-				<a href="<?php echo $instance['instagram'];?>"><span id="instagram"><?php echo humescores_get_svg(['icon'=>'instagram']);
-				?></span></a>
+				<a href="<?php echo $instance['instagram'];?>"><span id="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></span></a>
 			<?php endif;?>
 			<?php if(strpos($instance['linkedin'],"linkedin") !== false ):?>
-				<a href="<?php echo $instance['linkedin'];?>"><span id="linkedin"><?php echo humescores_get_svg(['icon'=>'linkedin']);
-				?></span></a>
+				<a href="<?php echo $instance['linkedin'];?>"><span id="linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></span></a>
 			<?php endif;?>
 			</div>
 			
