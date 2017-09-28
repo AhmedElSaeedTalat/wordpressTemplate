@@ -63,10 +63,11 @@
 					<div class="container ">
 						<div class="row ">
 							<div class=" col-lg-12 col-xl-4 d-flex align-items-center header_account">
-								<span class="tags"><i class="fa fa-tags" aria-hidden="true"></i></span><p class="mainStyleText1">Summer Sales Discount Learn More</p>
+								<span class="tags"><i class="fa fa-tags" aria-hidden="true"></i></span><a href="#"><p class="mainStyleText1">Summer Sales Discount Learn More</p></a>
 							</div>
 							<div class="col-lg-12 col-xl-8 d-flex align-items-center justify-content-end header_account" id="changeDirectionDiv">
-								<p class="mainStyleText1"> My account <span class="headerTextSpanPadding">Checkout</span></p>
+								<a href="#"><span class="mainStyleText1">My account </span></a>
+								<a href="#"><span class="mainStyleText1 headerTextSpanPadding">Checkout</span></a>
 							</div>
 						</div>
 					</div>
@@ -102,7 +103,7 @@
 											'theme_location' => 'menu-1',
 											'menu_id'        => 'primary-menu',
 											'depth' 		=> '3',
-											'after'			=> humescores_get_svg(['icon'=>'angle-down'])
+											'after'			=> '<i class="fa fa-angle-down" aria-hidden="true"></i>'
 										) );
 										
 									?>
@@ -110,7 +111,7 @@
 							</div>
 							<div class="col-3 col-sm-2 d-flex align-items-center  justify-content-end adjustIcons">
 								<div class="shopping-bag pr-3">
-									<i class="ion-bag"" aria-hidden="true"></i>
+									<a href="#"><i class="ion-bag"" aria-hidden="true"></i></a> 
 								</div>
 								<div class="searchIcon">
 									<i class="ion-ios-search-strong" aria-hidden="true"></i>

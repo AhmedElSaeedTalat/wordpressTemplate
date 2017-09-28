@@ -128,10 +128,15 @@ blockquote:after {
       align-items: center;
       color: white;
       font-size: 12px; }
+    .headWrapper .header_account a {
+      text-decoration: none;
+      padding-right: 17px; }
     .headWrapper .header_account .mainStyleText1 {
       font-size: 14px;
       color: white;
       margin-bottom: 0; }
+      .headWrapper .header_account .mainStyleText1:hover {
+        opacity: .9; }
       .headWrapper .header_account .mainStyleText1 .headerTextSpanPadding {
         padding-left: 2.5rem;
         cursor: pointer; }
@@ -156,19 +161,28 @@ blockquote:after {
     color: #333;
     text-decoration: none;
     font-size: 12px;
-    line-height: 10px; }
+    line-height: 10px;
+    letter-spacing: 1px; }
   .menu a:hover {
     color: #777; }
+  .menu .menu-item:not(.menu-item-has-children) .fa-angle-down {
+    display: none; }
   .menu .menu-item {
     padding-right: 2rem;
     position: relative;
+    transition: all .9s linear;
     line-height: 58px !important; }
+    .menu .menu-item .fa-angle-down {
+      padding-left: 2px;
+      font-size: 10px;
+      color: #333; }
     .menu .menu-item .sub-menu {
       list-style: none;
+      box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.08);
       min-height: 40px;
-      padding-top: 1rem;
+      padding-top: 2px;
       padding-left: 1rem;
-      padding-bottom: 1rem;
+      padding-bottom: 2px;
       position: absolute;
       top: 58px;
       left: 0%;
@@ -176,10 +190,14 @@ blockquote:after {
       background-color: white;
       display: none;
       z-index: 125;
-      border-width: 1px 1px 0px 1px; }
+      border-width: 1px 1px 0px 1px;
+      transition: opacity 0.3s ease; }
+      .menu .menu-item .sub-menu .menu-item-has-children:after {
+        content: "\203A"; }
       .menu .menu-item .sub-menu .menu-item {
-        line-height: 20px !important; }
-      .menu .menu-item .sub-menu .icon-angle-down {
+        line-height: 20px !important;
+        padding-bottom: 5px; }
+      .menu .menu-item .sub-menu .fa-angle-down {
         display: none; }
       .menu .menu-item .sub-menu .sub-menu {
         position: absolute;
@@ -191,7 +209,8 @@ blockquote:after {
         position: relative;
         margin-bottom: 1%;
         width: 100%;
-        padding-right: 0; }
+        padding-right: 0;
+        transition: all .9s linear; }
         .menu .menu-item .sub-menu [class*="menu-item-"]:hover .sub-menu {
           display: block; }
     .menu .menu-item:hover .sub-menu {
@@ -214,6 +233,8 @@ blockquote:after {
 .searchIcon {
   font-size: 20px;
   cursor: pointer; }
+  .searchIcon:hover {
+    opacity: 0.9; }
 
 #search_section {
   position: fixed;
@@ -256,6 +277,10 @@ blockquote:after {
 
 .n2-ss-slide-background-mask {
   width: 100% !important; }
+
+.main-navigation li ul li a {
+  margin: 0;
+  padding: 10px 0; }
 
 /*-------------------------------------------------
 	menu Mobile
@@ -323,8 +348,9 @@ blockquote:after {
     .menuMobile .menu .sub-menu:hover .sub-menu {
       display: none; }
 
-.shopping-bag {
-  font-size: 20px; }
+.shopping-bag a {
+  font-size: 20px;
+  color: #333; }
 
 .firstLvl {
   width: 100%;

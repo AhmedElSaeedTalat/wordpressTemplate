@@ -143,10 +143,17 @@ blockquote:after {
 					color: white;
 				    font-size: 12px;
 				}
+				a{
+					text-decoration:none;
+				    padding-right: 17px;
+				}
 		.mainStyleText1 {
 				font-size:14px;
 				color:white;
 				margin-bottom: 0;
+				&:hover{
+					opacity:.9;
+				}
 				 .headerTextSpanPadding{
 				 	padding-left:2.5rem;
 				 	cursor:pointer;
@@ -183,25 +190,34 @@ blockquote:after {
 						text-decoration: none;
 						font-size:12px;
 						line-height:10px;
+						letter-spacing: 1px;
 					}
 					a:hover{
 						color:#777;
 					}
-					
+					.menu-item:not(.menu-item-has-children){
+						.fa-angle-down{
+							display:none;
+						}
+					}
 					.menu-item{
 					    padding-right: 2rem;
 					    position:relative;
-				
+					 	transition:all .9s linear;
 						line-height:58px !important;
-					
+						.fa-angle-down{
+							padding-left:2px;
+							font-size: 10px;
+    						color: #333;
+						}
 					
 					.sub-menu{
 						list-style:none;
-					    // box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.08);
+					    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.08);
 					    min-height: 40px;
-					    padding-top: 1rem;
+					    padding-top: 2px;
 					    padding-left: 1rem;
-					    padding-bottom: 1rem;
+					    padding-bottom: 2px;
 					    position: absolute;
 				        top: 58px;
    						left: 0%;
@@ -210,10 +226,15 @@ blockquote:after {
 					    display:none;
 					    z-index:125;
 				        border-width: 1px 1px 0px 1px;
+			            transition: opacity 0.3s ease;
+			            .menu-item-has-children:after{
+							content:"\203A";
+			            }
 					    .menu-item{
 					    	line-height:20px !important;
+					    	padding-bottom:5px;
 					    }
-						 .icon-angle-down{
+						 .fa-angle-down{
 							display:none;
 						}
 						.sub-menu{
@@ -228,6 +249,7 @@ blockquote:after {
 							margin-bottom:1%;
 							width: 100%;
 						 	padding-right: 0;
+						 	transition:all .9s linear;
 							&:hover  .sub-menu{
 								display:block;
 							}
@@ -263,6 +285,9 @@ blockquote:after {
 	.searchIcon{
 			font-size:20px;
 			cursor:pointer;
+			&:hover{
+				opacity:0.9;
+			}
 
 	}
 	#search_section{
@@ -318,6 +343,11 @@ blockquote:after {
 .n2-ss-slide-background-mask{
 	width:100% !important
 }
+.main-navigation li ul li a {
+    margin: 0;
+    padding: 10px 0;
+}
+
 /*-------------------------------------------------
 	menu Mobile
 --------------------------------------------------*/
@@ -340,6 +370,7 @@ blockquote:after {
 		font-size:16px;
 		color:#333;
 	}
+
 	.Main_Icons {
 		    display: flex;
 		    align-items: center;
@@ -407,7 +438,10 @@ blockquote:after {
 }
 }
 .shopping-bag{
-	font-size: 20px;
+	a{
+		font-size: 20px;
+		color:#333;
+	}
 }
 .firstLvl{
 	width: 100%;
