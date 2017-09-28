@@ -1994,12 +1994,10 @@ navigationLinks
 	}
 	#contentBorder{
 		    border-bottom: 1px solid $borderColor;
-		    padding-bottom:10px;
 		    margin-bottom: 60px;
 	}
 }
 #content1{
-	    min-height: 196px;
     margin-bottom: 19px;
 	p{
 		margin-bottom:0px;
@@ -2030,7 +2028,6 @@ navigationLinks
 
 }
 .links{
-		height:90px;
 		.linkMore{
 			margin-bottom:23px;
 			a{
@@ -2082,9 +2079,7 @@ navigationLinks
     			font-size:10px;
     		}
     }
-    #content1{
-	    min-height: 330px;
-	}
+   
 	}
 /*--------------------------------------------------------------------------------------------
 	pages
@@ -2219,7 +2214,6 @@ navigationLinks
     		}
     	}
     	#content1 {
-		    min-height: 227px;
 		    margin-bottom: 19px;
 }
 .entry-meta {
@@ -2533,10 +2527,11 @@ justify-content:center !important;
     padding-bottom: 4%;
 }
 #content1 .category {
-    margin-bottom: 9px;
+    margin-bottom:15px;
+    margin-top:15px;
     width: 69px;
     border-bottom: 1px solid red;
-    padding-top: 12px;
+    // padding-top: 12px;
 }
 
 .searchPage {

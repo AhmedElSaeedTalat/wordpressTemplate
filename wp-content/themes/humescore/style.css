@@ -1587,11 +1587,9 @@ navigationLinks
 
 #posts_categories #contentBorder {
   border-bottom: 1px solid #f0f0f0;
-  padding-bottom: 10px;
   margin-bottom: 60px; }
 
 #content1 {
-  min-height: 196px;
   margin-bottom: 19px; }
   #content1 p {
     margin-bottom: 0px; }
@@ -1615,21 +1613,19 @@ navigationLinks
       #content1 .title a:hover {
         opacity: 0.8; }
 
-.links {
-  height: 90px; }
-  .links .linkMore {
-    margin-bottom: 23px; }
-    .links .linkMore a {
-      color: #999999;
-      font-size: 14px;
-      line-height: 23px;
-      letter-spacing: 1px;
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: all 0.3s ease; }
-      .links .linkMore a:hover {
-        opacity: .8;
-        border-color: #999; }
+.links .linkMore {
+  margin-bottom: 23px; }
+  .links .linkMore a {
+    color: #999999;
+    font-size: 14px;
+    line-height: 23px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease; }
+    .links .linkMore a:hover {
+      opacity: .8;
+      border-color: #999; }
 
 .adjust {
   overflow: hidden; }
@@ -1660,9 +1656,6 @@ navigationLinks
   display: inline-block; }
   #tags .entry-meta a {
     font-size: 10px; }
-
-#tags #content1 {
-  min-height: 330px; }
 
 /*--------------------------------------------------------------------------------------------
 	pages
@@ -1766,7 +1759,6 @@ navigationLinks
     border: none; }
 
 .searchPage #content1 {
-  min-height: 227px;
   margin-bottom: 19px; }
 
 .searchPage .entry-meta {
@@ -1981,10 +1973,10 @@ mediaqueries
   .relatedPosts .date {
     padding-bottom: 4%; }
   #content1 .category {
-    margin-bottom: 9px;
+    margin-bottom: 15px;
+    margin-top: 15px;
     width: 69px;
-    border-bottom: 1px solid red;
-    padding-top: 12px; }
+    border-bottom: 1px solid red; }
   .searchPage .entry-meta a {
     text-decoration: none;
     color: #7f7f7f;
