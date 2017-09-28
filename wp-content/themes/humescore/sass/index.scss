@@ -636,6 +636,11 @@ Single Posts
 		    	color: #000000 !important;
 	    		text-decoration: none;
 	    		border-bottom:1px solid red;
+				text-transform:uppercase;
+				font-size:12px;
+				line-height:20px;
+				letter-spacing:1px;
+
 		    }
 	}
 
@@ -645,11 +650,17 @@ Single Posts
 		.entry-title{
 			text-align:center;
 			font-size:24px;
+			line-height:26px;
+			letter-spacing:2px;
 			color:#333333;
 			margin-top:0.7rem;
 		}
+		
 
 }
+.entry-content .entry-meta__bottom {
+			display:none !important;
+		}
 .entry-footer{
 	margin-bottom: 1rem;
 	.tags-links{
@@ -713,6 +724,20 @@ Single Posts
 			.contentMargin{
 				margin-top: 5rem;
 			}
+			.single{
+				.entry-meta{
+					font-size:12px;
+					color:#7f7f7f;
+					line-height:20px;
+					letter-spacing:1px;
+					a{
+						font-size:12px;
+						color:#7f7f7f;
+						line-height:20px;
+						letter-spacing:1px;
+					}
+				}
+			}
 /*-------------------------------------------------------------------------------
 	Custome Menu
 --------------------------------------------------------------------------------*/
@@ -725,10 +750,15 @@ Single Posts
 				h2{
 					padding-bottom: 1rem;
    					border-bottom: 1px solid;
+   					font-size:18px;
+   					line-height:18px;
+   					letter-spacing:1px;
+   					color:#333333;
 				}
 			}
 			.menuWrapper{
 				display:inline-flex;
+				width: 100%;	
 				.menuWrapper2{
 					border: 1px solid #dcdcdc;
 	  				margin-right: 1rem;
@@ -736,35 +766,37 @@ Single Posts
 	    			display: flex;
 	    			justify-content: center;
 	    			align-items: center;
+	    			width:33.3%;
 	    			a{
 	    				color:#797d82;
 	    				text-decoration:none;
-	    				width:70%;
+	    				width:100%;
 	    				display:flex;
-	    				span:first-child{
-	    					width:20%;
+	    				justify-content:center;
+	    				align-items:center;
+	    				.fa{
+	    					width:10% !important;
+	    					color:rgb(51, 54, 58);
 	    				}
-	    				span :nth(2){
-	    					width:80%;
+	    				span {
+	    					width:60%;
+	    					font-size:14px;
+	    					color:#33363a;
 	    				}
-	    				span{
-	    					height: 65%;
-    						padding-top: 3px;
-    						.icon{
-							height:16px;
-							width:100%;
-						}
-	    				}
+	    				
 	    				
 	    				
 	    			}
 	    			&:hover{
 	    					background:#dd5252;
-	    					.icon{
-	    						fill:white;
+	    					.fa{
+	    						color:white;
 	    					}
 	    					a{
-	    						color:white;
+	    						span{
+	    							color:white;
+
+	    						}
 	    					}
 	    				}
 				}
@@ -798,6 +830,7 @@ Single Posts
 		Related Posts Section
 	--------------------------------------------------------------------------------*/
 .relatedPosts{
+	margin-top:70px;
 	img{width:100%;}
 	.relatedPosts_blog{
 		width:100%;
@@ -837,6 +870,10 @@ Single Posts
 		margin-bottom: 2rem;
 		border-bottom:1px solid;
 		width: 20%;
+		font-size:18px;
+		line-height:18px;
+		letter-spacing:1px;
+		color:#333333;
 	}
 	/*-------------------------------------------------------------------------------
 	comments
@@ -1477,6 +1514,7 @@ front-Page
 				font-size: 12px;
 			line-height:20px;
 			letter-spacing:1px;
+			text-transform:uppercase;
 			}
 			
 		  
@@ -1554,13 +1592,11 @@ front-Page
 	}
 	}
 	.postTitle{
-		height: 94px;
     	margin-bottom: 1rem;
 	}
 	.contentOfPosts{
 		p{
 			    padding-bottom: 1.25rem;
-			    min-height:181px;
 		}
 	}
 	.entry-meta{

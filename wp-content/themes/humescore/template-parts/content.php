@@ -137,7 +137,8 @@
 										
 										<a href="<?php echo $items_menu->url;?>"><?php 
 										if(!empty($items_menu->post_title)){
-											echo "<span>".humescores_get_svg(['icon'=>$items_menu->post_title])."</span>";
+										echo	"<i class='fa fa-". $items_menu->post_title." ' aria-hidden='true'></i>";
+											// echo "<span>".humescores_get_svg(['icon'=>$items_menu->post_title])."</span>";
 										}
 											echo "<span class='hidden-sm-down'>". $items_menu->post_title."</span>";
 
@@ -189,16 +190,17 @@
 					
 				</div>
 			
-			<div class="col-12 mt-5 blaidth relatedPosts">
+			<div class="col-12 blaidth relatedPosts">
 						<h2 class="mx-auto RelatedPostHeaderStyle">Related Posts</h2>
 <?php 
 						$title = get_the_title();
 						$category = get_the_category();
 						$the_category = $category[0]->name;
 						$x = new WP_Query(
-								[
-									'category_name'=>$the_category 
-								]
+								array(
+									'category_name'=>$the_category,
+									'posts_per_page' => 3
+								)
 							); ?>
 				<div class="row">
 					<?php
@@ -208,7 +210,7 @@
 									<?php
 								// echo the_post_thumbnail();
 								if($title !== get_the_title()) :?>
-								<div class="col-lg-3">
+								<div class="col-lg-4">
 								<div class="relatedPosts_blog">
 									<?php if(has_post_thumbnail()) :?>
 									<div class="image">

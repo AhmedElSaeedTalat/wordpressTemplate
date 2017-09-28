@@ -217,7 +217,7 @@ echo do_shortcode('[smartslider3 slider=2]');
 										</section>
 										
 										<div class="firstPostContent">
-											<span class="mt-1 contentOfPosts"><?php the_excerpt();?></span>
+											<p class="mt-1 contentOfPosts"><?php the_excerpt();?></p>
 											<a href="<?php echo get_permalink()?>" class="firstPostLink">read more</a>
 												<?php if( 'post' === get_post_type() ) : ?>
 												<?php 

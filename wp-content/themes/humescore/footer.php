@@ -79,7 +79,7 @@
 								<div class="title">
 									<a href="<?php echo get_permalink($value->ID) ; ?>"><?php echo $value->post_title ;?></a>
 									<p><?php $x  = new DateTime($value->post_date);
-											$y = $x->format("M d, 20y");
+											$y = $x->format("F  d, 20y");
 											echo $y;
 													?>	</p>
 								</div>

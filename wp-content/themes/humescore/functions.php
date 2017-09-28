@@ -247,6 +247,12 @@ function changeExcerpt($more){
 	return "...";
 }
 add_filter("excerpt_more",changeExcerpt);
+
+ function custom_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
 require get_template_directory()."/inc/icons-functions.php";
 require get_template_directory()."/walkerCat.php";
 add_action( 'init', 'add_excerpts_to_pages' );
