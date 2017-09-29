@@ -212,13 +212,13 @@
 								if($title !== get_the_title()) :?>
 								<div class="col-lg-4">
 								<div class="relatedPosts_blog">
-									<?php if(has_post_thumbnail()) :?>
+								<?php if(has_post_thumbnail()) :?>
 									<div class="image">
-										<?php echo the_post_thumbnail() ;?>	
+										<a href="<?php echo get_permalink() ;?>"><?php echo the_post_thumbnail('popular') ;?></a>
 									</div>	
 									<?php else:?>
 									<div class="image">
-										<img src="<?php echo get_template_directory_uri().'/images/logo-minimalo.png' ;?>	" alt="">
+										<a href="<?php echo get_permalink() ;?>"><img src="<?php echo get_template_directory_uri().'/images/3.jpg' ;?>	" alt=""></a>
 									</div>	
 
 								<?php endif;?>

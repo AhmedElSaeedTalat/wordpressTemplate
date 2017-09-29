@@ -654,7 +654,10 @@ Single Posts
   .relatedPosts .relatedPosts_blog {
     width: 100%; }
     .relatedPosts .relatedPosts_blog img {
-      width: 100% !important; }
+      width: 100% !important;
+      opacity: 0.8; }
+      .relatedPosts .relatedPosts_blog img:hover {
+        opacity: 1; }
   .relatedPosts .image img {
     height: auto;
     width: 100%; }
@@ -666,6 +669,8 @@ Single Posts
       font-size: 16px;
       line-height: 17px;
       text-transform: capitalize; }
+      .relatedPosts .title a:hover {
+        opacity: 0.8; }
   .relatedPosts .date {
     font-size: 12px;
     line-height: 20px;
