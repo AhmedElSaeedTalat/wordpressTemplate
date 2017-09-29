@@ -989,6 +989,13 @@ Footer
 			border: 1px solid #dd5252;
 
 	    }
+	    p{
+	    	a{
+	    		text-transform:uppercase;
+	    		font-size:12px;
+	    		line-height:20px;
+	    	}
+	    }
 	}
 	p{
 		margin-bottom:0;
@@ -2072,14 +2079,61 @@ navigationLinks
 		    text-decoration: none;
 		    padding-left: 0;
 }
-		.entry-meta {
-    		font-size: 10px;
-    		display: inline-block;
-    		a{
-    			font-size:10px;
-    		}
-    }
+	
    
+	}
+	.tag{
+		.entry-meta{
+			font-size:9px;
+			line-height:20px;
+			letter-spacing:1px;
+			color:#7f7f7f;
+			a{
+				font-size:9px;
+				line-height:20px;
+				letter-spacing:1px;
+				color:#7f7f7f;
+			}
+						.vcard a:hover{
+				color:#000;
+}
+			.posted-on{
+				a:hover{
+					color:#000;
+				}
+			}
+			.commentsNumber:hover{
+				color:#000;
+			}
+		}
+		#content1 p {
+		    margin-bottom: 0px;
+		    line-height: 23px;
+}
+		.post-categories{
+			a{
+				font-size:12px;
+				line-height:20px;
+				letter-spacing:1px;
+				text-transform:uppercase;
+			}
+			
+		}
+		img{
+			opacity:0.8;
+			&:hover{
+				opacity:1;
+			}
+		}
+		.text-Title{
+			margin-bottom:10px;
+		}
+		#Title .page-title{
+			font-size:36px;
+			line-height:39px;
+			color:#333333;
+			text-transform:lowercase;
+		}
 	}
 /*--------------------------------------------------------------------------------------------
 	pages

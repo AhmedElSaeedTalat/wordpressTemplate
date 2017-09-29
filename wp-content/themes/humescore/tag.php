@@ -14,7 +14,7 @@ get_header(); ?>
 						<div class="container " id="Title">
 							<div class="row">
 								<div class="col-12  d-flex justify-content-center">
-									<p class="text-uppercase text-Title">Browsing Category</p>
+									<p class="text-uppercase text-Title">POSTS TAGGED</p>
 								</div>	
 								<div class="col-12  d-flex justify-content-center">
 									<?php the_archive_title( '<h1 class="page-title">', '</h1>' );?>
@@ -31,9 +31,12 @@ get_header(); ?>
 
 							<?php 
 								$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+									$tags = get_the_archive_title();
+									$z= substr($tags,1.8);
+									
 								$args = array(
-									'tags' => get_the_archive_title(),
-									 'paged'               => $paged
+									'tag' => $z,
+									 'paged' => $paged
 								);
 								$query = new WP_Query($args);
 								$queries = $query->posts;
@@ -46,9 +49,9 @@ get_header(); ?>
 									
 										<div class="col-md-6 ">
 											<?php if (has_post_thumbnail()):?>
-												<?php the_post_thumbnail(); ?>
+												<a href="<?php echo get_permalink();?>"><?php the_post_thumbnail('popular'); ?></a>
 											<?php else :?>
-												<img src="<?php echo get_template_directory_uri().'/images/3.jpg' ;?>" alt="" class="img">
+												<a href="<?php echo get_permalink();?>"><img src="<?php echo get_template_directory_uri().'/images/3.jpg' ;?>" alt="" class="img"></a>
 											<?php endif;?>	
 										<div id="content1">
 											<div >
@@ -71,7 +74,7 @@ get_header(); ?>
 												<div class="entry-meta">
 													<?php humescore_posted_on(); ?>
 														<span class="commentsNumber">	
-															<span>-</span><?php comments_number("no comments") ;?>
+															<span>-</span><a href="<?php  echo get_permalink()?>/#comments"><?php comments_number("no comments") ;?></a>
 														</span>
 												</div><!-- .entry-meta -->
 										</div>
