@@ -82,7 +82,10 @@ echo do_shortcode('[smartslider3 slider=2]');
 												<a href="<?php  echo get_permalink()?>"><?php the_title();?></a>
 											</div>
 											<div class="date">
-												<?php echo  get_the_date() ;?>
+												<?php 
+												$x  = new DateTime(get_the_date());
+											$y = $x->format("M  d, 20y");
+											echo $y;?>
 											</div>
 										</div>
 									</div>
