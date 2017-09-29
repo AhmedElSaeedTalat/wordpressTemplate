@@ -20,7 +20,7 @@ get_header(); ?>
 					<p class="searchTitle">SEARCH RESULTS FOR</p><br>
 					<?php
 					/* translators: %s: search query. */
-					printf( esc_html__( ' %s', 'humescore' ), '<span>' . get_search_query() . '</span>' );
+					printf( esc_html__( ' %s', 'humescore' ), '<span class="Searched">' . get_search_query() . '</span>' );
 				?></h1>
 			</header><!-- .page-header -->
 	

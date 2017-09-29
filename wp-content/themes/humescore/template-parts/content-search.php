@@ -13,14 +13,14 @@
 	<header class="entry-header">
 		<div class="container searchPage mt-5">
 			<div class="row applyBorderSearch">
-				<div class="col-lg-6">
+				<div class="col-lg-5">
 					<?php if (has_post_thumbnail()):?>
-					<a href="<?php echo get_permalink() ;?>"><?php the_post_thumbnail('thumbnails1') ;?></a>
+					<a href="<?php echo get_permalink() ;?>"><?php the_post_thumbnail('search') ;?></a>
 					<?php else :?>
 						<a href="<?php echo get_permalink() ;?>"><img src="<?php echo get_template_directory_uri().'/images/3.jpg' ;?>" alt="" class="img"></a>
 					<?php endif;?>
 				</div>
-				<div class="col-lg-6">
+				<div class="col-lg-7 pl-5">
 					<section id="content1">
 						<div class="cat" >
 						<?php the_category() ;?>
@@ -41,7 +41,7 @@
 							<div class="entry-meta">
 								<?php humescore_posted_on(); ?>
 									<span class="commentsNumber">	
-										<span>-</span><?php comments_number("no comments") ;?>
+										<span>-</span>	<a href="<?php  echo get_permalink()?>/#comments"><?php comments_number("no comments") ;?></a>
 									</span>
 							</div><!-- .entry-meta -->
 					</div>

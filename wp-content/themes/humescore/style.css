@@ -1782,26 +1782,58 @@ navigationLinks
       content: "\201D"; }
   .searchHeader .searchTitle {
     color: #777;
-    font-size: 13px;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 1px;
     margin-bottom: 0.6rem;
     display: inline-block; }
+  .searchHeader .Searched {
+    font-size: 36px;
+    line-height: 39px;
+    color: #333333; }
+
+.searchPage .post-categories a {
+  border-bottom: 1px solid red;
+  text-decoration: none;
+  color: #333;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase; }
 
 .searchPage img {
   width: 100%;
-  height: 330px; }
+  height: auto;
+  opacity: 0.8; }
+  .searchPage img:hover {
+    opacity: 1; }
 
 .searchPage .entry-title {
-  text-align: left; }
+  text-align: left;
+  margin-bottom: 25px; }
   .searchPage .entry-title a {
-    color: #777;
+    color: #000;
+    font-size: 24px;
+    line-height: 26px;
+    letter-spacing: 2px;
     text-decoration: none;
     border: none; }
+    .searchPage .entry-title a:hover {
+      opacity: 0.8; }
 
 .searchPage #content1 {
   margin-bottom: 19px; }
 
 .searchPage .entry-meta {
-  border-bottom: none; }
+  border-bottom: none;
+  justify-content: start;
+  margin-top: 30px; }
+  .searchPage .entry-meta .vcard a:hover {
+    color: #000; }
+  .searchPage .entry-meta .posted-on a:hover {
+    color: #000; }
+  .searchPage .entry-meta .commentsNumber a:hover {
+    color: #000; }
 
 .searchPage .applyBorderSearch {
   border-bottom: 1px solid #f0f0f0;
@@ -1841,6 +1873,12 @@ navigationLinks
 
 .inputHeight {
   height: 96px; }
+
+.linkMore a {
+  text-transform: uppercase !important; }
+
+.search .site-main {
+  padding: 60px 0; }
 
 /*--------------------------------------------------------------------------------------------
 mediaqueries
