@@ -81,7 +81,7 @@ echo do_shortcode('[smartslider3 slider=2]');
 											<div class="title">
 												<a href="<?php  echo get_permalink()?>"><?php the_title();?></a>
 											</div>
-											<div class="date">
+											<div class="date text-uppercase">
 												<?php 
 												$x  = new DateTime(get_the_date());
 											$y = $x->format("M  d, 20y");
