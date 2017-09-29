@@ -116,9 +116,7 @@ echo do_shortcode('[smartslider3 slider=2]');
 											"posts_per_page" => 1
 										);
 										$query1 = new WP_Query($arguments);
-										if($query1->have_posts())
-
-											:?>
+										if($query1->have_posts()) : ?>
 												<div class="img">
 													<?php 
 													$postID = [];
@@ -168,7 +166,7 @@ echo do_shortcode('[smartslider3 slider=2]');
 															<span>-</span><a href="<?php echo get_permalink()?>/#comments"><?php comments_number("no comments") ;?></a>
 														</span>
 													</div><!-- .entry-meta -->
-												<?php endif;?>
+												<?php endif ; ?>
 											<?php
 										endif;
 											 wp_reset_postdata();
