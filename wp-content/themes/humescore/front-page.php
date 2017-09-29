@@ -155,7 +155,7 @@ echo do_shortcode('[smartslider3 slider=2]');
 													
 												</div>
 												<a href="<?php echo get_permalink()?>" class="firstPostLink">read more</a>
-												<?	if ( 'post' === get_post_type() ) : ?>
+												<?php if ( 'post' === get_post_type() ) : ?>
 											<?php 
 											setup_postdata('');
 											?>
@@ -262,6 +262,7 @@ echo do_shortcode('[smartslider3 slider=2]');
 
 						</div>
 					</div><!-- row -->
+				</div>
 				</div><!-- container -->
 			</section>
 
