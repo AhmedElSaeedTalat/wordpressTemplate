@@ -1842,9 +1842,17 @@ navigationLinks
 .search-non .title {
   width: 20%;
   margin: 0 auto;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 45px; }
+  .search-non .title p {
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 1px;
+    color: #777; }
   .search-non .title span {
-    font-size: 24px; }
+    font-size: 36px;
+    line-height: 39px;
+    color: #333333; }
   .search-non .title span:before {
     content: "\201C"; }
   .search-non .title span:after {
@@ -1856,15 +1864,17 @@ navigationLinks
   .search-non .searchFrom h1 {
     color: #8a6d3b;
     padding-top: 1rem;
-    font-size: 16px;
+    font-size: 18px;
+    line-height: 19px;
     padding-bottom: 1rem; }
   .search-non .searchFrom label {
     width: 100%; }
   .search-non .searchFrom .search-field {
     width: 100%;
-    padding: 8px 10px;
-    color: #777;
-    border: 1px solid #f0f0f0; }
+    padding: 6px 12px;
+    color: #666;
+    border: 1px solid #f0f0f0;
+    font-size: 14px; }
     .search-non .searchFrom .search-field:focus {
       border: 1px solid black; }
 

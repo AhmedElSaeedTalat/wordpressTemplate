@@ -251,7 +251,7 @@ function changeExcerpt($more){
 add_filter("excerpt_more",changeExcerpt);
 
  function custom_excerpt_length( $length ) {
-	return 30;
+	return 45;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
