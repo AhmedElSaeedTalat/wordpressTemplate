@@ -1200,6 +1200,12 @@ front-Page
       font-size: 12px !important;
       line-height: 20px !important;
       letter-spacing: 1px !important; }
+    .postsFrontPage .entry-meta .vcard a:hover {
+      color: #000; }
+    .postsFrontPage .entry-meta .posted-on a:hover {
+      color: #000; }
+    .postsFrontPage .entry-meta .commentsNumber a:hover {
+      color: #000; }
   .postsFrontPage .category {
     margin-top: 1rem;
     margin-bottom: 15px; }
