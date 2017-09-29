@@ -185,7 +185,8 @@ blockquote:after {
       border: 12px solid transparent;
       border-bottom-color: #ececec;
       bottom: 100%;
-      margin-left: -4px; }
+      margin-left: -4px;
+      opacity: 0.4; }
     .menu .menu-item .sub-menu {
       list-style: none;
       box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.08);
