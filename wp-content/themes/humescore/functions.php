@@ -45,8 +45,7 @@ if ( ! function_exists( 'humescore_setup' ) ) :
 		add_image_size("thumbnails1",600,500,true);
 		add_image_size("popular",450,450,true);
 		add_image_size("search",250,250,true);
-
-			add_image_size("page",300,300,true);
+		add_image_size("page",300,300,true);
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'humescore' ),
